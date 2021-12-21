@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/sbz/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -119,6 +119,6 @@ export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 export MYVIMRC="$HOME/.config/nvim/init.vim"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-[ -f "/Users/sbz/.ghcup/env" ] && source "/Users/sbz/.ghcup/env" # ghcup-env
+[ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env
 
-alias luamake=/Users/sbz/.config/nvim/lua-language-server/3rd/luamake/luamake
+alias luamake=$HOME/.config/nvim/lua-language-server/3rd/luamake/luamake
