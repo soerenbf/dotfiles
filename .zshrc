@@ -107,18 +107,22 @@ alias gca="git commit -am"
 alias gp="git push"
 alias gs="git status"
 
-alias nv="nvim_nightly"
+alias nv="nvim"
 
-export EDITOR='nvim_nightly'
+export EDITOR='nvim'
 export VISUAL="$EDITOR"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="/usr/local/go/bin:$PATH"
 export MYVIMRC="$HOME/.config/nvim/init.vim"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env
 
 alias luamake=$HOME/.config/nvim/lua-language-server/3rd/luamake/luamake
+
+source $HOME/.zshrc.local
