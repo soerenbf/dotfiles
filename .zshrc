@@ -126,4 +126,4 @@ export MYVIMRC="$HOME/.config/nvim/init.vim"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 alias luamake=$HOME/.config/nvim/lua-language-server/3rd/luamake/luamake
 
-source $HOME/.zshrc.local
+[ -f $HOME/.zshrc.local ] && source $HOME/.zshrc.local # source local config 
