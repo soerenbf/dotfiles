@@ -122,3 +122,5 @@ export MYVIMRC="$HOME/.config/nvim/init.vim"
 [ -f "/Users/sbz/.ghcup/env" ] && source "/Users/sbz/.ghcup/env" # ghcup-env
 
 alias luamake=/Users/sbz/.config/nvim/lua-language-server/3rd/luamake/luamake
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
