@@ -5,3 +5,6 @@
 [submodule ".config/nvim"]
 	path = .config/nvim
 	url = https://github.com/soerenbf/neovim-config.git
+[submodule ".config/nvim/lua-language-server"]
+	path = .config/nvim/lua-language-server
+	url = https://github.com/sumneko/lua-language-server.git
