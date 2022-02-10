@@ -12,16 +12,17 @@
 
 ## Installation
 
-Initialize git submodules in terminal:
-
-```bash
-git submodule update --init --recursive
-```
-
 Install vim plugins:
 
 ```bash
 :PlugInstall
+```
+
+If telescope doesn't work, do the following steps in a terminal from nvim dir:
+
+```bash
+$ cd autoload/plugged/telescope-fzf-native.nvim
+$ make clean && make
 ```
 
 Install relevant language servers:
