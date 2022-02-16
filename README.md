@@ -1,7 +1,7 @@
 ## Dependencies
 
+- zsh (if not installed by default)
 - Oh my zsh
-- Dependencies specified in `.config/nvim/README.md`
 
 ## Installation
 
@@ -13,3 +13,11 @@ git clone git@github.com:soerenbf/dotfiles.git .dotfiles
 cd .dotfiles
 ./install
 ```
+
+### Neovim
+
+Documentation of setting up neovim specified in `.config/nvim/README.md`
+
+### Emacs
+
+Doom emacs is added as a submodule. Documentation on installing and setting up can be found in `.emacs.d/README.md`
