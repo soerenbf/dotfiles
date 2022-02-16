@@ -119,6 +119,7 @@ export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="/usr/local/go/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="$HOME/.emacs.d/bin:$PATH"
 export MYVIMRC="$HOME/.config/nvim/init.vim"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

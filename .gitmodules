@@ -8,3 +8,6 @@
 [submodule ".config/nvim/lua-language-server"]
 	path = .config/nvim/lua-language-server
 	url = https://github.com/sumneko/lua-language-server.git
+[submodule ".emacs.d"]
+	path = .emacs.d
+	url = https://github.com/hlissner/doom-emacs

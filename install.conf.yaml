@@ -13,6 +13,8 @@
     ~/.bashrc: .bashrc
     ~/.zshrc: .zshrc
     ~/.config/nvim: .config/nvim
+    ~/.emacs.d: .emacs.d
+    ~/.doom.d: .doom.d
 
 - create:
     - ~/.vim/undodir
