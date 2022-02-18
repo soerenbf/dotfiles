@@ -106,9 +106,10 @@ alias gp="git push"
 alias gs="git status"
 
 alias nv="nvim"
+alias lv="lvim"
 alias em="emacs"
 
-export EDITOR='emacs'
+export EDITOR='lvim'
 export VISUAL="$EDITOR"
 
 export NVM_DIR="$HOME/.nvm"

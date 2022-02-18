@@ -12,7 +12,7 @@
     # ~/.vimrc: .vimrc
     ~/.bashrc: .bashrc
     ~/.zshrc: .zshrc
-    ~/.config/nvim: .config/nvim
+    ~/.config/lvim: .config/lvim
     ~/.emacs.d: .emacs.d
     ~/.doom.d: .doom.d
 
