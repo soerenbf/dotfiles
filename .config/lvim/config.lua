@@ -12,6 +12,7 @@ an executable
 lvim.log.level = "warn"
 lvim.format_on_save = true
 lvim.colorscheme = "onedarker"
+vim.opt.whichwrap = ""
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
@@ -73,6 +74,7 @@ lvim.builtin.treesitter.ensure_installed = {
   "tsx",
   "css",
   "rust",
+  "haskell",
   "java",
   "yaml",
 }
@@ -135,8 +137,8 @@ linters.setup {
   },
 }
 
--- -- npm i -g vscode-langservers-extracted
--- require 'lspconfig'.eslint.setup {}
+-- npm i -g vscode-langservers-extracted
+require 'lspconfig'.eslint.setup {}
 
 -- Additional Plugins
 lvim.plugins = {
