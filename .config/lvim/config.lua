@@ -141,17 +141,44 @@ linters.setup {
 -- npm i -g vscode-langservers-extracted
 require 'lspconfig'.eslint.setup {}
 
+vim.list_extend(lvim.lsp.override, { "rust_analyzer" })
+
+local config_rust_tools = function()
+    local lsp_installer_servers = require "nvim-lsp-installer.servers"
+    local _, requested_server = lsp_installer_servers.get_server "rust_analyzer"
+
+    require("rust-tools").setup({
+    tools = {
+      autoSetHints = true,
+      hover_with_actions = true,
+      runnables = {
+        use_telescope = true,
+      },
+    },
+    server = {
+      cmd_env = requested_server._default_options.cmd_env,
+      on_attach = require("lvim.lsp").common_on_attach,
+      on_init = require("lvim.lsp").common_on_init,
+    },
+    })
+end
+
 -- Additional Plugins
 lvim.plugins = {
-    { "editorconfig/editorconfig-vim" },
-    { "mbbill/undotree" },
-    { "tpope/vim-fugitive" },
-    { "francoiscabrol/ranger.vim" }
-    -- {"folke/tokyonight.nvim"},
-    -- {
-    --   "folke/trouble.nvim",
-    --   cmd = "TroubleToggle",
-    -- },
+  { "editorconfig/editorconfig-vim" },
+  { "mbbill/undotree" },
+  { "tpope/vim-fugitive" },
+  { "francoiscabrol/ranger.vim" },
+  {
+    "simrat39/rust-tools.nvim",
+    config = config_rust_tools,
+    ft = { "rust", "rs" },
+  }
+  -- {"folke/tokyonight.nvim"},
+  -- {
+  --   "folke/trouble.nvim",
+  --   cmd = "TroubleToggle",
+  -- },
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
