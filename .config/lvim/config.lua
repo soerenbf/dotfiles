@@ -1,6 +1,5 @@
 --[[
 lvim is the global options object
-
 Linters should be
 filled in as strings with either
 a global executable or a path to
@@ -18,8 +17,11 @@ vim.opt.whichwrap = ""
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
 -- add your own keymapping
-lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 lvim.keys.normal_mode["<leader>uu"] = ":UndotreeToggle<cr>"
+lvim.keys.normal_mode["<leader>gmm"] = ":Gvdiffsplit!<cr>"
+lvim.keys.normal_mode["<leader>gmh"] = ":diffget //2<cr>"
+lvim.keys.normal_mode["<leader>gml"] = ":diffget //3<cr>"
+
 -- unmap a default keymapping
 -- lvim.keys.normal_mode["<C-Up>"] = false
 -- edit a default keymapping
@@ -27,7 +29,7 @@ lvim.keys.normal_mode["<leader>uu"] = ":UndotreeToggle<cr>"
 
 -- Change Telescope navigation to use j and k for navigation and n and p for history in both input and normal mode.
 -- we use protected-mode (pcall) just in case the plugin wasn't loaded yet.
--- local _, actions = pcall(require, "telescope.actions")
+-- local _, actions = pcall(require, "telescope.actions"
 -- lvim.builtin.telescope.defaults.mappings = {
 --   -- for input mode
 --   i = {
@@ -44,6 +46,15 @@ lvim.keys.normal_mode["<leader>uu"] = ":UndotreeToggle<cr>"
 -- }
 
 -- Use which-key to add extra bindings with the leader-key prefix
+lvim.builtin.which_key.mappings["g"]["m"] = {
+    name = "Merge",
+    m = { "<cmd>Gvdiffsplit!<cr>", "Merge" },
+    h = { "<cmd>diffget //2<cr>", "Get ours" },
+    l = { "<cmd>diffget //3<cr>", "Get theirs" },
+}
+lvim.builtin.which_key.mappings["E"] = {
+  "<cmd>Ranger<CR>", "Ranger"
+}
 -- lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
 -- lvim.builtin.which_key.mappings["t"] = {
 --   name = "+Trouble",
