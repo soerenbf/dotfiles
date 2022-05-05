@@ -68,7 +68,7 @@ lvim.builtin.which_key.mappings["E"] = {
 
 -- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
-lvim.builtin.dashboard.active = true
+lvim.builtin.alpha.active = true
 lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
@@ -118,7 +118,7 @@ lvim.builtin.treesitter.highlight.enabled = true
 -- end
 
 -- -- set a formatter, this will override the language server formatting capabilities (if it exists)
--- Prettier configuration
+-- Formatting
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
   {
@@ -134,7 +134,7 @@ formatters.setup {
   },
 }
 
--- ESLint
+-- Linting
 local linters = require "lvim.lsp.null-ls.linters"
 linters.setup {
   {
@@ -152,7 +152,7 @@ linters.setup {
 -- npm i -g vscode-langservers-extracted
 require 'lspconfig'.eslint.setup {}
 
-vim.list_extend(lvim.lsp.override, { "rust_analyzer" })
+vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "rust_analyzer" })
 
 local config_rust_tools = function()
     local lsp_installer_servers = require "nvim-lsp-installer.servers"
