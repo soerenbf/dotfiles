@@ -2,10 +2,12 @@
 
 - zsh (if not installed by default)
 - Oh my zsh
+- LunarVim
 
 ## Installation
 
-Execute the following commands in a terminal to get going.
+- Install [LunarVim](https://www.lunarvim.org/01-installing.html#stable)
+- Install the dotfiles by executing the following commands in a terminal
 
 ```bash
 cd ~
@@ -14,9 +16,9 @@ cd .dotfiles
 ./install
 ```
 
-### Neovim
+### Lunarvim
 
-Documentation of setting up neovim specified in `.config/nvim/README.md`
+- By default, it creates the default lunarvim config in `~/.config/lvim`. If installation of LunarVim is done after running `./install`, Re-run the installation script to override the default config, with a symlink to the one included in the repo.
 
 ### Emacs
 
