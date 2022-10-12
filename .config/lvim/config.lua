@@ -143,35 +143,35 @@ lvim.builtin.treesitter.highlight.enabled = true
 
 -- -- set a formatter, this will override the language server formatting capabilities (if it exists)
 -- Formatting
-local formatters = require "lvim.lsp.null-ls.formatters"
-formatters.setup {
-  {
-    exe = "eslint_d",
-    filetypes = {
-      "javascriptreact",
-      "javascript",
-      "typescriptreact",
-      "typescript",
-      "json",
-      "markdown",
-    },
-  },
-}
+-- local formatters = require "lvim.lsp.null-ls.formatters"
+-- formatters.setup {
+--   {
+--     exe = "eslint_d",
+--     filetypes = {
+--       "javascriptreact",
+--       "javascript",
+--       "typescriptreact",
+--       "typescript",
+--       "json",
+--       "markdown",
+--     },
+--   },
+-- }
 
 -- Linting
-local linters = require "lvim.lsp.null-ls.linters"
-linters.setup {
-  {
-    exe = "eslint_d",
-    filetypes = {
-      "javascriptreact",
-      "javascript",
-      "typescriptreact",
-      "typescript",
-      "vue",
-    },
-  },
-}
+-- local linters = require "lvim.lsp.null-ls.linters"
+-- linters.setup {
+--   {
+--     exe = "eslint_d",
+--     filetypes = {
+--       "javascriptreact",
+--       "javascript",
+--       "typescriptreact",
+--       "typescript",
+--       "vue",
+--     },
+--   },
+-- }
 
 -- npm i -g vscode-langservers-extracted
 require 'lspconfig'.eslint.setup {}
