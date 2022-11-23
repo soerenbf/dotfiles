@@ -12,7 +12,7 @@ an executable
 lvim.log.level = "warn"
 lvim.format_on_save = true
 lvim.colorscheme = "onedarker"
-lvim.transparent_window = true
+-- lvim.transparent_window = true
 vim.opt.whichwrap = ""
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
@@ -208,7 +208,9 @@ lvim.plugins = {
     "simrat39/rust-tools.nvim",
     config = config_rust_tools,
     ft = { "rust", "rs" },
-  }
+  },
+  { "sheerun/vim-polyglot" },
+  { "purescript-contrib/purescript-vim" },
   -- {"folke/tokyonight.nvim"},
   -- {
   --   "folke/trouble.nvim",
@@ -217,6 +219,11 @@ lvim.plugins = {
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
+vim.api.nvim_create_autocmd("BufWritepre", {
+  pattern = { "*.js", "*.jsx", "*.ts", "*.tsx" },
+  -- enable wrap mode for json files only
+  command = "EslintFixAll",
+})
 -- vim.api.nvim_create_autocmd("BufEnter", {
 --   pattern = { "*.json", "*.jsonc" },
 --   -- enable wrap mode for json files only
