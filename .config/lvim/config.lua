@@ -140,40 +140,48 @@ lvim.builtin.treesitter.highlight.enabled = true
 --   buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
 -- end
 
--- -- set a formatter, this will override the language server formatting capabilities (if it exists)
+-- set a formatter, this will override the language server formatting capabilities (if it exists)
 -- Formatting
--- local formatters = require "lvim.lsp.null-ls.formatters"
--- formatters.setup {
---   {
---     exe = "eslint_d",
---     filetypes = {
---       "javascriptreact",
---       "javascript",
---       "typescriptreact",
---       "typescript",
---       "json",
---       "markdown",
---     },
---   },
--- }
+local formatters = require "lvim.lsp.null-ls.formatters"
+formatters.setup {
+  {
+    exe = "eslint_d",
+    filetypes = {
+      "javascriptreact",
+      "javascript",
+      "typescriptreact",
+      "typescript",
+      "json",
+      "markdown",
+    },
+  },
+}
 
 -- Linting
--- local linters = require "lvim.lsp.null-ls.linters"
--- linters.setup {
---   {
---     exe = "eslint_d",
---     filetypes = {
---       "javascriptreact",
---       "javascript",
---       "typescriptreact",
---       "typescript",
---       "vue",
---     },
---   },
--- }
+local linters = require "lvim.lsp.null-ls.linters"
+linters.setup {
+  {
+    exe = "eslint_d",
+    filetypes = {
+      "javascriptreact",
+      "javascript",
+      "typescriptreact",
+      "typescript",
+      "vue",
+    },
+  },
+}
+
+local code_actions = require "lvim.lsp.null-ls.code_actions"
+code_actions.setup {
+  {
+    exe = "eslint_d",
+    filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact", "vue" },
+  },
+}
 
 -- npm i -g vscode-langservers-extracted
-require 'lspconfig'.eslint.setup {}
+-- require 'lspconfig'.eslint.setup {}
 
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "rust_analyzer" })
 
@@ -218,11 +226,11 @@ lvim.plugins = {
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
-vim.api.nvim_create_autocmd("BufWritepre", {
-  pattern = { "*.js", "*.jsx", "*.ts", "*.tsx" },
-  -- enable wrap mode for json files only
-  command = "EslintFixAll",
-})
+-- vim.api.nvim_create_autocmd("BufWritepre", {
+--   pattern = { "*.js", "*.jsx", "*.ts", "*.tsx" },
+--   -- enable wrap mode for json files only
+--   command = "EslintFixAll",
+-- })
 -- vim.api.nvim_create_autocmd("BufEnter", {
 --   pattern = { "*.json", "*.jsonc" },
 --   -- enable wrap mode for json files only
