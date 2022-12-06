@@ -10,12 +10,23 @@ an executable
 
 -- general
 lvim.log.level = "warn"
-lvim.format_on_save = true
-lvim.colorscheme = "onedarker"
+lvim.reload_config_on_save = true
+lvim.format_on_save = {
+  ---@usage boolean: format on save (Default: false)
+  enabled = false,
+  ---@usage pattern string pattern used for the autocommand (Default: '*')
+  pattern = "*",
+  ---@usage timeout number timeout in ms for the format request (Default: 1000)
+  timeout = 1000,
+  ---@usage filter func to select client
+  filter = require("lvim.lsp.utils").format_filter,
+}
+lvim.colorscheme = "lunar"
 -- lvim.transparent_window = true
 vim.opt.whichwrap = ""
--- to disable icons and use a minimalist setup, uncomment the following
--- lvim.use_icons = false
+
+lvim.use_icons = true
+lvim.icons = require "lvim.icons"
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
