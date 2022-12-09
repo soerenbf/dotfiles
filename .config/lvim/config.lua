@@ -36,6 +36,8 @@ lvim.keys.normal_mode["<leader>uu"] = ":UndotreeToggle<cr>"
 lvim.keys.normal_mode["<leader>gmm"] = ":Gvdiffsplit!<cr>"
 lvim.keys.normal_mode["<leader>gmh"] = ":diffget //2<cr>"
 lvim.keys.normal_mode["<leader>gml"] = ":diffget //3<cr>"
+lvim.keys.normal_mode["<S-l>"] = ":bn<cr>"
+lvim.keys.normal_mode["<S-h>"] = ":bp<cr>"
 -- unmap a default keymapping
 -- vim.keymap.del("n", "<C-Up>")
 -- override a default keymapping
