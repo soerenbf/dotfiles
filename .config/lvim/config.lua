@@ -201,8 +201,6 @@ vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "rust_analyz
 local config_rust_tools = function()
   require("rust-tools").setup({
     tools = {
-      autoSetHints = true,
-      hover_with_actions = true,
       runnables = {
         use_telescope = true,
       },
@@ -210,6 +208,7 @@ local config_rust_tools = function()
     server = {
       on_attach = require("lvim.lsp").common_on_attach,
       on_init = require("lvim.lsp").common_on_init,
+      standalone = false,
     },
   })
 end

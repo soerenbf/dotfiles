@@ -109,6 +109,8 @@ alias nv="nvim"
 alias lv="lvim"
 alias em="emacs"
 
+alias rustfmt="cargo +nightly-2022-06-09 fmt"
+
 export EDITOR='lvim'
 export VISUAL="$EDITOR"
 
