@@ -199,19 +199,23 @@ code_actions.setup {
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "rust_analyzer" })
 
 local config_rust_tools = function()
-  require("rust-tools").setup({
-    tools = {
-      autoSetHints = true,
-      hover_with_actions = true,
-      runnables = {
-        use_telescope = true,
-      },
-    },
+  local rt = require("rust-tools")
+  local rt_opts = {
     server = {
-      on_attach = require("lvim.lsp").common_on_attach,
+      on_attach = function(client, bufnr)
+        require("lvim.lsp").common_on_attach(client, bufnr)
+
+        -- Hover actions
+        lvim.keys.normal_mode["K"] = ":RustHoverActions"
+        -- vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr })
+        -- Code action groups
+        -- vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
+      end,
       on_init = require("lvim.lsp").common_on_init,
     },
-  })
+  }
+
+  rt.setup(rt_opts)
 end
 
 -- Additional Plugins
