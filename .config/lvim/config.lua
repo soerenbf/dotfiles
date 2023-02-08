@@ -212,6 +212,7 @@ local config_rust_tools = function()
         -- vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
       end,
       on_init = require("lvim.lsp").common_on_init,
+      standalone = false,
     },
   }
 
