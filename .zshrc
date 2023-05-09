@@ -109,7 +109,7 @@ alias nv="nvim"
 alias lv="lvim"
 alias em="emacs"
 
-alias rustfmt="cargo +nightly-2022-06-09 fmt"
+alias rustfmt="cargo +nightly-2023-04-01 fmt"
 
 export EDITOR='lvim'
 export VISUAL="$EDITOR"
@@ -121,13 +121,14 @@ export NVM_DIR="$HOME/.nvm"
 # PATH
 export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/usr/local/go/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="$HOME/.emacs.d/bin:$PATH"
 export MYVIMRC="$HOME/.config/nvim/init.vim"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-[ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env
+#[ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env
 
 # Run tilix terminal setup when started in tilix terminal
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
@@ -135,3 +136,6 @@ if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
 fi
 
 [ -f $HOME/.zshrc.local ] && source $HOME/.zshrc.local # source local config 
+export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
+
+[ -f "/Users/sbz/.ghcup/env" ] && source "/Users/sbz/.ghcup/env" # ghcup-env

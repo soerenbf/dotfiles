@@ -213,7 +213,13 @@ local config_rust_tools = function()
       end,
       on_init = require("lvim.lsp").common_on_init,
       standalone = false,
-    },
+      checkOnSave = {
+        allFeatures = true,
+        overrideCommand = {
+          'cargo', 'clippy', '--workspace', '--message-format=json', '--all-targets', '--all-features'
+        }
+      }
+    }
   }
 
   rt.setup(rt_opts)
