@@ -110,10 +110,11 @@ alias gsw="git switch --recurse-submodules"
 alias nv="nvim"
 alias lv="lvim"
 alias em="emacs"
+alias lg="lazygit"
 
 alias rustfmt="cargo +nightly-2023-04-01 fmt"
 
-export EDITOR='lvim'
+export EDITOR='nvim'
 export VISUAL="$EDITOR"
 
 export NVM_DIR="$HOME/.nvm"
