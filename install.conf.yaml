@@ -15,9 +15,12 @@
     ~/.config/lvim:
       force: true
       path: .config/lvim
+    #    ~/.config/nvim:
+    #    force: true
+    #    path: .config/lazyvim
     ~/.config/nvim:
       force: true
-      path: .config/lazyvim
+      path: .config/astronvim
     ~/.emacs.d: .emacs.d
     ~/.doom.d: .doom.d
 
@@ -25,5 +28,8 @@
     - ~/.vim/undodir
 
 - shell:
-  - [git submodule update --init --recursive, Installing submodules]
-  - [touch ~/.z, Creating z history file]
+    - [
+        git submodule update --init --recursive,
+        Installing submodules
+      ]
+    - [ touch ~/.z, Creating z history file ]
