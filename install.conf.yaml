@@ -15,6 +15,9 @@
     ~/.config/lvim:
       force: true
       path: .config/lvim
+    ~/.config/nvim:
+      force: true
+      path: .config/lazyvim
     ~/.emacs.d: .emacs.d
     ~/.doom.d: .doom.d
 
