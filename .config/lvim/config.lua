@@ -203,13 +203,14 @@ local config_rust_tools = function()
   local rt_opts = {
     server = {
       on_attach = function(client, bufnr)
-        require("lvim.lsp").common_on_attach(client, bufnr)
-
         -- Hover actions
-        lvim.keys.normal_mode["K"] = ":RustHoverActions"
-        -- vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr })
+        lvim.lsp.buffer_mappings.normal_mode["K"] = { rt.hover_actions.hover_actions, "Hover actions" }
+        lvim.lsp.buffer_mappings.normal_mode["<Leader>a"] = { rt.code_action_group.code_action_group, "Code action group" }
+        -- vim.keymap.set("n", "K", rt.hover_actions.hover_actions, { buffer = bufnr })
         -- Code action groups
         -- vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
+
+        require("lvim.lsp").common_on_attach(client, bufnr)
       end,
       on_init = require("lvim.lsp").common_on_init,
       standalone = true,
@@ -219,6 +220,9 @@ local config_rust_tools = function()
             features = "all",
           },
           checkOnSave = true,
+          diagnostics = {
+            disabled = { "unresolved-proc-macro" }
+          }
         }
       }
     }

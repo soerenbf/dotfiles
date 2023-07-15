@@ -104,6 +104,8 @@ alias gcm="git commit -m"
 alias gca="git commit -am"
 alias gp="git push"
 alias gs="git status"
+alias gclr="git clone --recurse-submodules"
+alias gsw="git switch --recurse-submodules"
 
 alias nv="nvim"
 alias lv="lvim"
