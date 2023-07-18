@@ -14,4 +14,10 @@ return {
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.html-css" },
   { import = "astrocommunity.pack.docker" },
+
+  { import = "astrocommunity.motion.mini-move" },
+
+  { import = "astrocommunity.editing-support.todo-comments-nvim" },
+
+  { import = "astrocommunity.colorscheme.tokyonight-nvim" },
 }
