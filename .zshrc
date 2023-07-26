@@ -106,6 +106,7 @@ alias gp="git push"
 alias gs="git status"
 alias gclr="git clone --recurse-submodules"
 alias gsw="git switch --recurse-submodules"
+alias gsu="git submodule update --init --recursive"
 
 alias nv="nvim"
 alias lv="lvim"

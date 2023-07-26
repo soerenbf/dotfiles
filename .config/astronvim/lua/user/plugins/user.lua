@@ -9,4 +9,14 @@ return {
   --     require("lsp_signature").setup()
   --   end,
   -- },
+  {
+    "AlexvZyl/nordic.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function() require("nordic").load() end,
+  },
+  {
+    "tpope/vim-fugitive",
+    lazy = false,
+  },
 }
