@@ -1,6 +1,11 @@
 local utils = require "astronvim.utils"
 return {
   {
+    "iamcco/markdown-preview.nvim",
+    cmd = "MarkdownPreview",
+    build = ":call mkdp#util#install()",
+  },
+  {
     "nvim-treesitter/nvim-treesitter",
     opts = function(_, opts)
       if opts.ensure_installed ~= "all" then
