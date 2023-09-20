@@ -1,3 +1,4 @@
+-- Community pack but without prettier, and with markdownlint
 local utils = require "astronvim.utils"
 return {
   {
@@ -22,11 +23,10 @@ return {
 
       local has_mdlint = function(util) return util.root_has_file ".markdownlint.yaml" end
 
-      opts.handlers.eslint_d = function()
+      opts.handlers.markdownlint = function()
         local null_ls = require "null-ls"
         null_ls.register(null_ls.builtins.diagnostics.markdownlint.with { condition = has_mdlint })
         null_ls.register(null_ls.builtins.formatting.markdownlint.with { condition = has_mdlint })
-        null_ls.register(null_ls.builtins.code_actions.markdownlint.with { condition = has_mdlint })
       end
     end,
   },

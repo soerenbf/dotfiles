@@ -1,3 +1,4 @@
+-- Community pack but without prettier
 local utils = require "astronvim.utils"
 return {
   {

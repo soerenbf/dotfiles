@@ -115,7 +115,7 @@ alias lg="lazygit"
 
 alias rustfmt="cargo +nightly-2023-04-01 fmt"
 
-export EDITOR='hx'
+export EDITOR='nvim'
 export VISUAL="$EDITOR"
 
 export NVM_DIR="$HOME/.nvm"

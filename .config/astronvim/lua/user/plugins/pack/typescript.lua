@@ -1,4 +1,6 @@
+-- From community pack but without prettierd
 local utils = require "astronvim.utils"
+local check_json_key_exists = require "user.util"
 
 local function on_file_remove(args)
   local ts_clients = vim.lsp.get_active_clients { name = "tsserver" }
@@ -13,27 +15,6 @@ local function on_file_remove(args)
       },
     })
   end
-end
-
-local function check_json_key_exists(filename, key)
-  -- Open the file in read mode
-  local file = io.open(filename, "r")
-  if not file then
-    return false -- File doesn't exist or cannot be opened
-  end
-
-  -- Read the contents of the file
-  local content = file:read "*all"
-  file:close()
-
-  -- Parse the JSON content
-  local json_parsed, json = pcall(vim.fn.json_decode, content)
-  if not json_parsed or type(json) ~= "table" then
-    return false -- Invalid JSON format
-  end
-
-  -- Check if the key exists in the JSON object
-  return json[key] ~= nil
 end
 
 return {
@@ -68,7 +49,11 @@ return {
 
       opts.handlers.eslint_d = function()
         local null_ls = require "null-ls"
-        null_ls.register(null_ls.builtins.diagnostics.eslint_d.with { condition = has_eslint })
+        -- ignore prettier warnings from eslint-plugin-prettier
+        null_ls.register(null_ls.builtins.diagnostics.eslint_d.with {
+          condition = has_eslint,
+          filter = function(diagnostic) return diagnostic.code ~= "prettier/prettier" end,
+        })
         null_ls.register(null_ls.builtins.formatting.eslint_d.with { condition = has_eslint })
         null_ls.register(null_ls.builtins.code_actions.eslint_d.with { condition = has_eslint })
       end
