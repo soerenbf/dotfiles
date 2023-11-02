@@ -15,9 +15,9 @@ return {
   -- { import = "astrocommunity.pack.yaml" },
   { import = "astrocommunity.pack.zig" },
 
+  { import = "astrocommunity.colorscheme.nightfox-nvim" },
   { import = "astrocommunity.motion.mini-move" },
-
   { import = "astrocommunity.editing-support.todo-comments-nvim" },
-
   { import = "astrocommunity.project.nvim-spectre" },
+  { import = "astrocommunity.diagnostics.trouble-nvim" },
 }

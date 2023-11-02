@@ -1,6 +1,6 @@
 -- From community pack but without prettierd
 local utils = require "astronvim.utils"
-local check_json_key_exists = require "user.util"
+-- local check_json_key_exists = require "user.util"
 
 local function on_file_remove(args)
   local ts_clients = vim.lsp.get_active_clients { name = "tsserver" }
@@ -29,35 +29,16 @@ return {
   },
   {
     "williamboman/mason-lspconfig.nvim",
-    opts = function(_, opts) opts.ensure_installed = utils.list_insert_unique(opts.ensure_installed, "tsserver") end,
+    opts = function(_, opts) opts.ensure_installed = utils.list_insert_unique(opts.ensure_installed, { "tsserver" }) end,
   },
   {
     "jay-babu/mason-null-ls.nvim",
-
-    opts = function(_, opts)
-      opts.ensure_installed = utils.list_insert_unique(opts.ensure_installed, { "eslint_d" })
-      if not opts.handlers then opts.handlers = {} end
-
-      local has_eslint = function(util)
-        return util.root_has_file ".eslintrc.js"
-          or util.root_has_file ".eslintrc.cjs"
-          or util.root_has_file ".eslintrc.yaml"
-          or util.root_has_file ".eslintrc.yml"
-          or util.root_has_file ".eslintrc.json"
-          or check_json_key_exists(vim.fn.getcwd() .. "/package.json", "eslintConfig")
-      end
-
-      opts.handlers.eslint_d = function()
-        local null_ls = require "null-ls"
-        -- ignore prettier warnings from eslint-plugin-prettier
-        null_ls.register(null_ls.builtins.diagnostics.eslint_d.with {
-          condition = has_eslint,
-          filter = function(diagnostic) return diagnostic.code ~= "prettier/prettier" end,
-        })
-        null_ls.register(null_ls.builtins.formatting.eslint_d.with { condition = has_eslint })
-        null_ls.register(null_ls.builtins.code_actions.eslint_d.with { condition = has_eslint })
-      end
-    end,
+    opts = function(_, opts) opts.ensure_installed = utils.list_insert_unique(opts.ensure_installed, { "eslint_d" }) end,
+  },
+  {
+    "MunifTanjim/eslint.nvim",
+    dependencies = { "jose-elias-alvarez/null-ls.nvim" },
+    opts = function(_, opts) opts.bin = "eslint_d" end,
   },
   {
     "jay-babu/mason-nvim-dap.nvim",

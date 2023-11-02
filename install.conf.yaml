@@ -12,6 +12,7 @@
     # ~/.vimrc: .vimrc
     ~/.bashrc: .bashrc
     ~/.zshrc: .zshrc
+    ~/.zshenv: .zshenv
     ~/.config/lvim:
       force: true
       path: .config/lvim
