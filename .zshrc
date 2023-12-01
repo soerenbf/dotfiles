@@ -103,6 +103,9 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
+# Enable vi mode
+set -o vi
+
 # Aliases
 alias gc="git commit"
 alias gcm="git commit -m"

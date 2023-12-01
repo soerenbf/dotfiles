@@ -19,5 +19,7 @@ return {
   { import = "astrocommunity.motion.mini-move" },
   { import = "astrocommunity.editing-support.todo-comments-nvim" },
   { import = "astrocommunity.project.nvim-spectre" },
+  { import = "astrocommunity.git.neogit" },
+  { import = "astrocommunity.git.git-blame-nvim" },
   { import = "astrocommunity.diagnostics.trouble-nvim" },
 }
