@@ -25,6 +25,9 @@
     ~/.config/nvim:
       force: true
       path: .config/astronvim
+    ~/.config/alacritty:
+      force: true
+      path: .config/alacritty
     ~/.emacs.d: .emacs.d
     ~/.doom.d: .doom.d
 

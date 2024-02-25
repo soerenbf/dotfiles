@@ -11,3 +11,6 @@
 [submodule ".emacs.d"]
 	path = .emacs.d
 	url = https://github.com/hlissner/doom-emacs
+[submodule ".config/alacritty-themes"]
+	path = .config/alacritty-themes
+	url = git@github.com:alacritty/alacritty-theme.git
