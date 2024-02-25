@@ -19,6 +19,9 @@
     ~/.config/helix:
       force: true
       path: .config/helix
+    ~/.config/zellij:
+      force: true
+      path: .config/zellij
     #    ~/.config/nvim:
     #    force: true
     #    path: .config/lazyvim
