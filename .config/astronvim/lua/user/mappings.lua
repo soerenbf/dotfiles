@@ -28,7 +28,7 @@ return {
     -- tables with the `name` key will be registered with which-key if it's installed
     -- this is useful for naming menus
     ["<leader>b"] = { name = "Buffers" },
-    ["<leader>gg"] = { desc = "Open neogit split", function() require("neogit").open { kind = "auto" } end },
+    ["<leader>gg"] = { desc = "Open neogit split", function() require("neogit").open() end },
     ["<leader>gn"] = { name = "Neogit" },
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
