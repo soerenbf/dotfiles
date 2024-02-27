@@ -2,15 +2,6 @@
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
-[submodule ".config/nvim"]
-	path = .config/nvim
-	url = https://github.com/soerenbf/neovim-config.git
-[submodule ".config/nvim/lua-language-server"]
-	path = .config/nvim/lua-language-server
-	url = https://github.com/sumneko/lua-language-server.git
-[submodule ".emacs.d"]
-	path = .emacs.d
-	url = https://github.com/hlissner/doom-emacs
-[submodule ".config/alacritty-themes"]
-	path = .config/alacritty-themes
+[submodule "config/alacritty-theme"]
+	path = config/alacritty-theme
 	url = git@github.com:alacritty/alacritty-theme.git

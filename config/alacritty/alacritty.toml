@@ -1,5 +1,5 @@
 import = [
-    "~/.dotfiles/.config/alacritty-themes/themes/nord.toml"
+    "~/dotfiles/config/alacritty-theme/themes/nord.toml"
 ]
 
 [font]

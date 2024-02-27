@@ -10,29 +10,27 @@
 
 - link:
     # ~/.vimrc: .vimrc
-    ~/.bashrc: .bashrc
-    ~/.zshrc: .zshrc
-    ~/.zshenv: .zshenv
+    ~/.bashrc: bashrc
+    ~/.zshrc: zshrc
+    ~/.zshenv: zshenv
     ~/.config/lvim:
       force: true
-      path: .config/lvim
+      path: config/lvim
     ~/.config/helix:
       force: true
-      path: .config/helix
+      path: config/helix
     ~/.config/zellij:
       force: true
-      path: .config/zellij
+      path: config/zellij
     #    ~/.config/nvim:
     #    force: true
-    #    path: .config/lazyvim
+    #    path: config/lazyvim
     ~/.config/nvim:
       force: true
-      path: .config/astronvim
+      path: config/astronvim
     ~/.config/alacritty:
       force: true
-      path: .config/alacritty
-    ~/.emacs.d: .emacs.d
-    ~/.doom.d: .doom.d
+      path: config/alacritty
 
 - create:
     - ~/.vim/undodir
