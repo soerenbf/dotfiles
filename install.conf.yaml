@@ -13,6 +13,7 @@
     ~/.bashrc: bashrc
     ~/.zshrc: zshrc
     ~/.zshenv: zshenv
+    ~/.p10k.zsh: p10k.zsh
     ~/.config/lvim:
       force: true
       path: config/lvim
