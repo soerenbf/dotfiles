@@ -14,9 +14,9 @@
     ~/.zshrc: zshrc
     ~/.zshenv: zshenv
     ~/.p10k.zsh: p10k.zsh
-    ~/.config/lvim:
-      force: true
-      path: config/lvim
+    # ~/.config/lvim:
+    #   force: true
+    #   path: config/lvim
     ~/.config/helix:
       force: true
       path: config/helix
@@ -28,7 +28,7 @@
     #    path: config/lazyvim
     ~/.config/nvim:
       force: true
-      path: config/astronvim
+      path: config/astronvim_v4
     ~/.config/alacritty:
       force: true
       path: config/alacritty
