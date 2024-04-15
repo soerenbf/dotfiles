@@ -16,6 +16,7 @@ return {
   { import = "astrocommunity.pack.docker" },
   { import = "astrocommunity.pack.typescript" },
   -- { import = "astrocommunity.pack.yaml" }, -- INFO: check `./plugins/pack/yaml.lua`
+  { import = "astrocommunity.pack.swift" },
   { import = "astrocommunity.pack.zig" },
 
   { import = "astrocommunity.colorscheme.nightfox-nvim" },
