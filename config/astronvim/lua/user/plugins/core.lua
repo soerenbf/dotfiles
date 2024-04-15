@@ -13,6 +13,23 @@ return {
       },
     },
   },
+  {
+    "goolord/alpha-nvim",
+    opts = function(_, opts)
+      -- dashboard-images.lua contains few "ASCII" images that you can change
+      opts.section.header.val = require("user/dashboard-images").astronvim_logo
+
+      local button = require("astronvim.utils").alpha_button
+      opts.section.buttons.val = {
+        button("LDR f p", "  Open Project  "),
+        button("LDR S l", "  Last Session  "),
+        button("LDR S f", "  Find Recent sessions"),
+        button("LDR s", "  Settings  "),
+      }
+
+      return opts
+    end,
+  },
   --
   -- You can also easily customize additional setup of plugins that is outside of the plugin's setup call
   -- {
