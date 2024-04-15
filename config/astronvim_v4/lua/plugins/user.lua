@@ -8,12 +8,12 @@ return {
 
   -- == Examples of Adding Plugins ==
 
-  "andweeb/presence.nvim",
-  {
-    "ray-x/lsp_signature.nvim",
-    event = "BufRead",
-    config = function() require("lsp_signature").setup() end,
-  },
+  -- "andweeb/presence.nvim", -- WARN: do not enable; does not work...
+  -- {
+  --   "ray-x/lsp_signature.nvim",
+  --   event = "BufRead",
+  --   config = function() require("lsp_signature").setup() end,
+  -- },
 
   -- == Examples of Overriding Plugins ==
 
@@ -21,19 +21,14 @@ return {
   {
     "goolord/alpha-nvim",
     opts = function(_, opts)
+      local dashboard = require "alpha.themes.dashboard"
       -- customize the dashboard header
-      opts.section.header.val = {
-        " █████  ███████ ████████ ██████   ██████",
-        "██   ██ ██         ██    ██   ██ ██    ██",
-        "███████ ███████    ██    ██████  ██    ██",
-        "██   ██      ██    ██    ██   ██ ██    ██",
-        "██   ██ ███████    ██    ██   ██  ██████",
-        " ",
-        "    ███    ██ ██    ██ ██ ███    ███",
-        "    ████   ██ ██    ██ ██ ████  ████",
-        "    ██ ██  ██ ██    ██ ██ ██ ████ ██",
-        "    ██  ██ ██  ██  ██  ██ ██  ██  ██",
-        "    ██   ████   ████   ██ ██      ██",
+      opts.section.header.val = require("dashboard-images").neovim
+      opts.section.buttons.val = {
+        dashboard.button("LDR f p", "  Open Project  "),
+        dashboard.button("LDR f o", "󰊄  Recently opened files"),
+        dashboard.button("LDR S l", "  Last Session  "),
+        dashboard.button("LDR S f", "  Find Recent sessions"),
       }
       return opts
     end,
