@@ -20,6 +20,7 @@ return {
   { import = "astrocommunity.pack.zig" },
 
   { import = "astrocommunity.colorscheme.nightfox-nvim" },
+  { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.motion.mini-move" },
   { import = "astrocommunity.project.nvim-spectre" },
   { import = "astrocommunity.git.neogit" },
