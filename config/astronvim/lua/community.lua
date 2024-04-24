@@ -9,12 +9,11 @@ return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.rust" },
-  { import = "astrocommunity.pack.json" },
-  { import = "astrocommunity.pack.toml" },
   -- { import = "astrocommunity.pack.markdown" }, -- INFO: check `./plugins/pack/markdown.lua`
-  { import = "astrocommunity.pack.html-css" },
+  -- { import = "astrocommunity.pack.html-css" }, -- INFO: check `./plugins/pack/html-css.lua`
   { import = "astrocommunity.pack.docker" },
-  { import = "astrocommunity.pack.typescript" },
+  { import = "astrocommunity.pack.json" },
+  -- { import = "astrocommunity.pack.typescript" }, -- INFO: check `./plugins/pack/typescript`
   -- { import = "astrocommunity.pack.yaml" }, -- INFO: check `./plugins/pack/yaml.lua`
   { import = "astrocommunity.pack.swift" },
   { import = "astrocommunity.pack.zig" },
@@ -22,6 +21,7 @@ return {
   { import = "astrocommunity.colorscheme.nightfox-nvim" },
   { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.motion.mini-move" },
+  { import = "astrocommunity.markdown-and-latex.peek-nvim" },
   { import = "astrocommunity.project.nvim-spectre" },
   { import = "astrocommunity.git.neogit" },
   { import = "astrocommunity.diagnostics.trouble-nvim" },
