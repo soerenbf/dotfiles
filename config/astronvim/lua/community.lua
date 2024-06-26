@@ -15,7 +15,7 @@ return {
   { import = "astrocommunity.pack.json" },
   -- { import = "astrocommunity.pack.typescript" }, -- INFO: check `./plugins/pack/typescript`
   -- { import = "astrocommunity.pack.yaml" }, -- INFO: check `./plugins/pack/yaml.lua`
-  { import = "astrocommunity.pack.swift" },
+  -- { import = "astrocommunity.pack.swift" }, -- INFO: check `./plugins/pack/swift.lua`
   { import = "astrocommunity.pack.zig" },
 
   { import = "astrocommunity.colorscheme.nightfox-nvim" },
