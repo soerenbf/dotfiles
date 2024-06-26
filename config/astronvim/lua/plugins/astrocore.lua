@@ -70,7 +70,7 @@ return {
         -- this is useful for naming menus
         ["<Leader>b"] = { desc = "Buffers" },
 
-        ["<Leader>gg"] = { desc = "Open neogit split", function() require("neogit").open() end },
+        ["<Leader>gg"] = { desc = "Open neogit split", function() require("neogit").open( { kind = "auto"}) end },
         ["<Leader>gn"] = { name = "Neogit" },
         -- quick save
         -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
