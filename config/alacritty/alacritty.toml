@@ -3,6 +3,9 @@ import = [
 ]
 
 [font]
-normal.family = "MesloLGS NF"
+normal.family = "JetBrainsMono Nerd Font"
 size = 12
+
+[window]
+option_as_alt = "OnlyLeft"
 

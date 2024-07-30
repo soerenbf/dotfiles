@@ -26,5 +26,6 @@ return {
   { import = "astrocommunity.git.neogit" },
   { import = "astrocommunity.diagnostics.trouble-nvim" },
 
+  { import = "astrocommunity.recipes.telescope-lsp-mappings" },
   -- import/override with your plugins folder
 }

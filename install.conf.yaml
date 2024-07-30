@@ -23,6 +23,9 @@
     ~/.config/nvim:
       force: true
       path: config/astronvim
+    ~/.config/nvim-kickstart:
+      force: true
+      path: config/kickstart.nvim
     ~/.config/alacritty:
       force: true
       path: config/alacritty
