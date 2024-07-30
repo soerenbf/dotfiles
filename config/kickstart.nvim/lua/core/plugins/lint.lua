@@ -2,6 +2,10 @@ return {
   { -- Linting
     'mfussenegger/nvim-lint',
     event = { 'BufReadPre', 'BufNewFile' },
+    dependencies = {
+      'williamboman/mason.nvim', -- NOTE: Must be loaded before dependants
+      { 'rshkarin/mason-nvim-lint', config = true },
+    },
     config = function()
       local lint = require 'lint'
       lint.linters_by_ft = {

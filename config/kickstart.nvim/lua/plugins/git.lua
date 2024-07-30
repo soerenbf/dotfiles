@@ -66,5 +66,28 @@ return {
       end,
     },
   },
+  {
+    'sindrets/diffview.nvim',
+    lazy = true,
+    opts = {
+      view = {
+        merge_tool = {
+          layout = 'diff3_mixed',
+        },
+      },
+    },
+  },
+  {
+    'NeogitOrg/neogit',
+    keys = {
+      { '<leader>g', '<cmd>Neogit kind=auto<cr>', desc = 'NeoGit' },
+    },
+    dependencies = {
+      'nvim-lua/plenary.nvim', -- required
+      'sindrets/diffview.nvim',
+      'nvim-telescope/telescope.nvim',
+    },
+    config = true,
+  },
 }
 -- vim: ts=2 sts=2 sw=2 et
