@@ -1,12 +1,12 @@
 return {
-  {
-    'wojciech-kulik/xcodebuild.nvim',
-    dependencies = {
-      'nvim-telescope/telescope.nvim',
-      'MunifTanjim/nui.nvim',
-    },
-    config = true,
-  },
+  -- {
+  --   'wojciech-kulik/xcodebuild.nvim',
+  --   dependencies = {
+  --     'nvim-telescope/telescope.nvim',
+  --     'MunifTanjim/nui.nvim',
+  --   },
+  --   ft = 'swift',
+  -- },
   {
     'neovim/nvim-lspconfig',
     opts = function(_, opts)

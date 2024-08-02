@@ -4,13 +4,13 @@ return {
     dependencies = {
       -- Automatically install LSPs and related tools to stdpath for Neovim
       -- NOTE: The order matters here...
-      'williamboman/mason.nvim',
+      { 'williamboman/mason.nvim', config = true },
       { 'WhoIsSethDaniel/mason-tool-installer.nvim', config = true },
       'williamboman/mason-lspconfig.nvim',
 
       -- Useful status updates for LSP.
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      { 'j-hui/fidget.nvim',                         opts = {} },
+      { 'j-hui/fidget.nvim', opts = {} },
     },
     opts = {
       _servers = {},
@@ -148,13 +148,15 @@ return {
         require('lspconfig')[name].setup(server_opts)
       end
 
-      require('mason').setup()
       require('mason-lspconfig').setup {
         ensure_installed = vim.tbl_keys(opts._servers),
         handlers = {
           function(server_name)
             local server_opts = opts._servers[server_name] or {}
-            setup_server(server_name, server_opts)
+            if not server_opts._skip_setup then
+              server_opts._skip_setup = nil
+              setup_server(server_name, server_opts)
+            end
           end,
         },
       }
