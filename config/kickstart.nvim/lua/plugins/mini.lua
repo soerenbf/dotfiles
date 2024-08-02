@@ -36,8 +36,6 @@ return {
       files.setup()
       vim.keymap.set('n', '<leader>e', files.open, { desc = 'Open files explorer' })
 
-      require('mini.files').setup()
-
       -- ... and there is more!
       --  Check out: https://github.com/echasnovski/mini.nvim
     end,

@@ -16,5 +16,6 @@ return {
       vim.cmd.hi 'Comment gui=none'
     end,
   },
+  'scottmckendry/cyberdream.nvim',
 }
 -- vim: ts=2 sts=2 sw=2 et

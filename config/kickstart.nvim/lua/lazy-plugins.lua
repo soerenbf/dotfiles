@@ -36,6 +36,13 @@ require('lazy').setup({
   require 'plugins.todo-comments',
   require 'plugins.indent_line',
   require 'plugins.autopairs',
+
+  -- Language support
+  require 'plugins.markdown',
+  require 'plugins.swift',
+  require 'plugins.typescript',
+  require 'plugins.rust',
+  require 'plugins.lua',
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
