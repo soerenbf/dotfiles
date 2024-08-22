@@ -117,7 +117,6 @@ alias gsw="git switch --recurse-submodules"
 alias gsu="git submodule update --init --recursive"
 
 alias nv="nvim"
-alias kv='NVIM_APPNAME="nvim-kickstart" nvim'
 alias em="emacs"
 alias lg="lazygit"
 

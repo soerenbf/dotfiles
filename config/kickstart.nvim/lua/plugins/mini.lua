@@ -32,10 +32,6 @@ return {
         return '%2l:%-2v'
       end
 
-      local files = require 'mini.files'
-      files.setup()
-      vim.keymap.set('n', '<leader>e', files.open, { desc = 'Open files explorer' })
-
       -- ... and there is more!
       --  Check out: https://github.com/echasnovski/mini.nvim
     end,

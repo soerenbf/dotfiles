@@ -80,7 +80,7 @@ return {
   {
     'NeogitOrg/neogit',
     keys = {
-      { '<leader>g', '<cmd>Neogit kind=auto<cr>', desc = 'NeoGit' },
+      { '<leader>g', '<cmd>Neogit kind=replace<cr>', desc = 'NeoGit' },
     },
     dependencies = {
       'nvim-lua/plenary.nvim', -- required

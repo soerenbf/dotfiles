@@ -1,5 +1,5 @@
 -- You can use 'stop_after_first' to run the first available formatter from the list
-local prettier = { 'prettierd', 'prettier', stop_after_first = true }
+local prettier = { 'prettierd' }
 
 return {
   {
@@ -7,7 +7,8 @@ return {
     optional = true,
     opts = function(_, opts)
       if opts.ensure_installed ~= 'all' then
-        opts.ensure_installed = vim.tbl_extend('keep', opts.ensure_installed, { 'javascript', 'typescript', 'tsx', 'jsdoc' })
+        opts.ensure_installed = vim.tbl_extend('keep', opts.ensure_installed,
+          { 'javascript', 'typescript', 'tsx', 'jsdoc' })
       end
     end,
   },

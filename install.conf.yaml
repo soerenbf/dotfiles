@@ -20,10 +20,10 @@
     ~/.config/zellij:
       force: true
       path: config/zellij
-    ~/.config/nvim:
+    ~/.config/nvim-astro:
       force: true
       path: config/astronvim
-    ~/.config/nvim-kickstart:
+    ~/.config/nvim:
       force: true
       path: config/kickstart.nvim
     ~/.config/alacritty:

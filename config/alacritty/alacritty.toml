@@ -1,6 +1,4 @@
-import = [
-    "~/dotfiles/config/alacritty-theme/themes/nord.toml"
-]
+import = ["~/dotfiles/config/alacritty-theme/themes/nord.toml"]
 
 [font]
 normal.family = "JetBrainsMono Nerd Font"
@@ -8,4 +6,3 @@ size = 12
 
 [window]
 option_as_alt = "OnlyLeft"
-
