@@ -1,12 +1,16 @@
+--- @type LazySpec
 return {
-  -- {
-  --   'wojciech-kulik/xcodebuild.nvim',
-  --   dependencies = {
-  --     'nvim-telescope/telescope.nvim',
-  --     'MunifTanjim/nui.nvim',
-  --   },
-  --   ft = 'swift',
-  -- },
+  {
+    'wojciech-kulik/xcodebuild.nvim',
+    dependencies = {
+      'nvim-telescope/telescope.nvim',
+      'MunifTanjim/nui.nvim',
+      'nvim-treesitter/nvim-treesitter',
+    },
+    ft = 'swift',
+    config = true,
+    build = "make install"
+  },
   {
     'neovim/nvim-lspconfig',
     opts = function(_, opts)
