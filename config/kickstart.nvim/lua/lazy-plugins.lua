@@ -37,7 +37,7 @@ require('lazy').setup({
   require 'plugins.indent_line',
   require 'plugins.autopairs',
   require 'plugins.yazi',
-  -- require 'plugins.multicursor',
+  require 'plugins.multicursor',
 
   -- Language support
   require 'plugins.markdown',
