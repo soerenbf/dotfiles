@@ -1,4 +1,4 @@
-import = ["~/dotfiles/config/alacritty-theme/themes/nord.toml"]
+import = ["~/dotfiles/config/alacritty-theme/themes/dawnfox.toml"]
 
 [font]
 normal.family = "JetBrainsMono Nerd Font"
