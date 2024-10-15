@@ -38,6 +38,8 @@ require('lazy').setup({
   require 'plugins.autopairs',
   require 'plugins.yazi',
   require 'plugins.multicursor',
+  require 'plugins.trouble',
+  require 'plugins.ai',
 
   -- Language support
   require 'plugins.markdown',

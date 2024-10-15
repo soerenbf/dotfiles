@@ -22,8 +22,10 @@ return {
 
       -- Document existing key chains
       require('which-key').add {
+        { '<leader>a', group = '[A]I' },
         { '<leader>c', group = '[C]ode' },
         { '<leader>d', group = '[D]ocument' },
+        { '<leader>m', group = '[M]ulticursor' },
         { '<leader>r', group = '[R]ename' },
         { '<leader>s', group = '[S]earch' },
         { '<leader>w', group = '[W]orkspace' },
