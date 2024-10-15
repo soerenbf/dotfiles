@@ -40,6 +40,7 @@ require('lazy').setup({
   require 'plugins.multicursor',
   require 'plugins.trouble',
   require 'plugins.ai',
+  require 'plugins.flash',
 
   -- Language support
   require 'plugins.markdown',
