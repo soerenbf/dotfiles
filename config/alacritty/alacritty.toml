@@ -6,3 +6,7 @@ size = 12
 
 [window]
 option_as_alt = "OnlyLeft"
+
+[shell]
+program = "/opt/homebrew/bin/zellij"
+args = ["-l", "welcome"]
