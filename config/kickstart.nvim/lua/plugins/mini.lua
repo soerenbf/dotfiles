@@ -21,6 +21,12 @@ return {
       require('mini.starter').setup()
       require('mini.move').setup()
 
+      -- replicate mini.move for arrow keys
+      vim.keymap.set({'n', 'v'}, '<M-up>', '<M-k>')
+      vim.keymap.set({'n', 'v'}, '<M-down>', '<M-j>')
+      vim.keymap.set({'n', 'v'}, '<M-left>', '<M-h>')
+      vim.keymap.set({'n', 'v'}, '<M-right>', '<M-l>')
+
       -- Simple and easy statusline.
       --  You could remove this setup call if you don't like it,
       --  and try some other statusline plugin
