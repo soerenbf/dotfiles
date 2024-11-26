@@ -19,13 +19,20 @@ return {
 
       require('mini.sessions').setup()
       require('mini.starter').setup()
-      require('mini.move').setup()
+
+      local move = require('mini.move')
+      move.setup()
 
       -- replicate mini.move for arrow keys
-      vim.keymap.set({'n', 'v'}, '<M-up>', '<M-k>')
-      vim.keymap.set({'n', 'v'}, '<M-down>', '<M-j>')
-      vim.keymap.set({'n', 'v'}, '<M-left>', '<M-h>')
-      vim.keymap.set({'n', 'v'}, '<M-right>', '<M-l>')
+      vim.keymap.set('x', '<M-left>', [[<Cmd>lua MiniMove.move_selection('left')<CR>]], { desc = 'Move left' })
+      vim.keymap.set('x', '<M-right>', [[<Cmd>lua MiniMove.move_selection('right')<CR>]], { desc = 'Move right' })
+      vim.keymap.set('x', '<M-down>', [[<Cmd>lua MiniMove.move_selection('down')<CR>]], { desc = 'Move down' })
+      vim.keymap.set('x', '<M-up>', [[<Cmd>lua MiniMove.move_selection('up')<CR>]], { desc = 'Move up' })
+
+      vim.keymap.set('n', '<M-left>', [[<Cmd>lua MiniMove.move_line('left')<CR>]], { desc = 'Move line left' })
+      vim.keymap.set('n', '<M-right>', [[<Cmd>lua MiniMove.move_line('right')<CR>]], { desc = 'Move line right' })
+      vim.keymap.set('n', '<M-down>', [[<Cmd>lua MiniMove.move_line('down')<CR>]], { desc = 'Move line down' })
+      vim.keymap.set('n', '<M-up>', [[<Cmd>lua MiniMove.move_line('up')<CR>]], { desc = 'Move line up' })
 
       -- Simple and easy statusline.
       --  You could remove this setup call if you don't like it,

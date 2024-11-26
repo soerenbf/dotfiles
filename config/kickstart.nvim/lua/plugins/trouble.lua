@@ -6,12 +6,12 @@ return {
     {
       "<leader>wx",
       "<cmd>Trouble diagnostics toggle<cr>",
-      desc = "Diagnostics (Trouble)",
+      desc = "[W]orkspace [D]iagnostics (Trouble)",
     },
     {
-      "<leader>dx",
+      "<leader>bx",
       "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
-      desc = "Buffer Diagnostics (Trouble)",
+      desc = "[B]uffer [D]iagnostics (Trouble)",
     },
   },
 }

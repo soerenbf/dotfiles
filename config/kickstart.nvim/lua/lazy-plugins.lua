@@ -49,6 +49,7 @@ require('lazy').setup({
   require 'plugins.rust',
   require 'plugins.haskell', -- Ensure the correct hls version is installed for the version of haskell used: https://haskell-language-server.readthedocs.io/en/latest/support/ghc-version-support.html#current-ghc-version-support-status
   require 'plugins.lua',
+  require 'plugins.smear-cursor'
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
