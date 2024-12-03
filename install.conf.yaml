@@ -26,6 +26,9 @@
     ~/.config/nvim:
       force: true
       path: config/kickstart.nvim
+    ~/.config/kitty:
+      force: true
+      path: config/kitty
     ~/.config/alacritty:
       force: true
       path: config/alacritty
