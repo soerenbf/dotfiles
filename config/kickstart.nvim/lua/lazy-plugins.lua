@@ -41,6 +41,7 @@ require('lazy').setup({
   require 'plugins.trouble',
   require 'plugins.ai',
   require 'plugins.flash',
+  require 'plugins.fzf',
 
   -- Language support
   require 'plugins.markdown',

@@ -4,7 +4,7 @@ return {
     dependencies = {
       -- Automatically install LSPs and related tools to stdpath for Neovim
       -- NOTE: The order matters here...
-      { 'williamboman/mason.nvim', config = true },
+      { 'williamboman/mason.nvim',                   config = true },
       { 'WhoIsSethDaniel/mason-tool-installer.nvim', config = true },
       'williamboman/mason-lspconfig.nvim',
 
@@ -61,27 +61,31 @@ return {
           -- Jump to the definition of the word under your cursor.
           --  This is where a variable was first declared, or where a function is defined, etc.
           --  To jump back, press <C-t>.
-          map('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
+          map('gd', require('fzf-lua').lsp_definitions, '[G]oto [D]efinition')
 
           -- Find references for the word under your cursor.
-          map('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
+          map('gr', require('fzf-lua').lsp_references, '[G]oto [R]eferences')
 
           -- Jump to the implementation of the word under your cursor.
           --  Useful when your language has ways of declaring types without an actual implementation.
-          map('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
+          map('gI', require('fzf-lua').lsp_implementations, '[G]oto [I]mplementation')
 
           -- Jump to the type of the word under your cursor.
           --  Useful when you're not sure what type a variable is and you want to see
           --  the definition of its *type*, not where it was *defined*.
-          map('<leader>D', require('telescope.builtin').lsp_type_definitions, 'Type [D]efinition')
+          map('<leader>D', require('fzf-lua').lsp_typedefs, 'Type [D]efinition')
 
           -- Fuzzy find all the symbols in your current document.
           --  Symbols are things like variables, functions, types, etc.
-          map('<leader>bs', require('telescope.builtin').lsp_document_symbols, '[B]uffer [S]ymbols')
+          map('<leader>bs', require('fzf-lua').lsp_document_symbols, '[B]uffer [S]ymbols')
+          -- And diagnostics
+          map('<leader>bd', require('fzf-lua').diagnostics_document, '[B]uffer [D]iagnostics')
 
           -- Fuzzy find all the symbols in your current workspace.
           --  Similar to document symbols, except searches over your entire project.
-          map('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
+          map('<leader>ws', require('fzf-lua').lsp_live_workspace_symbols, '[W]orkspace [S]ymbols')
+          -- And diagnostics
+          map('<leader>wd', require('fzf-lua').diagnostics_workspace, '[W]orkspace [D]iagnostics')
 
           -- Rename the variable under your cursor.
           --  Most Language Servers support renaming across files, etc.
@@ -89,7 +93,12 @@ return {
 
           -- Execute a code action, usually your cursor needs to be on top of an error
           -- or a suggestion from your LSP for this to activate.
-          map('g.', vim.lsp.buf.code_action, 'Code Action')
+          map('g.',
+            function()
+              require('fzf-lua').lsp_code_actions({ winopts = { relative = 'cursor', row = 1.01, col = 0, height = 0.2, width = 0.4 } })
+            end,
+            'Code Action'
+          )
 
           -- WARN: This is not Goto Definition, this is Goto Declaration.
           --  For example, in C this would take you to the header.

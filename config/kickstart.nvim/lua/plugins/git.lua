@@ -14,6 +14,9 @@ return {
         topdelete = { text = '‾' },
         changedelete = { text = '~' },
       },
+      current_line_blame_opts = {
+        delay = 0,
+      },
       on_attach = function(bufnr)
         local gitsigns = require 'gitsigns'
 
@@ -80,12 +83,12 @@ return {
   {
     'NeogitOrg/neogit',
     keys = {
-      { '<leader>g', '<cmd>Neogit kind=replace<cr>', desc = 'NeoGit' },
+      { '<leader>g', '<cmd>Neogit kind=replace<cr>', desc = 'Neo[G]it' },
     },
     dependencies = {
       'nvim-lua/plenary.nvim', -- required
       'sindrets/diffview.nvim',
-      'nvim-telescope/telescope.nvim',
+      -- 'nvim-telescope/telescope.nvim',
     },
     config = true,
   },
