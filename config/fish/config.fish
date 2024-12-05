@@ -1,4 +1,6 @@
 set -gx EDITOR nvim
+set -Ux fifc_editor nvim
+
 alias v='nvim'
 
 alias gc="git commit"
