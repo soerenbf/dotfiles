@@ -30,7 +30,7 @@ return {
         { '<leader>d', group = '[D]ocument' },
         { '<leader>m', group = '[M]ulticursor' },
         { '<leader>r', group = '[R]ename' },
-        { '<leader>f', group = '[F]ind' },
+        { '<leader>s', group = '[S]earch' },
         { '<leader>w', group = '[W]orkspace' },
         { '<leader>t', group = '[T]oggle' },
         { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },

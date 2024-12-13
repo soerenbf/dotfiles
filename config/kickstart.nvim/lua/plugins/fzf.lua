@@ -10,15 +10,15 @@ return {
     local fzf = require 'fzf-lua'
     fzf.setup(opts)
 
-    map('<leader>fh', fzf.helptags, '[F]ind [H]elp', { winopts = { fullscreen = true } })
-    map('<leader>fk', fzf.keymaps, '[F]ind [K]eymaps')
-    map('<leader>ff', fzf.files, '[F]ind [F]iles', { winopts = { fullscreen = true } })
-    map('<leader>f?', fzf.builtin, '[F]ind Fzf command ("?" for help)')
-    map('<leader>fw', fzf.grep_cword, '[F]ind current [W]ord')
-    map('<leader>fg', fzf.live_grep_glob, '[F]ind by [G]rep', { winopts = { fullscreen = true } })
-    map('<leader>f.', fzf.resume, '[F]ind Resume ("." for repeat)', { winopts = { fullscreen = true } })
-    map('<leader>fr', fzf.oldfiles, '[F]ind [R]ecent Files', { winopts = { fullscreen = true } })
-    map('<leader><leader>', fzf.buffers, '[ ] Find existing buffers', { winopts = { fullscreen = true } })
+    map('<leader>sh', fzf.helptags, '[S]earch [H]elp', { winopts = { fullscreen = true } })
+    map('<leader>sk', fzf.keymaps, '[S]earch [K]eymaps')
+    map('<leader>sa', fzf.files, '[S]earch [A]ll files', { winopts = { fullscreen = true } })
+    map('<leader>s?', fzf.builtin, '[S]earch Fzf command ("?" for help)')
+    map('<leader>sw', fzf.grep_cword, '[S]earch current [W]ord')
+    map('<leader>sg', fzf.live_grep_glob, '[S]earch by [G]rep', { winopts = { fullscreen = true } })
+    map('<leader>s.', fzf.resume, '[S]earch Resume ("." for repeat)', { winopts = { fullscreen = true } })
+    map('<leader>sr', fzf.oldfiles, '[S]earch [R]ecent Files', { winopts = { fullscreen = true } })
+    map('<leader><leader>', fzf.buffers, '[ ] Search existing buffers', { winopts = { fullscreen = true } })
     map('<leader>/', fzf.blines, '[/] Search in current buffer',
       { winopts = { preview = { hidden = 'hidden' }, width = 120, height = 30 } })
   end
