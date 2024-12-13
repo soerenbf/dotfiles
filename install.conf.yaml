@@ -15,9 +15,8 @@
     ~/.zshenv: zshenv
     ~/.p10k.zsh: p10k.zsh
     ~/.config/fish:
-      force: true
       glob: true
-      path: config/fish/*
+      path: config/fish/**
     ~/.config/helix:
       force: true
       path: config/helix

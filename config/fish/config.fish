@@ -3,6 +3,10 @@ set -Ux fifc_editor nvim
 
 alias v='nvim'
 
+alias cc='concordium-client'
+alias cct='concordium-client --grpc-ip grpc.testnet.concordium.com --secure'
+alias ccm='concordium-client --grpc-ip grpc.mainnet.concordium.software --secure'
+
 alias gc="git commit"
 alias gcm="git commit -m"
 alias gca="git commit -am"
