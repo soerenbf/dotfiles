@@ -50,6 +50,8 @@ brew "ripgrep"
 brew "rust-analyzer"
 # 7-Zip is a file archiver with a high compression ratio
 brew "sevenzip"
+# Prompt theme for any shell.
+brew "starship"
 # Watch files and take action when they change
 brew "watchman"
 # JavaScript package manager
