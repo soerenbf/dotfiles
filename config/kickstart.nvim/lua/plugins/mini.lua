@@ -20,6 +20,23 @@ return {
       require('mini.sessions').setup()
       require('mini.starter').setup()
 
+      require('mini.files').setup({
+        windows = {
+          preview = true,
+          width_preview = 100,
+        }
+      })
+
+      vim.keymap.set('n', '<leader>e', [[<Cmd>lua MiniFiles.open()<CR>]], { desc = 'Open [E]xplorer' })
+      vim.api.nvim_create_autocmd("User", {
+        pattern = "MiniFilesBufferCreate",
+        callback = function(args)
+          local buf_id = args.data.buf_id
+          vim.keymap.set("n", "<left>", require('mini.files').go_out, { buffer = buf_id })
+          vim.keymap.set("n", "<right>", require('mini.files').go_in, { buffer = buf_id })
+        end,
+      })
+
       local move = require('mini.move')
       move.setup()
 

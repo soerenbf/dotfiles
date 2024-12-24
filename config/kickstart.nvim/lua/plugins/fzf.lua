@@ -12,7 +12,7 @@ return {
 
     map('<leader>sh', fzf.helptags, '[S]earch [H]elp', { winopts = { fullscreen = true } })
     map('<leader>sk', fzf.keymaps, '[S]earch [K]eymaps')
-    map('<leader>sa', fzf.files, '[S]earch [A]ll files', { winopts = { fullscreen = true } })
+    map('<leader>ss', fzf.files, '[S]earch files', { winopts = { fullscreen = true } })
     map('<leader>s?', fzf.builtin, '[S]earch Fzf command ("?" for help)')
     map('<leader>sw', fzf.grep_cword, '[S]earch current [W]ord')
     map('<leader>sg', fzf.live_grep_glob, '[S]earch by [G]rep', { winopts = { fullscreen = true } })
