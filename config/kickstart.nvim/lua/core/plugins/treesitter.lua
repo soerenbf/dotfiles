@@ -14,6 +14,24 @@ return {
         additional_vim_regex_highlighting = { 'ruby' },
       },
       indent = { enable = true, disable = { 'ruby' } },
+      incremental_selection = {
+        enable = true,
+        keymaps = {
+          init_selection = "<S-space>",
+          node_incremental = "<S-space>",
+          scope_incremental = false,
+          node_decremental = "<C-bs>",
+        },
+      },
+      textobjects = {
+        move = {
+          enable = true,
+          goto_next_start = { ["]f"] = "@function.outer", ["]c"] = "@class.outer", ["]a"] = "@parameter.inner" },
+          goto_next_end = { ["]F"] = "@function.outer", ["]C"] = "@class.outer", ["]A"] = "@parameter.inner" },
+          goto_previous_start = { ["[f"] = "@function.outer", ["[c"] = "@class.outer", ["[a"] = "@parameter.inner" },
+          goto_previous_end = { ["[F"] = "@function.outer", ["[C"] = "@class.outer", ["[A"] = "@parameter.inner" },
+        },
+      },
     },
     config = function(_, opts)
       -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
@@ -31,5 +49,20 @@ return {
       --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
     end,
   },
+  {
+    "aaronik/treewalker.nvim",
+    opts = {
+      highlight = true,         -- Whether to briefly highlight the node after jumping to it
+      highlight_duration = 250, -- How long should above highlight last (in ms)
+    },
+    keys = {
+      { '<S-up>',    '<cmd>Treewalker Up<cr>',    noremap = true, silent = true, mode = { 'n', 'v' } },
+      { '<S-down>',  '<cmd>Treewalker Down<cr>',  noremap = true, silent = true, mode = { 'n', 'v' } },
+      { '<S-right>', '<cmd>Treewalker Right<cr>', noremap = true, silent = true, mode = { 'n', 'v' } },
+      { '<S-left>',  '<cmd>Treewalker Left<cr>',  noremap = true, silent = true, mode = { 'n', 'v' } },
+      { '<S-M-up>', '<cmd>Treewalker SwapUp<cr>',   noremap = true, silent = true, mode = 'n' },
+      { '<S-M-down>', '<cmd>Treewalker SwapDown<cr>', noremap = true, silent = true, mode = 'n' },
+    }
+  }
 }
 -- vim: ts=2 sts=2 sw=2 et
