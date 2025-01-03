@@ -161,6 +161,20 @@ keybinds clear-defaults=true {
         }
     }
     shared_among "normal" "locked" {
+        bind "Ctrl Shift Alt h" { MoveFocusOrTab "left"; }
+        bind "Ctrl Shift Alt j" { MoveFocus "down"; }
+        bind "Ctrl Shift Alt k" { MoveFocus "up"; }
+        bind "Ctrl Shift Alt l" { MoveFocusOrTab "right"; }
+        bind "Ctrl Shift Alt left" { MoveFocusOrTab "left"; }
+        bind "Ctrl Shift Alt down" { MoveFocus "down"; }
+        bind "Ctrl Shift Alt up" { MoveFocus "up"; }
+        bind "Ctrl Shift Alt right" { MoveFocusOrTab "right"; }
+        
+        bind "Ctrl Shift Alt f" { ToggleFloatingPanes; }
+
+        bind "Ctrl Shift Alt t" { NewTab; SwitchToMode "locked";  }
+        bind "Ctrl Shift Alt p" { NewPane; SwitchToMode "locked";  }
+        bind "Ctrl Shift Alt w" { CloseFocus; SwitchToMode "locked";  }
     }
     shared_except "locked" "renametab" "renamepane" {
         bind "Ctrl g" { SwitchToMode "locked"; }
@@ -257,7 +271,7 @@ simplified_ui true
 // Choose the theme that is specified in the themes section.
 // Default: default
 // 
-theme "dawnfox"
+theme "terafox"
  
 // Choose the base input mode of zellij.
 // Default: normal
@@ -276,7 +290,7 @@ default_mode "locked"
 // The name of the default layout to load on startup
 // Default: "default"
 // 
-default_layout "welcome"
+default_layout "compact-top"
  
 // The folder in which Zellij will look for layouts
 // (Requires restart)

@@ -21,8 +21,15 @@
       force: true
       path: config/helix
     ~/.config/zellij:
+      glob: true
+      create: true
+      path: config/zellij/**
+    ~/.config/ghostty:
       force: true
-      path: config/zellij
+      path: config/ghostty
+    ~/.config/aerospace:
+      force: true
+      path: config/aerospace
     ~/.config/nvim-astro:
       force: true
       path: config/astronvim

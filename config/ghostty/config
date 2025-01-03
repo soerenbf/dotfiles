@@ -1,0 +1,18 @@
+font-family = "JetBrainsMono Nerd Font Mono"
+font-size = 13
+
+window-padding-balance = true
+window-padding-color = extend
+window-inherit-working-directory = true
+window-width = 200
+window-height = 50
+window-padding-y = 0
+window-padding-x = 0
+
+quick-terminal-position = left
+quick-terminal-screen = macos-menu-bar
+
+macos-option-as-alt = true
+macos-titlebar-style = hidden
+
+keybind = global:cmd+ctrl+alt+shift+grave_accent=toggle_quick_terminal
