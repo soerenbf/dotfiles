@@ -20,7 +20,7 @@ return {
           init_selection = "<S-space>",
           node_incremental = "<S-space>",
           scope_incremental = false,
-          node_decremental = "<C-bs>",
+          node_decremental = "<bs>",
         },
       },
       textobjects = {
