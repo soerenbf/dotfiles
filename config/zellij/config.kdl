@@ -271,7 +271,7 @@ simplified_ui true
 // Choose the theme that is specified in the themes section.
 // Default: default
 // 
-theme "terafox"
+theme "nordfox"
  
 // Choose the base input mode of zellij.
 // Default: normal
@@ -288,7 +288,9 @@ default_mode "locked"
 // default_cwd "/tmp"
  
 // The name of the default layout to load on startup
-Default: "default"
+// Default: "default"
+// 
+default_layout "compact-top"
  
 // The folder in which Zellij will look for layouts
 // (Requires restart)
