@@ -17,10 +17,10 @@ return {
       incremental_selection = {
         enable = true,
         keymaps = {
-          init_selection = "<S-space>",
-          node_incremental = "<S-space>",
+          init_selection = "<C-space>",
+          node_incremental = "<C-space>",
           scope_incremental = false,
-          node_decremental = "<bs>",
+          node_decremental = "<C-BS>",
         },
       },
       textobjects = {

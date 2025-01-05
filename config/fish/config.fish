@@ -41,7 +41,7 @@ if status is-interactive
             if set -q ZELLIJ
                 set -l cmd_line (string split " " -- $argv)
                 set -l process_name $cmd_line[1]
-                if test "$process_name" = "z" -o "$process_name" = "cd"
+                if test "$process_name" = "z" -o "$process_name" = "cd" -o "$process_name" = "v"
                     command nohup zellij action rename-tab (prompt_pwd) >/dev/null 2>&1
                 end
             end

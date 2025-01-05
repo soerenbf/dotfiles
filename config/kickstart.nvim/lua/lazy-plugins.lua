@@ -36,6 +36,7 @@ require('lazy').setup({
   require 'plugins.todo-comments',
   require 'plugins.indent_line',
   require 'plugins.autopairs',
+  require 'plugins.lualine',
   -- require 'plugins.yazi',
   require 'plugins.multicursor',
   require 'plugins.trouble',

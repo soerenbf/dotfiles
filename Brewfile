@@ -1,8 +1,8 @@
-# Taps
 tap "homebrew/bundle"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/services"
+tap "nikitabobko/tap"
 tap "oven-sh/bun"
 
 
@@ -50,7 +50,7 @@ brew "ripgrep"
 brew "rust-analyzer"
 # 7-Zip is a file archiver with a high compression ratio
 brew "sevenzip"
-# Prompt theme for any shell.
+# Cross-shell prompt for astronauts
 brew "starship"
 # Watch files and take action when they change
 brew "watchman"
@@ -60,17 +60,21 @@ brew "yarn"
 brew "yazi"
 # Pluggable terminal workspace, with terminal multiplexer as the base feature
 brew "zellij"
+# Shell extension to navigate your filesystem faster
+brew "zoxide"
 # Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
 brew "oven-sh/bun/bun"
-
-
+# AeroSpace is an i3-like tiling window manager for macOS
+cask "aerospace"
 # Enable Windows-like alt-tab
 cask "alt-tab"
 cask "font-hack-nerd-font"
 cask "font-jetbrains-mono"
 cask "font-symbols-only-nerd-font"
-# GPU-based terminal emulator
-cask "kitty"
+# Terminal emulator that uses platform-native UI and GPU acceleration
+cask "ghostty"
+# Control your tools with a few keystrokes
+cask "raycast"
 # System monitor for the menu bar
 cask "stats"
 # Multiplayer code editor
