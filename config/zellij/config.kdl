@@ -43,6 +43,16 @@ keybinds clear-defaults=true {
         bind "Alt down" { MovePane "down"; }
         bind "Alt up" { MovePane "up"; }
         bind "Alt right" { MovePane "right"; }
+
+        bind "1" { GoToTab 1; SwitchToMode "locked"; }
+        bind "2" { GoToTab 2; SwitchToMode "locked"; }
+        bind "3" { GoToTab 3; SwitchToMode "locked"; }
+        bind "4" { GoToTab 4; SwitchToMode "locked"; }
+        bind "5" { GoToTab 5; SwitchToMode "locked"; }
+        bind "6" { GoToTab 6; SwitchToMode "locked"; }
+        bind "7" { GoToTab 7; SwitchToMode "locked"; }
+        bind "8" { GoToTab 8; SwitchToMode "locked"; }
+        bind "9" { GoToTab 9; SwitchToMode "locked"; }
     }
     pane {
         bind "h" { MoveFocus "left"; }
@@ -94,10 +104,6 @@ keybinds clear-defaults=true {
         bind "tab" { ToggleTab; }
     }
     resize {
-        bind "H" { Resize "Decrease left"; }
-        bind "J" { Resize "Decrease down"; }
-        bind "K" { Resize "Decrease up"; }
-        bind "L" { Resize "Decrease right"; }
         bind "h" { Resize "Increase left"; }
         bind "j" { Resize "Increase down"; }
         bind "k" { Resize "Increase up"; }
@@ -186,6 +192,16 @@ keybinds clear-defaults=true {
         bind "Ctrl Shift Alt t" { NewTab; SwitchToMode "locked";  }
         bind "Ctrl Shift Alt p" { NewPane; SwitchToMode "locked";  }
         bind "Ctrl Shift Alt x" { CloseFocus; SwitchToMode "locked";  }
+
+        bind "Ctrl Shift Alt 1" { GoToTab 1; SwitchToMode "locked"; }
+        bind "Ctrl Shift Alt 2" { GoToTab 2; SwitchToMode "locked"; }
+        bind "Ctrl Shift Alt 3" { GoToTab 3; SwitchToMode "locked"; }
+        bind "Ctrl Shift Alt 4" { GoToTab 4; SwitchToMode "locked"; }
+        bind "Ctrl Shift Alt 5" { GoToTab 5; SwitchToMode "locked"; }
+        bind "Ctrl Shift Alt 6" { GoToTab 6; SwitchToMode "locked"; }
+        bind "Ctrl Shift Alt 7" { GoToTab 7; SwitchToMode "locked"; }
+        bind "Ctrl Shift Alt 8" { GoToTab 8; SwitchToMode "locked"; }
+        bind "Ctrl Shift Alt 9" { GoToTab 9; SwitchToMode "locked"; }
     }
     shared_except "locked" "renametab" "renamepane" {
         bind "Ctrl Shift Alt enter" { SwitchToMode "locked"; }

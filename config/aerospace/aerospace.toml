@@ -242,5 +242,5 @@ alt-w = 'move-node-to-workspace W'
 
 [workspace-to-monitor-force-assignment]
 1 = 'main'                       # Main monitor
-2 = ['secondary', 'asus', '2']        # Non-main monitor in case when there are only two monitors
-3 = 'built-in'                   # Case insensitive regex substring
+B = ['secondary', 'asus', '2']        # Non-main monitor in case when there are only two monitors
+O = 'built-in'                   # Case insensitive regex substring
