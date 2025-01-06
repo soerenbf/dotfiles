@@ -1,4 +1,4 @@
-;; Home row mods QWERTY example with more complexity.
+;; Home row mods QWERTY ebxample with more complexity.
 ;; Some of the changes from the basic example:
 ;; - when a home row mod activates tap, the home row mods are disabled
 ;;   while continuing to type rapidly
@@ -13,9 +13,10 @@
   )
 )
 (defsrc
+  f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f11 f12
                                     i
   caps  a   s   d   f	g   h   j   k   l   ;	'
-                       spc
+  fn                   spc      m       .
 )
 (defvar
   ;; Note: consider using different time values for your different fingers.
@@ -37,15 +38,24 @@
   )
 )
 (deflayer base
+  f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f11 f12
                               _
   @caps @a @s @d @f @g @h @j @k @l @; @'
-                @spc
+  @fn               @spc  _     _
+)
+
+(deflayer fn
+  🔅 🔆 @mc @sls @dtn @dnd ◀◀ ▶⏸ ▶▶ 🔇 🔉 🔊 
+                              _
+  @caps @a @s @d @f @g @h @j @k @l @; @'
+  _                  @spc  _     _
 )
 
 (deflayer arrows
+  _ _ _ _ _ _ _ _ _ _ _ _
                                up
   @caps @a @s @d @f @g _ left down right _ _
-                  _
+  _                  _     S-6       S-4
 )
 
 (defalias
@@ -66,4 +76,13 @@
   ' (tap-hold-release-keys $tap-time $hold-time ' (multi lmet lctl lalt lsft) $right-hand-keys)
 
   spc (tap-hold-press $tap-time $hold-time (fork spc S-- (lsft rsft)) (layer-toggle arrows))
+
+  fn (tap-hold 200 200 fn (layer-toggle fn))
+
+  ;; macOS function key glyphs
+  mc S-C-A-M-up ;; Mission Control
+  sls M-spc ;; Spotlight Search
+  dtn S-C-A-M-f5 ;; Dictation
+  dnd S-C-A-M-f6 ;; Do Not Disturb
+  lp S-C-A-M-l ;; Launchpad
 )
