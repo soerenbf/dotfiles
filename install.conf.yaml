@@ -27,6 +27,10 @@
     ~/.config/ghostty:
       force: true
       path: config/ghostty
+    ~/.config/karabiner/karabiner.json:
+      force: true
+      create: true
+      path: config/karabiner/karabiner.json
     ~/.config/aerospace:
       force: true
       path: config/aerospace

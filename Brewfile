@@ -64,6 +64,8 @@ brew "zellij"
 brew "zoxide"
 # Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
 brew "oven-sh/bun/bun"
+# Software keyboard remapper
+brew "kanata"
 # AeroSpace is an i3-like tiling window manager for macOS
 cask "aerospace"
 # Enable Windows-like alt-tab
@@ -79,3 +81,5 @@ cask "raycast"
 cask "stats"
 # Multiplayer code editor
 cask "zed"
+# Keyboard remapping macOS
+cask "karabiner-elements"
