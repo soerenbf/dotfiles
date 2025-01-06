@@ -13,14 +13,16 @@
   )
 )
 (defsrc
+                                    i
   caps  a   s   d   f	g   h   j   k   l   ;	'
+                       spc
 )
 (defvar
   ;; Note: consider using different time values for your different fingers.
   ;; For example, your pinkies might be slower to release keys and index
   ;; fingers faster.
   tap-time 200
-  hold-time 150
+  hold-time 200
 
   ;; To be used when experimenting with bilateral combinators mod
   left-hand-keys (
@@ -35,31 +37,33 @@
   )
 )
 (deflayer base
-  esc @a  @s  @d  @f @g @h @j  @k  @l  @; @'
+                              _
+  @caps @a @s @d @f @g @h @j @k @l @; @'
+                @spc
 )
 
-(deflayer nomods
-  esc a   s   d   f g h   j   k   l   ; '
+(deflayer arrows
+                               up
+  @caps @a @s @d @f @g _ left down right _ _
+                  _
 )
-(deffakekeys
-  to-base (layer-switch base)
-)
+
 (defalias
-  tap (multi
-    (layer-switch nomods)
-    (on-idle-fakekey to-base tap 20)
-  )
-
+  ;; LH mods
   caps(tap-hold $tap-time $hold-time esc (multi lmet lctl lalt lsft))
   a (tap-hold-release-keys $tap-time $hold-time a lmet $left-hand-keys)
   s (tap-hold-release-keys $tap-time $hold-time s lalt $left-hand-keys)
   d (tap-hold-release-keys $tap-time $hold-time d lctl $left-hand-keys)
   f (tap-hold-release-keys $tap-time $hold-time f lsft $left-hand-keys)
   g (tap-hold-release-keys $tap-time $hold-time g (multi lctl lalt lsft) $left-hand-keys)
+
+  ;; RH mods
   h (tap-hold-release-keys $tap-time $hold-time h (multi lctl lalt lsft) $right-hand-keys)
   j (tap-hold-release-keys $tap-time $hold-time j rsft $right-hand-keys)
   k (tap-hold-release-keys $tap-time $hold-time k rctl $right-hand-keys)
   l (tap-hold-release-keys $tap-time $hold-time l lalt $right-hand-keys)
   ; (tap-hold-release-keys $tap-time $hold-time ; rmet $right-hand-keys)
   ' (tap-hold-release-keys $tap-time $hold-time ' (multi lmet lctl lalt lsft) $right-hand-keys)
+
+  spc (tap-hold-press $tap-time $hold-time (fork spc S-- (lsft rsft)) (layer-toggle arrows))
 )
