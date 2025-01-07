@@ -4,6 +4,7 @@ tap "homebrew/cask-versions"
 tap "homebrew/services"
 tap "nikitabobko/tap"
 tap "oven-sh/bun"
+tap "buo/cask-upgrade"
 
 
 # Cryptography and SSL/TLS Toolkit
@@ -38,6 +39,8 @@ brew "jq"
 brew "lazygit"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+# Mac store apps for brew
+brew "mas"
 # Object-relational database system
 brew "postgresql@16"
 # Python version management
