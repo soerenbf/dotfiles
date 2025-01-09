@@ -1,6 +1,10 @@
 # Place a copy of this config to ~/.aerospace.toml
 # After that, you can edit ~/.aerospace.toml to your liking
 
+# TODO:
+# - open float by default
+# - send most used apps to predefined workspaces
+
 # You can use it to add commands that run after login to macOS user session.
 # 'start-at-login' needs to be 'true' for 'after-login-command' to work
 # Available commands: https://nikitabobko.github.io/AeroSpace/commands
@@ -58,12 +62,12 @@ preset = 'qwerty'
 #                 Monitor pattern is the same as for 'workspace-to-monitor-force-assignment'.
 #                 See: https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-inner.horizontal = 12
-inner.vertical =   12
-outer.left =       12
-outer.bottom =     12
-outer.top =        12
-outer.right =      12
+inner.horizontal = 24
+inner.vertical =   24
+outer.left =       24
+outer.bottom =     24
+outer.top =        24
+outer.right =      24
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -242,5 +246,5 @@ alt-w = 'move-node-to-workspace W'
 
 [workspace-to-monitor-force-assignment]
 1 = 'main'                       # Main monitor
-B = ['secondary', 'asus', '2']        # Non-main monitor in case when there are only two monitors
+B = ['asus', '2', 'secondary']        # Non-main monitor in case when there are only two monitors
 O = 'built-in'                   # Case insensitive regex substring
