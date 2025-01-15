@@ -86,3 +86,7 @@ cask "stats"
 cask "zed"
 # Keyboard remapping macOS
 cask "karabiner-elements"
+# easy window management
+cask "rectangle"
+# 1password as cli
+cask "1password-cli"

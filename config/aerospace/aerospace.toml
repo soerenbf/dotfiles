@@ -16,7 +16,7 @@ after-login-command = []
 after-startup-command = []
 
 # Start AeroSpace at login
-start-at-login = true
+start-at-login = false
 
 # Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
 enable-normalization-flatten-containers = true
@@ -62,12 +62,12 @@ preset = 'qwerty'
 #                 Monitor pattern is the same as for 'workspace-to-monitor-force-assignment'.
 #                 See: https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-inner.horizontal = 24
-inner.vertical =   24
-outer.left =       24
-outer.bottom =     24
-outer.top =        24
-outer.right =      24
+inner.horizontal = 16
+inner.vertical =   16
+outer.left =       16
+outer.bottom =     16
+outer.top =        16
+outer.right =      16
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -153,8 +153,26 @@ cmd-alt-ctrl-w = 'workspace W' # [W]ork
 # cmd-alt-ctrl-y = 'workspace Y'
 # cmd-alt-ctrl-z = 'workspace Z'
 
-cmd-alt-shift-f = 'layout floating tiling'
-cmd-alt-ctrl-f = 'fullscreen'
+# See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
+cmd-alt-shift-1 = 'move-node-to-workspace 1'
+cmd-alt-shift-2 = 'move-node-to-workspace 2'
+cmd-alt-shift-3 = 'move-node-to-workspace 3'
+cmd-alt-shift-4 = 'move-node-to-workspace 4'
+cmd-alt-shift-5 = 'move-node-to-workspace 5'
+cmd-alt-shift-6 = 'move-node-to-workspace 6'
+cmd-alt-shift-7 = 'move-node-to-workspace 7'
+cmd-alt-shift-8 = 'move-node-to-workspace 8'
+cmd-alt-shift-9 = 'move-node-to-workspace 9'
+cmd-alt-shift-b = 'move-node-to-workspace B'
+cmd-alt-shift-o = 'move-node-to-workspace O'
+cmd-alt-shift-p = 'move-node-to-workspace P'
+cmd-alt-shift-t = 'move-node-to-workspace T'
+cmd-alt-shift-w = 'move-node-to-workspace W'
+
+# cmd-alt-ctrl-t = 'exec-and-forget open -n /Applications/Ghostty.app'
+
+cmd-alt-ctrl-f = 'layout floating tiling'
+cmd-alt-shift-f = 'fullscreen'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 cmd-alt-ctrl-tab = 'workspace-back-and-forth'
@@ -248,3 +266,10 @@ alt-w = 'move-node-to-workspace W'
 1 = 'main'                       # Main monitor
 B = ['asus', '2', 'secondary']        # Non-main monitor in case when there are only two monitors
 O = 'built-in'                   # Case insensitive regex substring
+
+[[on-window-detected]]
+run = 'layout floating'
+
+# [[on-window-detected]]
+# if.app-id = 'com.mitchellh.ghostty'
+# run = "move-node-to-workspace T"
