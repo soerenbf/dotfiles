@@ -1,6 +1,7 @@
 return {
   {
     'neovim/nvim-lspconfig',
+    optional = true,
     opts = function(_, opts)
       opts._servers = vim.tbl_extend('keep', opts._servers, {
         lua_ls = {
@@ -37,6 +38,7 @@ return {
   },
   {
     'stevearc/conform.nvim',
+    optional = true,
     opts = function(_, opts)
       opts.formatters_by_ft = vim.tbl_extend('keep', opts.formatters_by_ft, { lua = { 'stylua' } })
     end,

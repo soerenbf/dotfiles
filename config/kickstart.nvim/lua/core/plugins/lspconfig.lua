@@ -77,9 +77,9 @@ return {
 
           -- Fuzzy find all the symbols in your current document.
           --  Symbols are things like variables, functions, types, etc.
-          map('<leader>bs', require('fzf-lua').lsp_document_symbols, '[B]uffer [S]ymbols')
+          map('<leader>ds', require('fzf-lua').lsp_document_symbols, '[D]ocument [S]ymbols')
           -- And diagnostics
-          map('<leader>bd', require('fzf-lua').diagnostics_document, '[B]uffer [D]iagnostics')
+          map('<leader>dd', require('fzf-lua').diagnostics_document, '[D]ocument [D]iagnostics')
 
           -- Fuzzy find all the symbols in your current workspace.
           --  Similar to document symbols, except searches over your entire project.

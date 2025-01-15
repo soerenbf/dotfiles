@@ -5,12 +5,12 @@ return {
     cmd = { 'ConformInfo' },
     keys = {
       {
-        '<leader>bf',
-        function()
-          require('conform').format { async = true, lsp_fallback = true }
-        end,
-        mode = '',
-        desc = '[B]uffer [F]ormat'
+        '<leader>df',
+        ':lua require("conform").format { async = true, lsp_fallback = true }<CR>',
+        noremap = true,
+        silent = true,
+        mode = 'n',
+        desc = '[D]ocument [F]ormat'
       },
     },
     config = true,
@@ -18,6 +18,7 @@ return {
       'williamboman/mason.nvim',
       {
         'stevearc/conform.nvim',
+        lazy = true,
         opts = {
           notify_on_error = false,
           format_on_save = false,

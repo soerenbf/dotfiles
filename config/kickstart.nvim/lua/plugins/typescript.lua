@@ -14,6 +14,7 @@ return {
   },
   {
     'neovim/nvim-lspconfig',
+    optional = true,
     opts = function(_, opts)
       opts._servers = vim.tbl_extend('keep', opts._servers, {
         tsserver = {},
@@ -41,6 +42,7 @@ return {
   },
   {
     'stevearc/conform.nvim',
+    optional = true,
     opts = function(_, opts)
       opts.formatters_by_ft = vim.tbl_extend('keep', opts.formatters_by_ft, {
         javascript = prettier,

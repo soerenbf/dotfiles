@@ -39,10 +39,11 @@ require('lazy').setup({
   require 'plugins.lualine',
   -- require 'plugins.yazi',
   require 'plugins.multicursor',
-  require 'plugins.trouble',
+  -- require 'plugins.trouble',
   require 'plugins.ai',
   require 'plugins.flash',
   require 'plugins.fzf',
+  require 'plugins.neogen',
 
   -- Language support
   require 'plugins.markdown',
