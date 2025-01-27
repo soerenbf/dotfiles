@@ -30,12 +30,12 @@
   ;; To be used when experimenting with bilateral combinators mod
   left-hand-keys (
     q w e r t
-    ;; a s d f g
-    z x c v
+    ;; a s d f g ;; needs to be active to be able to combine mods.
+    ;; z x c v ;; major shortcut keys...
   )
   right-hand-keys (
     y u i o p
-    ;; h j k l ;
+    ;; h j k l ; ;; needs to be active to be able to combine mods.
     n m , . /
   )
   not-movement-keys (
@@ -50,7 +50,7 @@
                                _
   @esc @a  @s  @d  @f  @g  @h  @j  @k  @l  @;  @'
   @cw              @v          @m  _           @cw
-  @fn              @nav @spc  
+  @fn              lmet @spc  
 )
 
 (deflayer fn
@@ -74,7 +74,7 @@
 ;; The following section generally describes the functionality of the keyboard layout
 (defalias
   ;; Alternative shift mods
-  spc (fork spc - (lsft rsft))
+  spc_ (fork spc - (lsft rsft))
   bsp (fork bspc (unshift del) (lsft rsft))
   - (fork - = (lsft rsft))
   = (fork = 1 (lsft rsft))
@@ -103,8 +103,8 @@
   ; (tap-hold-release-keys $tap-time $hold-time ; rmet $right-hand-keys)
   ' (tap-hold-release-keys $tap-time $hold-time ' @hyp $right-hand-keys)
 
-  ;; spc (tap-hold-press 200 200 @spc_ (layer-toggle arrows))
-  nav (tap-hold-press 200 200 esc (layer-toggle arrows))
+  spc (tap-hold-press 100 200 @spc_ (layer-toggle arrows))
+  ;; nav (tap-hold-press 200 200 esc (layer-toggle arrows))
 
   fn (tap-hold 1 1 fn (layer-toggle fn))
 
