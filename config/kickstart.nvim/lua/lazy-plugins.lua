@@ -37,13 +37,17 @@ require('lazy').setup({
   require 'plugins.indent_line',
   require 'plugins.autopairs',
   require 'plugins.lualine',
-  -- require 'plugins.yazi',
+  require 'plugins.yazi',
   require 'plugins.multicursor',
   -- require 'plugins.trouble',
   require 'plugins.ai',
   require 'plugins.flash',
   require 'plugins.fzf',
   require 'plugins.neogen',
+  require 'plugins.undotree',
+  require 'plugins.smear-cursor',
+  require 'plugins.noice',
+  require 'plugins.breadcrumb',
 
   -- Language support
   require 'plugins.markdown',
@@ -52,7 +56,6 @@ require('lazy').setup({
   require 'plugins.rust',
   require 'plugins.haskell', -- Ensure the correct hls version is installed for the version of haskell used: https://haskell-language-server.readthedocs.io/en/latest/support/ghc-version-support.html#current-ghc-version-support-status
   require 'plugins.lua',
-  require 'plugins.smear-cursor'
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the

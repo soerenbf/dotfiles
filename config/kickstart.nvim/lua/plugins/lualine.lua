@@ -14,5 +14,5 @@ return {
             lualine_z = { 'location' }
         },
     },
-    dependencies = { "echasnovski/mini.icons" }
+    dependencies = { "nvim-tree/nvim-web-devicons" }
 }

@@ -57,35 +57,42 @@ return {
           local map = function(keys, func, desc)
             vim.keymap.set('n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
           end
+          local fzf = require('fzf-lua')
 
           -- Jump to the definition of the word under your cursor.
           --  This is where a variable was first declared, or where a function is defined, etc.
           --  To jump back, press <C-t>.
-          map('gd', require('fzf-lua').lsp_definitions, '[G]oto [D]efinition')
+          map('gd', function() fzf.lsp_definitions({ jump_to_single_result = true, ignore_current_line = true, }) end,
+            '[G]oto [D]efinition')
+          map('go', function() fzf.lsp_definitions({ jump_to_single_result = true, ignore_current_line = true, }) end,
+            '[Go]to Definition')
 
           -- Find references for the word under your cursor.
-          map('gr', require('fzf-lua').lsp_references, '[G]oto [R]eferences')
+          map('gr', function() fzf.lsp_references({ jump_to_single_result = true, ignore_current_line = true, }) end,
+            '[G]oto [R]eferences')
 
           -- Jump to the implementation of the word under your cursor.
           --  Useful when your language has ways of declaring types without an actual implementation.
-          map('gI', require('fzf-lua').lsp_implementations, '[G]oto [I]mplementation')
+          map('gI', function() fzf.lsp_implementations({ jump_to_single_result = true, ignore_current_line = true, }) end,
+            '[G]oto [I]mplementation')
 
           -- Jump to the type of the word under your cursor.
           --  Useful when you're not sure what type a variable is and you want to see
           --  the definition of its *type*, not where it was *defined*.
-          map('<leader>D', require('fzf-lua').lsp_typedefs, 'Type [D]efinition')
+          map('got', function() fzf.lsp_typedefs({ jump_to_single_result = true, ignore_current_line = true, }) end,
+            '[Go]to [T]ype Definition')
 
           -- Fuzzy find all the symbols in your current document.
           --  Symbols are things like variables, functions, types, etc.
-          map('<leader>ds', require('fzf-lua').lsp_document_symbols, '[D]ocument [S]ymbols')
+          map('<leader>ds', fzf.lsp_document_symbols, '[D]ocument [S]ymbols')
           -- And diagnostics
-          map('<leader>dd', require('fzf-lua').diagnostics_document, '[D]ocument [D]iagnostics')
+          map('<leader>dd', fzf.diagnostics_document, '[D]ocument [D]iagnostics')
 
           -- Fuzzy find all the symbols in your current workspace.
           --  Similar to document symbols, except searches over your entire project.
-          map('<leader>ws', require('fzf-lua').lsp_live_workspace_symbols, '[W]orkspace [S]ymbols')
+          map('<leader>ws', fzf.lsp_live_workspace_symbols, '[W]orkspace [S]ymbols')
           -- And diagnostics
-          map('<leader>wd', require('fzf-lua').diagnostics_workspace, '[W]orkspace [D]iagnostics')
+          map('<leader>wd', fzf.diagnostics_workspace, '[W]orkspace [D]iagnostics')
 
           -- Rename the variable under your cursor.
           --  Most Language Servers support renaming across files, etc.
@@ -95,7 +102,7 @@ return {
           -- or a suggestion from your LSP for this to activate.
           map('g.',
             function()
-              require('fzf-lua').lsp_code_actions({ winopts = { relative = 'cursor', row = 1.01, col = 0, height = 0.2, width = 0.4 } })
+              fzf.lsp_code_actions({ winopts = { relative = 'cursor', row = 1.01, col = 0, height = 0.2, width = 0.4 } })
             end,
             'Code Action'
           )
