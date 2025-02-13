@@ -16,6 +16,7 @@
     ~/.p10k.zsh: p10k.zsh
     ~/.config/fish:
       glob: true
+      create: true
       path: config/fish/**
     ~/.config/helix:
       force: true
@@ -58,8 +59,5 @@
     - ~/.vim/undodir
 
 - shell:
-    - [
-        git submodule update --init --recursive,
-        Installing submodules
-      ]
-    - [ touch ~/.z, Creating z history file ]
+    - [git submodule update --init --recursive, Installing submodules]
+    - [touch ~/.z, Creating z history file]

@@ -51,7 +51,7 @@
   },
   {
     "label": "Yazi",
-    "command": "EDITOR=zed yazi",
+    "command": "yazi_zed",
     "args": ["$ZED_FILE"],
     "use_new_terminal": true,
     "allow_concurrent_runs": false,
