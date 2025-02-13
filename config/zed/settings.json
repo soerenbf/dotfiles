@@ -1,0 +1,73 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run the `open default settings` command
+// from the command palette or from `Zed` application menu.
+{
+  "icon_theme": "Material Icon Theme",
+  "format_on_save": "off",
+  "autosave": "on_focus_change",
+  "theme": {
+    "mode": "system",
+    "light": "Rosé Pine Dawn",
+    "dark": "Nord"
+  },
+  "ui_font_size": 14,
+  "buffer_font_size": 12.0,
+  "buffer_font_family": "JetBrainsMono Nerd Font",
+  "vim_mode": true,
+  "relative_line_numbers": true,
+  "base_keymap": "VSCode",
+  "tab_size": 4, // This is the default, but for some reason it does not apply unless explicitly defined?
+  "assistant": {
+    "dock": "right",
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "claude-3-5-sonnet-latest"
+    },
+    "version": "2"
+  },
+  "terminal": {
+    "dock": "right",
+    "font_family": "JetBrainsMono Nerd Font",
+    "font_size": 12
+  },
+  "chat_panel": {
+    "button": "when_in_call"
+  },
+  "collaboration_panel": {
+    "button": false
+  },
+  "notification_panel": {
+    "button": false
+  },
+  "journal": {
+    "hour_format": "hour24"
+  },
+  "languages": {
+    "TypeScript": {
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true
+      }
+    },
+    "JavaScript": {
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true
+      }
+    },
+    "TSX": {
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true
+      }
+    },
+    "JSONC": {
+      "tab_size": 2
+    },
+    "JSON": {
+      "tab_size": 2
+    }
+  }
+}

@@ -69,6 +69,8 @@ brew "zoxide"
 brew "oven-sh/bun/bun"
 # Software keyboard remapper
 brew "kanata"
+# Telescope-like search for your terminal
+brew "television"
 # AeroSpace is an i3-like tiling window manager for macOS
 cask "aerospace"
 # Enable Windows-like alt-tab

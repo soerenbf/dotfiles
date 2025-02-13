@@ -24,6 +24,10 @@
       glob: true
       create: true
       path: config/zellij/**
+    ~/.config/zed:
+      glob: true
+      create: true
+      path: config/zed/**
     ~/.config/ghostty:
       force: true
       path: config/ghostty

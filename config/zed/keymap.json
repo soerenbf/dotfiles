@@ -1,0 +1,101 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      // Navigation
+      "ctrl-left": ["workspace::ActivatePaneInDirection", "Left"],
+      "ctrl-right": ["workspace::ActivatePaneInDirection", "Right"],
+      "ctrl-up": ["workspace::ActivatePaneInDirection", "Up"],
+      "ctrl-down": ["workspace::ActivatePaneInDirection", "Down"],
+      "ctrl-alt-left": "pane::SplitLeft",
+      "ctrl-alt-right": "pane::SplitRight",
+      "ctrl-alt-up": "pane::SplitUp",
+      "ctrl-alt-down": "pane::SplitDown",
+      // Panel + docks overrides
+      "cmd-y": "workspace::CloseAllDocks",
+      "cmd-shift-t": "terminal_panel::ToggleFocus", // [t]erminal
+      "cmd-shift-g": [ // [g]it
+        "task::Spawn",
+        { "task_name": "Lazygit", "reveal_target": "center" }
+      ],
+      "cmd-shift-p": [
+        // [p]roject
+        "task::Spawn",
+        { "task_name": "File finder", "reveal_target": "center" }
+      ],
+      "cmd-shift-y": [
+        // [y]azi
+        "task::Spawn",
+        { "task_name": "Yazi", "reveal_target": "center" }
+      ],
+      "cmd-:": "command_palette::Toggle" // [:]
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      // Navigation
+      "ctrl-up": ["workspace::ActivatePaneInDirection", "Up"],
+      "ctrl-down": ["workspace::ActivatePaneInDirection", "Down"],
+      // Misc
+      "cmd-shift-d": "editor::SelectAllMatches" // Select all occurrences of current selection
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      // Anything vim
+      "space space": "file_finder::Toggle",
+      // "space e": "project_panel::ToggleFocus", // [e]xplorer
+      "space f": "editor::Format", // [f]ormat
+      "space d s": "outline::Toggle", // [d]ocument [s]ymbols
+      "space w s": "project_symbols::Toggle", // [w]orkspace [s]ymbols
+      // "space v": "pane::SplitRight", // [v]ertical split
+      // "space h": "pane::SplitDown", // [h]orizontal split
+      // "space /": "editor::ToggleComments",
+      // "space t": "terminal_panel::ToggleFocus", // [t]erminal
+      // "space a a": "assistant::ToggleFocus", // [a]ssistant
+      // "space a i": "assistant::InlineAssist", // [a]ssistant [i]nline
+      "space r": "editor::Rename", // [r]ename
+      // Navigation
+      "shift-up": "editor::MoveToStartOfParagraph",
+      "shift-down": "editor::MoveToEndOfParagraph"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == visual && !menu",
+    "bindings": {
+      // "v": "editor::SelectLargerSyntaxNode",
+      // "V": "editor::SelectSmallerSyntaxNode"
+    }
+  },
+  {
+    "context": "ProjectPanel",
+    "bindings": {
+      // "cmd-shift-e": "workspace::ToggleLeftDock"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      // "cmd-shift-t": "workspace::ToggleRightDock"
+    }
+  },
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      // Align with vim defaults + ergo overrides
+      "g r": "editor::FindAllReferences",
+      "g o": "editor::GoToDefinition", // "g d" is horrible on hands down vibranium
+      "g shift-o": "editor::GoToDeclaration",
+      "ctrl-^": "pane::AlternateFile"
+    }
+  }
+]
