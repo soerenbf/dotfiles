@@ -7,6 +7,9 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "features": {
+    "edit_prediction_provider": "zed"
+  },
   "icon_theme": "Material Icon Theme",
   "format_on_save": "off",
   "autosave": "on_focus_change",
@@ -26,7 +29,7 @@
     "dock": "right",
     "default_model": {
       "provider": "zed.dev",
-      "model": "claude-3-5-sonnet-latest"
+      "model": "claude-3-7-sonnet-latest"
     },
     "version": "2"
   },
@@ -46,6 +49,15 @@
   },
   "journal": {
     "hour_format": "hour24"
+  },
+  "lsp": {
+    "rust-analyzer": {
+      "initialization_options": {
+        "cargo": {
+          "features": "all"
+        }
+      }
+    }
   },
   "languages": {
     "TypeScript": {

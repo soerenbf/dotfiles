@@ -7,21 +7,22 @@
 // from the command palette.
 [
   {
-    "context": "Workspace",
+    "context": "Workspace || Editor",
     "bindings": {
       // Navigation
-      "ctrl-left": ["workspace::ActivatePaneInDirection", "Left"],
-      "ctrl-right": ["workspace::ActivatePaneInDirection", "Right"],
-      "ctrl-up": ["workspace::ActivatePaneInDirection", "Up"],
-      "ctrl-down": ["workspace::ActivatePaneInDirection", "Down"],
+      "ctrl-left": "workspace::ActivatePaneLeft",
+      "ctrl-right": "workspace::ActivatePaneRight",
+      "ctrl-up": "workspace::ActivatePaneUp",
+      "ctrl-down": "workspace::ActivatePaneDown",
       "ctrl-alt-left": "pane::SplitLeft",
       "ctrl-alt-right": "pane::SplitRight",
       "ctrl-alt-up": "pane::SplitUp",
       "ctrl-alt-down": "pane::SplitDown",
       // Panel + docks overrides
-      "cmd-y": "workspace::CloseAllDocks",
+      "cmd-alt-q": "workspace::CloseAllDocks",
       "cmd-shift-t": "terminal_panel::ToggleFocus", // [t]erminal
-      "cmd-shift-g": [ // [g]it
+      "cmd-shift-g": [
+        // [g]it
         "task::Spawn",
         { "task_name": "Lazygit", "reveal_target": "center" }
       ],
@@ -30,8 +31,8 @@
         "task::Spawn",
         { "task_name": "File finder", "reveal_target": "center" }
       ],
-      "cmd-shift-y": [
-        // [y]azi
+      "cmd-alt-e": [
+        // [e]xplorer (alternative)
         "task::Spawn",
         { "task_name": "Yazi", "reveal_target": "center" }
       ],
@@ -41,9 +42,6 @@
   {
     "context": "Editor",
     "bindings": {
-      // Navigation
-      "ctrl-up": ["workspace::ActivatePaneInDirection", "Up"],
-      "ctrl-down": ["workspace::ActivatePaneInDirection", "Down"],
       // Misc
       "cmd-shift-d": "editor::SelectAllMatches" // Select all occurrences of current selection
     }
