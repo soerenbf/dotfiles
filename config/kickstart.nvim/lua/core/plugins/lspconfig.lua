@@ -62,24 +62,24 @@ return {
           -- Jump to the definition of the word under your cursor.
           --  This is where a variable was first declared, or where a function is defined, etc.
           --  To jump back, press <C-t>.
-          map('gd', function() fzf.lsp_definitions({ jump_to_single_result = true, ignore_current_line = true, }) end,
+          map('gd', function() fzf.lsp_definitions({ jump1 = true, ignore_current_line = true, }) end,
             '[G]oto [D]efinition')
-          map('go', function() fzf.lsp_definitions({ jump_to_single_result = true, ignore_current_line = true, }) end,
+          map('go', function() fzf.lsp_definitions({ jump1 = true, ignore_current_line = true, }) end,
             '[Go]to Definition')
 
           -- Find references for the word under your cursor.
-          map('gr', function() fzf.lsp_references({ jump_to_single_result = true, ignore_current_line = true, }) end,
+          map('gr', function() fzf.lsp_references({ jump1 = true, ignore_current_line = true, }) end,
             '[G]oto [R]eferences')
 
           -- Jump to the implementation of the word under your cursor.
           --  Useful when your language has ways of declaring types without an actual implementation.
-          map('gI', function() fzf.lsp_implementations({ jump_to_single_result = true, ignore_current_line = true, }) end,
+          map('gI', function() fzf.lsp_implementations({ jump1 = true, ignore_current_line = true, }) end,
             '[G]oto [I]mplementation')
 
           -- Jump to the type of the word under your cursor.
           --  Useful when you're not sure what type a variable is and you want to see
           --  the definition of its *type*, not where it was *defined*.
-          map('got', function() fzf.lsp_typedefs({ jump_to_single_result = true, ignore_current_line = true, }) end,
+          map('got', function() fzf.lsp_typedefs({ jump1 = true, ignore_current_line = true, }) end,
             '[Go]to [T]ype Definition')
 
           -- Fuzzy find all the symbols in your current document.

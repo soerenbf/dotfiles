@@ -63,6 +63,11 @@ return {
       { '<S-M-up>', '<cmd>Treewalker SwapUp<cr>',   noremap = true, silent = true, mode = 'n' },
       { '<S-M-down>', '<cmd>Treewalker SwapDown<cr>', noremap = true, silent = true, mode = 'n' },
     }
+  },
+  {
+    "windwp/nvim-ts-autotag",
+    event = "VeryLazy",
+    opts = {},
   }
 }
 -- vim: ts=2 sts=2 sw=2 et
