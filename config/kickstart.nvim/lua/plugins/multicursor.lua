@@ -7,26 +7,26 @@ return {
         mc.setup()
 
         -- Add cursors above/below the main cursor.
-        vim.keymap.set({"n", "v"}, "<leader>m<up>", function() mc.addCursor("k") end)
-        vim.keymap.set({"n", "v"}, "<leader>m<down>", function() mc.addCursor("j") end)
+        vim.keymap.set({ "n", "v" }, "<leader>m<up>", function() mc.addCursor("k") end)
+        vim.keymap.set({ "n", "v" }, "<leader>m<down>", function() mc.addCursor("j") end)
 
         -- Add a cursor and jump to the next word under cursor.
-        vim.keymap.set({"n", "v"}, "<c-n>", function() mc.addCursor("*") end)
+        vim.keymap.set({ "n", "v" }, "<c-n>", function() mc.addCursor("*") end)
 
         -- Jump to the next word under cursor but do not add a cursor.
-        vim.keymap.set({"n", "v"}, "<c-s>", function() mc.skipCursor("*") end)
+        vim.keymap.set({ "n", "v" }, "<c-s>", function() mc.skipCursor("*") end)
 
         -- Rotate the main cursor.
-        vim.keymap.set({"n", "v"}, "<leader>m<left>", mc.prevCursor)
-        vim.keymap.set({"n", "v"}, "<leader>m<right>", mc.nextCursor)
+        vim.keymap.set({ "n", "v" }, "<leader>m<left>", mc.prevCursor)
+        vim.keymap.set({ "n", "v" }, "<leader>m<right>", mc.nextCursor)
 
         -- Delete the main cursor.
-        vim.keymap.set({"n", "v"}, "<leader>mx", mc.deleteCursor, { desc = "[m]utlicursor delete main cursor"})
+        vim.keymap.set({ "n", "v" }, "<leader>mx", mc.deleteCursor, { desc = "[m]ulticursor delete main cursor" })
 
         -- Add and remove cursors with control + left click.
         vim.keymap.set("n", "<c-leftmouse>", mc.handleMouse)
 
-        vim.keymap.set({"n", "v"}, "<leader>mr", function()
+        vim.keymap.set({ "n", "v" }, "<leader>mr", function()
             if mc.cursorsEnabled() then
                 -- Stop other cursors from moving.
                 -- This allows you to reposition the main cursor.
@@ -34,7 +34,7 @@ return {
             else
                 mc.addCursor()
             end
-        end, { desc = "[m]utlicursor [reposition] main cursor"})
+        end, { desc = "[m]ulticursor [reposition] main cursor" })
 
         vim.keymap.set("n", "<esc>", function()
             if not mc.cursorsEnabled() then
@@ -42,12 +42,12 @@ return {
             elseif mc.hasCursors() then
                 mc.clearCursors()
             else
-               vim.cmd('nohlsearch')
+                vim.cmd('nohlsearch')
             end
         end)
 
         -- Align cursor columns.
-        vim.keymap.set("n", "<leader>ma", mc.alignCursors, { desc = '[m]ulticursor [a]lign cursor columns'})
+        vim.keymap.set("n", "<leader>ma", mc.alignCursors, { desc = '[m]ulticursor [a]lign cursor columns' })
 
         -- Split visual selections by regex.
         vim.keymap.set("v", "S", mc.splitCursors)
@@ -60,8 +60,10 @@ return {
         vim.keymap.set("v", "M", mc.matchCursors)
 
         -- Rotate visual selection contents.
-        vim.keymap.set("v", "<leader>mt", function() mc.transposeCursors(1) end, { desc = '[m]ulticursor [t]ranspose cursor forwards'})
-        vim.keymap.set("v", "<leader>mT", function() mc.transposeCursors(-1) end, { desc = '[m]ulticursor [t]ranspose cursor backwards'})
+        vim.keymap.set("v", "<leader>mt", function() mc.transposeCursors(1) end,
+            { desc = '[m]ulticursor [t]ranspose cursor forwards' })
+        vim.keymap.set("v", "<leader>mT", function() mc.transposeCursors(-1) end,
+            { desc = '[m]ulticursor [t]ranspose cursor backwards' })
 
         -- Customize how cursors look.
         vim.api.nvim_set_hl(0, "MultiCursorCursor", { link = "Cursor" })

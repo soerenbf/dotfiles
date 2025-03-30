@@ -18,7 +18,7 @@ return {
     map('<leader>sg', fzf.live_grep_glob, '[S]earch by [G]rep', { winopts = { fullscreen = true } })
     map('<leader>s.', fzf.resume, '[S]earch Resume ("." for repeat)', { winopts = { fullscreen = true } })
     map('<leader>sr', fzf.oldfiles, '[S]earch [R]ecent Files', { winopts = { fullscreen = true } })
-    map('<leader><leader>', fzf.buffers, '[ ] Search existing buffers', { winopts = { fullscreen = true } })
+    -- map('<leader><leader>', fzf.buffers, '[ ] Search existing buffers', { winopts = { fullscreen = true } })
     map('<leader>/', fzf.blines, '[/] Search in current buffer',
       { winopts = { preview = { hidden = 'hidden' }, width = 120, height = 30 } })
   end
