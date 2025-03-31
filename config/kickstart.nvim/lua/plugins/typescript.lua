@@ -17,7 +17,7 @@ return {
     optional = true,
     opts = function(_, opts)
       opts._servers = vim.tbl_extend('keep', opts._servers, {
-        tsserver = {},
+        ts_ls = {},
         eslint = {
           settings = {
             -- helps eslint find the eslintrc when it's placed in a subfolder instead of the cwd root
