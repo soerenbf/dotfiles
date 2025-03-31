@@ -18,7 +18,7 @@
                                     i
   caps a   s   d   f	g   h   j   k   l   ;	'
   lsft             v            m       .       rsft
-  fn               lmet  spc      
+  fn               lmet  spc rmet    
 )
 (defvar
   ;; Note: consider using different time values for your different fingers.
@@ -49,8 +49,8 @@
   				      @-  @= @bsp
                                _
   @esc @a  @s  @d  @f  @g  @h  @j  @k  @l  @;  @'
-  @cw              @v          @m  _           @cw
-  @fn              lmet @spc  
+  _                @v          @m  _           _
+  @fn              @nav @spc   _
 )
 
 (deflayer fn
@@ -59,7 +59,7 @@
                                   _
   _   _   _   _   _   _   _   _   _   _   _   _
   _               _           _       _          _
-  _                  _    _
+  _                  _    _   _
 )
 
 (deflayer arrows
@@ -68,13 +68,13 @@
                                     up
   _   _   _   _   _   _   _   left down right _  _
   _               _           S-6       S-4         _
-  _               _  _     
+  _               _  _    @cw
 )
 
 ;; The following section generally describes the functionality of the keyboard layout
 (defalias
   ;; Alternative shift mods
-  spc_ (fork spc - (lsft rsft))
+  spc (fork spc - (lsft rsft))
   bsp (fork bspc (unshift del) (lsft rsft))
   - (fork - = (lsft rsft))
   = (fork = 1 (lsft rsft))
@@ -103,8 +103,9 @@
   ; (tap-hold-release-keys $tap-time $hold-time ; rmet $right-hand-keys)
   ' (tap-hold-release-keys $tap-time $hold-time ' @hyp $right-hand-keys)
 
-  spc (tap-hold-press 100 200 @spc_ (layer-toggle arrows))
+  ;; spc (tap-hold-press 100 200 @spc_ (layer-toggle arrows))
   ;; nav (tap-hold-press 200 200 esc (layer-toggle arrows))
+  nav (layer-toggle arrows)
 
   fn (tap-hold 1 1 fn (layer-toggle fn))
 
