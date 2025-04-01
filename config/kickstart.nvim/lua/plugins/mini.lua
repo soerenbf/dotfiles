@@ -9,8 +9,14 @@ local files = function()
 
   vim.keymap.set('n', '<leader>e', function()
     local buf_name = vim.api.nvim_buf_get_name(0)
-    local _ = mod.close() or mod.open(buf_name, false)
-    mod.reveal_cwd()
+    local status, err = pcall(function()
+      local _ = mod.close() or mod.open(buf_name, false)
+    end)
+    if not status then
+      mod.open()
+    else
+      mod.reveal_cwd()
+    end
   end, { desc = 'Open [E]xplorer' })
 
   vim.api.nvim_create_autocmd("User", {
