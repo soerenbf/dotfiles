@@ -113,8 +113,8 @@ keybinds clear-defaults=true {
         bind "up" { Resize "Increase up"; }
         bind "right" { Resize "Increase right"; }
         bind "+" { Resize "Increase"; }
-        bind "-" { Resize "Decrease"; }
         bind "=" { Resize "Increase"; }
+        bind "-" { Resize "Decrease"; }
         bind "r" { SwitchToMode "normal"; }
     }
     move {
