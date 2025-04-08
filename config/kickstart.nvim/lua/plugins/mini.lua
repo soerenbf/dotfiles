@@ -25,6 +25,13 @@ local files = function()
       local buf_id = args.data.buf_id
       vim.keymap.set("n", "<left>", mod.go_out, { buffer = buf_id })
       vim.keymap.set("n", "<right>", function() mod.go_in { close_on_file = true } end, { buffer = buf_id })
+      vim.keymap.set("n", "l", function() mod.go_in { close_on_file = true } end, { buffer = buf_id })
+    end,
+  })
+  vim.api.nvim_create_autocmd("User", {
+    pattern = "MiniFilesActionRename",
+    callback = function(event)
+      Snacks.rename.on_rename_file(event.data.from, event.data.to)
     end,
   })
 end
@@ -49,6 +56,7 @@ return {
     'echasnovski/mini.nvim',
     dependencies = {
       "nvim-tree/nvim-web-devicons",
+      "folke/snacks.nvim",
     },
     config = function()
       -- Better Around/Inside textobjects
