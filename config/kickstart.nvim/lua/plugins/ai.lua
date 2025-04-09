@@ -4,7 +4,8 @@ return {
   version = false, -- set this if you want to always pull the latest change
   opts = {
     -- add any opts here
-    provider = "copilot",
+    provider = "cp_sonnet_37",
+    auto_suggestion_provider = "copilot",
     windows = {
       width = 40
     },
@@ -12,7 +13,31 @@ return {
       provider = "snacks",
     },
     hints = { enabled = false },
-    auto_suggestion_provider = "copilot",
+    on_error = function(err, opts)
+      -- Check if this is a quota/limit error
+      local is_quota_error = err:match("quota") or
+          err:match("rate limit") or
+          err:match("exceeded") or
+          err:match("billing")
+
+      if is_quota_error then
+        local current_provider = require("avante.config")._options.provider;
+        local fallback = 'copilot'
+
+        if fallback then
+          vim.notify(
+            "Quota exceeded for " .. current_provider .. ". Falling back to " .. fallback,
+            vim.log.levels.WARN,
+            { title = "avante.nvim" }
+          )
+          require("avante.providers").refresh(fallback)
+          return true -- Tell avante to retry with the new provider
+        end
+      end
+
+      -- If not a quota error or no fallback available, show the original error
+      return false
+    end,
     behaviour = {
       auto_suggestions = false, -- Experimental stage
       auto_set_highlight_group = true,
@@ -20,6 +45,54 @@ return {
       auto_apply_diff_after_generation = false,
       support_paste_from_clipboard = false,
       minimize_diff = false, -- Whether to remove unchanged lines when applying a code block
+    },
+    vendors = {
+      -- Available
+      cp_sonnet_37 = {
+        __inherited_from = "copilot",
+        model = "claude-3.7-sonnet",
+        timeout = 30000, -- Timeout in milliseconds
+        temperature = 0,
+        -- max_tokens = 4096,
+      },
+      -- Available
+      cp_claude_thinking = {
+        __inherited_from = "copilot",
+        model = "claude-3.7-sonnet-thought",
+        timeout = 30000, -- Timeout in milliseconds
+        temperature = 0,
+        -- max_tokens = 4096,
+      },
+      -- -- Unavailable
+      -- cp_gpt4o = {
+      --   __inherited_from = "copilot",
+      --   timeout = 30000, -- Timeout in milliseconds
+      --   temperature = 0,
+      --   -- max_tokens = 4096,
+      -- },
+      -- -- Unavailable
+      -- cp_sonnet_35 = {
+      --   __inherited_from = "copilot",
+      --   model = "claude-3.5-sonnet",
+      --   timeout = 30000, -- Timeout in milliseconds
+      --   temperature = 0,
+      --   -- max_tokens = 4096,
+      -- },
+      -- -- Unavailable
+      -- copilot_o1 = {
+      --   __inherited_from = "copilot",
+      --   model = "o1",
+      -- },
+      -- -- Unavailable
+      -- copilot_o3_mini = {
+      --   __inherited_from = "copilot",
+      --   model = "o3-mini",
+      -- },
+      -- -- Unavailable
+      -- copilot_gemini = {
+      --   __inherited_from = "copilot",
+      --   model = "gemini-2.0-flash-001",
+      -- },
     },
   },
   init = function()
@@ -35,7 +108,7 @@ return {
     "MunifTanjim/nui.nvim",
     --- The below dependencies are optional,
     "folke/snacks.nvim", -- for picker provider
-    "hrsh7th/nvim-cmp", -- autocompletion for avante commands and mentions
+    "hrsh7th/nvim-cmp",  -- autocompletion for avante commands and mentions
     "nvim-tree/nvim-web-devicons",
     {
       "zbirenbaum/copilot.lua",
@@ -43,7 +116,7 @@ return {
         require("copilot").setup({
           panels = { enabled = false },
           suggestion = {
-            -- auto_trigger = true,
+            auto_trigger = true,
             keymap = {
               accept = "<C-M-y>",
               accept_word = false,
