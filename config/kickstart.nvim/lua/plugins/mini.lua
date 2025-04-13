@@ -66,6 +66,22 @@ return {
       --  - yinq - [Y]ank [I]nside [N]ext [Q]uote
       --  - ci'  - [C]hange [I]nside [']quote
       require('mini.ai').setup { n_lines = 500 }
+      require('mini.diff').setup {
+        mappings = {
+          -- Apply hunks inside a visual/operator region
+          apply = '',
+          -- Reset hunks inside a visual/operator region
+          reset = '',
+          -- Hunk range textobject to be used inside operator
+          -- Works also in Visual mode if mapping differs from apply and reset
+          textobject = '',
+          -- Go to hunk range in corresponding direction
+          goto_first = '[H',
+          goto_prev = '[h',
+          goto_next = ']h',
+          goto_last = ']H',
+        },
+      }
 
       -- Add/delete/replace surroundings (brackets, quotes, etc.)
       --

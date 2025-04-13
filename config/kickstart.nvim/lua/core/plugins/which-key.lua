@@ -26,7 +26,7 @@ return {
       require('which-key').add {
         { '<leader>a', group = '[A]I' },
         { '<leader>b', group = '[B]uffer' },
-        { '<leader>c', group = '[C]ode' },
+        { '<leader>c', group = '[C]odeCompanion' },
         { '<leader>d', group = '[D]ocument' },
         { '<leader>m', group = '[M]ulticursor' },
         { '<leader>r', group = '[R]ename' },
