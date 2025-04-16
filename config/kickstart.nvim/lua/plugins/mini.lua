@@ -1,3 +1,5 @@
+---@module "snacks"
+
 local files = function()
   local mod = require('mini.files')
   mod.setup({
@@ -26,6 +28,7 @@ local files = function()
       vim.keymap.set("n", "<left>", mod.go_out, { buffer = buf_id })
       vim.keymap.set("n", "<right>", function() mod.go_in { close_on_file = true } end, { buffer = buf_id })
       vim.keymap.set("n", "l", function() mod.go_in { close_on_file = true } end, { buffer = buf_id })
+      vim.keymap.set("n", "<esc>", mod.close, { buffer = buf_id })
     end,
   })
   vim.api.nvim_create_autocmd("User", {
