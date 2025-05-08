@@ -44,9 +44,9 @@
     ;; n m , . / ;; needs to be active to be able to combine mods.
   )
   not-movement-keys (
-    q w e r t y u o p
-    a s d f g h ;
-    z x c v n , /
+    q w e r t p
+            g ;
+    z x c v b /
   )
   mods (
     lsft lctl lalt lmet
@@ -76,11 +76,11 @@
   ;; |------|------|------|------|------|------|------|------|------|------|------|------|------|------|
         _      _      _      _      _      _      _      _      _      _      _      _      _    
   ;; |------|------|------|------|------|------|------|------|------|------|------|------|------|------|
-       esc     @a     @s     @d     @f     _      _      _      _      _      _      _      _    return
+       @esc    @a     @s     @d     @f     _      _      @j     @k     @l     @;     _      _    return
   ;; |------|------|------|------|------|------|------|------|------|------|------|-------------|------|
-   _    _      _      _      _      _      _      _      @m     @,     @.     @/            _
+   _    _      @x     _      _      _      _      _      _      _      @.     _             _
   ;; |------|------|------|----------------------------------|------|------|------|--------------------|
-  @fn   _     @sym   @nav                 @spc                  _      _
+  @fn   _      _      _                   @spc                  _      _
   ;; |------|------|------|----------------------------------|------|------|------|------|------|------|
 )
 
@@ -104,13 +104,13 @@
   ;; |------|------|------|------|------|------|------|------|------|------|------|------|------|------|
                _      _      _      _      _      _      _      _      _      _      _      _      _
   ;; |------|------|------|------|------|------|------|------|------|------|------|------|------|------|
-        _     @cmq   @cmw    _     @cmr   @cmt   home   pgdn   pgup   end     _      _      _    
+        _      _      _      _      _      _     home   pgdn   pgup   end     _      _      _    
   ;; |------|------|------|------|------|------|------|------|------|------|------|------|------|------|
-        _     @cma   @cms    _     @cmf    _     left   down    up   right    _      _      _      _
+        _      _      _      _      _      _     left   down    up   right    _      _      _      _
   ;; |------|------|------|------|------|------|------|------|------|------|------|-------------|------|
-  @cw   _     @cmz   @cmx   @cmc   @cmv   @cmb   S-6    C-d    C-u    S-4     _            @cw
+  @cw   _      _      _      _      _      _     S-6    C-d    C-u    S-4     _            @cw
   ;; |------|------|------|----------------------------------|------|------|------|--------------------|
-   _    _      _      _                   @sls                 @cw     _
+   _    _      _      _                    _                    _      _
   ;; |------|------|------|----------------------------------|------|------|------|------|------|------|
 )
 
@@ -132,7 +132,7 @@
 ;; The following section generally describes the functionality of the keyboard layout
 (defalias
   ;; Alternative shift mods
-  spc (fork spc - (lsft rsft))
+  spc_ (fork spc - (lsft rsft))
   bsp (fork bspc (unshift del) (lsft rsft))
   - (fork - = (lsft rsft))
   = (fork = 1 (lsft rsft))
@@ -160,29 +160,32 @@
 
   ;; LH mods
   ;; esc (tap-hold $tap-time $hold-time esc @hyp)
-  a (tap-hold-release-keys $tap-time $hold-time a lmet $left-hand-keys)
-  s (tap-hold-release-keys $tap-time $hold-time s lalt $left-hand-keys)
-  d (tap-hold-release-keys $tap-time $hold-time d lctl $left-hand-keys)
-  f (tap-hold-release-keys $tap-time $hold-time f lsft $left-hand-keys)
+  a (tap-hold-release-keys $tap-time $hold-time a lsft $left-hand-keys)
+  s (tap-hold-release-keys $tap-time $hold-time s lctl $left-hand-keys)
+  d (tap-hold-release-keys $tap-time $hold-time d lalt $left-hand-keys)
+  f (tap-hold-release-keys $tap-time $hold-time f lmet $left-hand-keys)
+  x (tap-hold-release-keys $tap-time $hold-time x ralt $left-hand-keys)
   ;; v (tap-hold-release-keys $tap-time $hold-time v @cag $left-hand-keys)
   ;; g (tap-hold-release-keys $tap-time $hold-time g @meh $left-hand-keys)
 
   ;; RH mods
   ;; h (tap-hold-release-keys $tap-time $hold-time h @meh $right-hand-keys)
   ;; m (tap-hold-release-keys $tap-time $hold-time m @cag $right-hand-keys)
-  ;; j (tap-hold-release-keys $tap-time $hold-time j rsft $right-hand-keys)
-  ;; k (tap-hold-release-keys $tap-time $hold-time k rctl $right-hand-keys)
-  ;; l (tap-hold-release-keys $tap-time $hold-time l lalt $right-hand-keys)
-  ;; ; (tap-hold-release-keys $tap-time $hold-time ; rmet $right-hand-keys)
-  m (tap-hold-release-keys $tap-time $hold-time m rsft $right-hand-keys)
-  , (tap-hold-release-keys $tap-time $hold-time , rctl $right-hand-keys)
-  . (tap-hold-release-keys $tap-time $hold-time . lalt $right-hand-keys)
-  / (tap-hold-release-keys $tap-time $hold-time / rmet $right-hand-keys)
+  j (tap-hold-release-keys $tap-time $hold-time j rsft $right-hand-keys)
+  k (tap-hold-release-keys $tap-time $hold-time k rctl $right-hand-keys)
+  l (tap-hold-release-keys $tap-time $hold-time l lalt $right-hand-keys)
+  ; (tap-hold-release-keys $tap-time $hold-time ; rmet $right-hand-keys)
+  . (tap-hold-release-keys $tap-time $hold-time . ralt $right-hand-keys)
+  ;; m (tap-hold-release-keys $tap-time $hold-time m rmet $right-hand-keys)
+  ;; , (tap-hold-release-keys $tap-time $hold-time , lalt $right-hand-keys)
+  ;; . (tap-hold-release-keys $tap-time $hold-time . rctl $right-hand-keys)
+  ;; / (tap-hold-release-keys $tap-time $hold-time / rsft $right-hand-keys)
   ;; ' (tap-hold-release-keys $tap-time $hold-time ' @hyp $right-hand-keys)
 
-  ;; spc (tap-hold-press 100 200 @spc_ (layer-toggle arrows))
-  nav (tap-hold-except-keys 200 200 lmet (layer-toggle nav) $mods)
-  sym (tap-hold-except-keys 200 200 lalt (layer-toggle sym) $mods)
+  spc (tap-hold-except-keys 200 200 @spc_ (layer-toggle nav) $not-movement-keys)
+  ;; nav (tap-hold-except-keys 200 200 lmet (layer-toggle nav) $mods)
+  ;; sym (tap-hold-except-keys 200 200 lalt (layer-toggle sym) $mods)
+  esc (tap-hold-press 0 200 esc (layer-toggle sym))
 
   fn (tap-hold 1 1 fn (layer-toggle fn))
 
