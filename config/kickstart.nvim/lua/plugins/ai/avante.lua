@@ -4,7 +4,7 @@ return {
   version = false, -- set this if you want to always pull the latest change
   opts = {
     -- add any opts here
-    provider = "cp_sonnet_37",
+    provider = "copilot",
     auto_suggestion_provider = "copilot",
     windows = {
       width = 40
