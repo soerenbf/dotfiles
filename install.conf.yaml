@@ -35,6 +35,10 @@
     ~/.config/kanata:
       force: true
       path: config/kanata
+    ~/.config/kanata-tray:
+      glob: true
+      create: true
+      path: config/kanata-tray/**
     ~/.config/karabiner/karabiner.json:
       force: true
       create: true

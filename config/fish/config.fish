@@ -1,5 +1,7 @@
 set -x EDITOR nvim
 set -x GOPATH ~/go
+set -x KANATA_TRAY_CONFIG_DIR ~/.config/kanata-tray
+set -x KANATA_TRAY_LOG_DIR ~/.config/kanata-tray
 
 # PATH
 set -x PATH $PATH /usr/local/go/bin $GOPATH/bin
