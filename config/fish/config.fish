@@ -6,6 +6,9 @@ set -x KANATA_TRAY_LOG_DIR ~/.config/kanata-tray
 # PATH
 set -x PATH $PATH /usr/local/go/bin $GOPATH/bin
 
+# enable vi mode
+set -g fish_key_bindings fish_vi_key_bindings
+
 alias cc='concordium-client'
 alias cct='concordium-client --grpc-ip grpc.testnet.concordium.com --secure'
 alias ccm='concordium-client --grpc-ip grpc.mainnet.concordium.software --secure'
@@ -25,6 +28,10 @@ alias lg="lazygit"
 alias rustfmt="cargo +nightly-2023-04-01 fmt"
 
 starship init fish | source
+
+if test -f "$HOME/.cargo/env.fish"
+    source "$HOME/.cargo/env.fish"
+end
 
 if status is-interactive
     if type -q zellij
