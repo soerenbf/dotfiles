@@ -40,8 +40,8 @@
   )
   right-hand-keys (
     y u i o p
-    h j k l ;
-    ;; n m , . / ;; needs to be active to be able to combine mods.
+    h ;; j k l ; ;; needs to be active to be able to combine mods.
+    n m ,   / 
   )
   not-movement-keys (
     q w e r t p
