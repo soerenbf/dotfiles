@@ -1,0 +1,15 @@
+# Kanata-Tray Configuration
+"$schema" = "https://raw.githubusercontent.com/rszyma/kanata-tray/main/doc/config_schema.json"
+
+[general]
+allow_concurrent_presets = false
+
+[defaults]
+kanata_executable = "" # Leave empty to use the system $PATH
+kanata_config = ""     # Default kanata config locations will be used if empty
+tcp_port = 5829        # Default TCP port
+autorestart_on_crash = true
+
+[presets.'default']
+kanata_config = "~/.config/kanata/qwerty.kbd"
+autorun = true

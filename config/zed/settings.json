@@ -25,7 +25,11 @@
   "relative_line_numbers": true,
   "base_keymap": "VSCode",
   "tab_size": 4, // This is the default, but for some reason it does not apply unless explicitly defined?
-  "assistant": {
+  "agent": {
+    "inline_assistant_model": {
+      "provider": "copilot_chat",
+      "model": "claude-3-7-sonnet"
+    },
     "dock": "right",
     "default_model": {
       "provider": "copilot_chat",
