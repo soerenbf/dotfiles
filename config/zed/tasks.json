@@ -50,6 +50,14 @@
     "reveal": "always"
   },
   {
+    "label": "Gitu",
+    "command": "gitu",
+    "use_new_terminal": true,
+    "allow_concurrent_runs": true,
+    "hide": "always",
+    "reveal": "always"
+  },
+  {
     "label": "Yazi",
     "command": "yazi_zed",
     "args": ["$ZED_FILE"],
