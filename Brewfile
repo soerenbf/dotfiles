@@ -72,7 +72,7 @@ brew "kanata"
 # Telescope-like search for your terminal
 brew "television"
 # Magit-like git UI for the terminal
-brew gitu
+brew "gitu"
 
 # AeroSpace is an i3-like tiling window manager for macOS
 cask "aerospace"
