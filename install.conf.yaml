@@ -14,6 +14,9 @@
     ~/.zshrc: zshrc
     ~/.zshenv: zshenv
     ~/.p10k.zsh: p10k.zsh
+    ~/.config/btop:
+      create: true
+      path: config/btop
     ~/.config/fish:
       glob: true
       create: true
