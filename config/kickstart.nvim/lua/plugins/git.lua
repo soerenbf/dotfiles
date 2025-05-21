@@ -69,10 +69,28 @@ local gitsigns = {
   },
 }
 
+--- Function to locate the nearest .git directory using vim.fs
+local function find_git_root(path)
+  path = path or vim.fn.expand '%:p:h' -- Start from the current buffer's folder
+  local git_dir = vim.fs.find('.git', { path = path, upward = true })[1]
+  return git_dir and vim.fs.dirname(git_dir) or nil
+end
+
 local neogit = {
   'NeogitOrg/neogit',
   keys = {
-    { '<leader>g', '<cmd>Neogit kind=replace<cr>', desc = 'Neo[G]it' },
+    {
+      '<leader>g',
+      function()
+        local git_root = find_git_root()
+        if git_root then
+          require('neogit').open { cwd = git_root }
+        else
+          vim.notify('No Git repository found.', vim.log.levels.WARN)
+        end
+      end,
+      desc = 'Neo[G]it',
+    },
   },
   dependencies = {
     'nvim-lua/plenary.nvim', -- required
