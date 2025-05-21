@@ -1,36 +1,29 @@
 return {
-  "yetone/avante.nvim",
-  event = "VeryLazy",
+  'yetone/avante.nvim',
+  event = 'VeryLazy',
   version = false, -- set this if you want to always pull the latest change
   opts = {
     -- add any opts here
-    provider = "copilot",
-    auto_suggestion_provider = "copilot",
+    provider = 'copilot',
+    auto_suggestion_provider = 'copilot',
     windows = {
-      width = 40
+      width = 40,
     },
     file_selector = {
-      provider = "snacks",
+      provider = 'snacks',
     },
     hints = { enabled = false },
     on_error = function(err, opts)
       -- Check if this is a quota/limit error
-      local is_quota_error = err:match("quota") or
-          err:match("rate limit") or
-          err:match("exceeded") or
-          err:match("billing")
+      local is_quota_error = err:match 'quota' or err:match 'rate limit' or err:match 'exceeded' or err:match 'billing'
 
       if is_quota_error then
-        local current_provider = require("avante.config")._options.provider;
+        local current_provider = require('avante.config')._options.provider
         local fallback = 'copilot'
 
         if fallback then
-          vim.notify(
-            "Quota exceeded for " .. current_provider .. ". Falling back to " .. fallback,
-            vim.log.levels.WARN,
-            { title = "avante.nvim" }
-          )
-          require("avante.providers").refresh(fallback)
+          vim.notify('Quota exceeded for ' .. current_provider .. '. Falling back to ' .. fallback, vim.log.levels.WARN, { title = 'avante.nvim' })
+          require('avante.providers').refresh(fallback)
           return true -- Tell avante to retry with the new provider
         end
       end
@@ -49,16 +42,16 @@ return {
     vendors = {
       -- Available
       cp_sonnet_37 = {
-        __inherited_from = "copilot",
-        model = "claude-3.7-sonnet",
+        __inherited_from = 'copilot',
+        model = 'claude-3.7-sonnet',
         timeout = 30000, -- Timeout in milliseconds
         temperature = 0,
         -- max_tokens = 4096,
       },
       -- Available
       cp_claude_thinking = {
-        __inherited_from = "copilot",
-        model = "claude-3.7-sonnet-thought",
+        __inherited_from = 'copilot',
+        model = 'claude-3.7-sonnet-thought',
         timeout = 30000, -- Timeout in milliseconds
         temperature = 0,
         -- max_tokens = 4096,
@@ -99,40 +92,22 @@ return {
     -- setup_avante_highlights()
   end,
   -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
-  build = "make",
+  build = 'make',
   -- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
   dependencies = {
-    "nvim-treesitter/nvim-treesitter",
-    "stevearc/dressing.nvim",
-    "nvim-lua/plenary.nvim",
-    "MunifTanjim/nui.nvim",
+    'nvim-treesitter/nvim-treesitter',
+    'stevearc/dressing.nvim',
+    'nvim-lua/plenary.nvim',
+    'MunifTanjim/nui.nvim',
     --- The below dependencies are optional,
-    "folke/snacks.nvim", -- for picker provider
-    "hrsh7th/nvim-cmp",  -- autocompletion for avante commands and mentions
-    "nvim-tree/nvim-web-devicons",
-    {
-      "zbirenbaum/copilot.lua",
-      config = function()
-        require("copilot").setup({
-          panels = { enabled = false },
-          suggestion = {
-            auto_trigger = true,
-            keymap = {
-              accept = "<C-M-y>",
-              accept_word = false,
-              accept_line = false,
-              next = "<C-M-n>",
-              prev = "<C-M-p>",
-              dismiss = "<C-Esc>",
-            },
-          },
-        })
-      end,
-    },
+    'folke/snacks.nvim', -- for picker provider
+    'hrsh7th/nvim-cmp', -- autocompletion for avante commands and mentions
+    'nvim-tree/nvim-web-devicons',
+    'zbirenbaum/copilot.lua',
     {
       -- support for image pasting
-      "HakonHarnes/img-clip.nvim",
-      event = "VeryLazy",
+      'HakonHarnes/img-clip.nvim',
+      event = 'VeryLazy',
       opts = {
         -- recommended settings
         default = {
@@ -150,9 +125,9 @@ return {
       -- Make sure to set this up properly if you have lazy=true
       'MeanderingProgrammer/render-markdown.nvim',
       opts = {
-        file_types = { "markdown", "Avante" },
+        file_types = { 'markdown', 'Avante' },
       },
-      ft = { "markdown", "Avante" },
+      ft = { 'markdown', 'Avante' },
     },
   },
 }
