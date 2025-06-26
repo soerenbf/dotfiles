@@ -26,6 +26,8 @@
   "base_keymap": "VSCode",
   "tab_size": 4, // This is the default, but for some reason it does not apply unless explicitly defined?
   "agent": {
+    "always_allow_tool_actions": true,
+    "default_profile": "write",
     "inline_assistant_model": {
       "provider": "copilot_chat",
       "model": "claude-3-7-sonnet"
@@ -33,7 +35,7 @@
     "dock": "right",
     "default_model": {
       "provider": "copilot_chat",
-      "model": "claude-3-7-sonnet"
+      "model": "claude-3.7-sonnet"
     },
     "version": "2"
   },
@@ -67,26 +69,62 @@
     "TypeScript": {
       "code_actions_on_format": {
         "source.fixAll.eslint": true
+      },
+      "formatter": {
+        "external": {
+          "command": "prettierd",
+          "arguments": ["--stdin-filepath", "{buffer_path}"]
+        }
       }
     },
     "JavaScript": {
       "code_actions_on_format": {
         "source.fixAll.eslint": true
+      },
+      "formatter": {
+        "external": {
+          "command": "prettierd",
+          "arguments": ["--stdin-filepath", "{buffer_path}"]
+        }
       }
     },
     "TSX": {
       "code_actions_on_format": {
         "source.fixAll.eslint": true
+      },
+      "formatter": {
+        "external": {
+          "command": "prettierd",
+          "arguments": ["--stdin-filepath", "{buffer_path}"]
+        }
       }
     },
     "JSONC": {
-      "tab_size": 2
+      "tab_size": 2,
+      "formatter": {
+        "external": {
+          "command": "prettierd",
+          "arguments": ["--stdin-filepath", "{buffer_path}"]
+        }
+      }
     },
     "JSON": {
-      "tab_size": 2
+      "tab_size": 2,
+      "formatter": {
+        "external": {
+          "command": "prettierd",
+          "arguments": ["--stdin-filepath", "{buffer_path}"]
+        }
+      }
     },
     "YAML": {
-      "tab_size": 2
+      "tab_size": 2,
+      "formatter": {
+        "external": {
+          "command": "prettierd",
+          "arguments": ["--stdin-filepath", "{buffer_path}"]
+        }
+      }
     }
   }
 }

@@ -73,6 +73,8 @@ brew "kanata"
 brew "television"
 # Magit-like git UI for the terminal
 brew "gitu"
+# Prettier is an opinionated code formatter for JavaScript, TypeScript, CSS, and more.
+brew "prettier"
 
 # AeroSpace is an i3-like tiling window manager for macOS
 cask "aerospace"
