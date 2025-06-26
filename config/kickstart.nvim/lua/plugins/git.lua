@@ -86,7 +86,7 @@ local neogit = {
         if git_root then
           require('neogit').open { cwd = git_root }
         else
-          vim.notify('No Git repository found.', vim.log.levels.WARN)
+          require('neogit').open()
         end
       end,
       desc = 'Neo[G]it',
