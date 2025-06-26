@@ -42,7 +42,7 @@
     "shell": "system"
   },
   {
-    "label": "Lazygit",
+    "label": "lazygit",
     "command": "lazygit --use-config-file ~/.config/zed/zed-lazygit.config.yml",
     "use_new_terminal": true,
     "allow_concurrent_runs": true,
@@ -50,7 +50,7 @@
     "reveal": "always"
   },
   {
-    "label": "Gitu",
+    "label": "gitu",
     "command": "gitu",
     "use_new_terminal": true,
     "allow_concurrent_runs": true,
@@ -58,7 +58,7 @@
     "reveal": "always"
   },
   {
-    "label": "Yazi",
+    "label": "yazi",
     "command": "yazi_zed",
     "args": ["$ZED_FILE"],
     "use_new_terminal": true,
@@ -66,15 +66,15 @@
     "hide": "always"
   },
   {
-    "label": "File finder",
-    "command": "zed \"$(tv files)\"",
+    "label": "fzf files",
+    "command": "zed \"$(fzf --style minimal --preview  \"bat -n --theme GitHub --color always {}\")\"",
     "hide": "always",
     "allow_concurrent_runs": true,
     "use_new_terminal": true
   },
   {
-    "label": "Find in files",
-    "command": "zed \"$(tv text)\"",
+    "label": "rg | fzf search",
+    "command": "zed \"$(rg --line-number . | fzf --exact --style minimal --delimiter : --preview 'bat -n --theme GitHub --color always --line-range {2}: {1}')\"",
     "hide": "always",
     "allow_concurrent_runs": true,
     "use_new_terminal": true

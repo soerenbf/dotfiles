@@ -10,31 +10,36 @@
     "context": "Workspace || Editor",
     "bindings": {
       // Navigation
-      "ctrl-left": "workspace::ActivatePaneLeft",
-      "ctrl-right": "workspace::ActivatePaneRight",
-      "ctrl-up": "workspace::ActivatePaneUp",
-      "ctrl-down": "workspace::ActivatePaneDown",
-      "ctrl-alt-left": "pane::SplitLeft",
-      "ctrl-alt-right": "pane::SplitRight",
-      "ctrl-alt-up": "pane::SplitUp",
-      "ctrl-alt-down": "pane::SplitDown",
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-j": "workspace::ActivatePaneDown",
+      "ctrl-alt-h": "pane::SplitLeft",
+      "ctrl-alt-l": "pane::SplitRight",
+      "ctrl-alt-k": "pane::SplitUp",
+      "ctrl-alt-j": "pane::SplitDown",
       // Panel + docks overrides
       "cmd-alt-q": "workspace::CloseAllDocks",
       "cmd-shift-t": "terminal_panel::ToggleFocus", // [t]erminal
-      "cmd-shift-g": [
-        // [g]it
+      "alt-g": [
+        // [g]it (alternative)
         "task::Spawn",
-        { "task_name": "Gitu", "reveal_target": "dock" }
+        { "task_name": "gitu", "reveal_target": "dock" }
       ],
-      "cmd-shift-p": [
-        // [p]roject
+      "alt-p": [
+        // [p]roject (alternative)
         "task::Spawn",
-        { "task_name": "File finder", "reveal_target": "center" }
+        { "task_name": "fzf files", "reveal_target": "center" }
       ],
-      "cmd-alt-e": [
+      "alt-f": [
+        // [f]ind (alternative)
+        "task::Spawn",
+        { "task_name": "rg | fzf search", "reveal_target": "center" }
+      ],
+      "alt-e": [
         // [e]xplorer (alternative)
         "task::Spawn",
-        { "task_name": "Yazi", "reveal_target": "center" }
+        { "task_name": "yazi", "reveal_target": "center" }
       ],
       "cmd-:": "command_palette::Toggle" // [:]
     }
