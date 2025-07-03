@@ -15,7 +15,7 @@
   "autosave": "on_focus_change",
   "theme": {
     "mode": "system",
-    "light": "Rosé Pine Dawn",
+    "light": "Nord",
     "dark": "Nord"
   },
   "ui_font_size": 14,
@@ -23,7 +23,7 @@
   "buffer_font_size": 12.0,
   "buffer_font_family": "JetBrainsMono Nerd Font",
   "vim_mode": true,
-  "relative_line_numbers": false,
+  "relative_line_numbers": true,
   "base_keymap": "VSCode",
   "tab_size": 4, // This is the default, but for some reason it does not apply unless explicitly defined?
   "debugger": {
