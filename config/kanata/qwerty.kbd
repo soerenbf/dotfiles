@@ -9,7 +9,6 @@
   process-unmapped-keys yes
   log-layer-changes no
   concurrent-tap-hold yes
-  rapid-event-delay 15
   macos-dev-names-include (
     "Apple Internal Keyboard / Trackpad"
   )
@@ -32,7 +31,7 @@
   ;; Note: consider using different time values for your different fingers.
   ;; For example, your pinkies might be slower to release keys and index
   ;; fingers faster.
-  tap-time 200
+  tap-time 0
   hold-time 200
 
   ;; To be used when experimenting with bilateral combinators mod
@@ -122,13 +121,13 @@
 ;; |------|------|------|------|------|------|------|------|------|------|------|------|------|------|
              _      _      _      _      _      _      _      _      _      _      _      _      _
 ;; |------|------|------|------|------|------|------|------|------|------|------|------|------|------|
-      _      _      _      _      _      _      @-     S-[    S-]    S-4     _      _      _
+      _      _      _      _      _      _      @-    S-[    S-]    S-4     _      _      _
 ;; |------|------|------|------|------|------|------|------|------|------|------|------|------|------|
       _      _      _      _      _      _     S-,    S-9    S-0    S-.    S-\    S-7     \     _
 ;; |------|------|------|------|------|------|------|------|------|------|------|-------------|------|
- _    _      _      _      _      _      _      @=      [      ]     S-8     /            S-`
+ _    _      _      _      _      _      _      @=     [      ]     S-8     /            S-`
 ;; |------|------|------|----------------------------------|------|------|------|--------------------|
- _    _      _      _                    _                    _      _
+ _    _      _      _                    @_                    _      _
 ;; |------|------|------|----------------------------------|------|------|------|------|------|------|
 )
 
@@ -140,6 +139,7 @@
   - (fork - = (lsft rsft))
   = (fork = 1 (lsft rsft))
   cw (caps-word-toggle 5000)
+  _ (multi lsft -)
 
   ;; Combined mods
   hyp (multi lmet lctl lalt lsft)
@@ -185,7 +185,7 @@
   ;; / (tap-hold-release-keys $tap-time $hold-time / rsft $right-hand-keys)
   ;; ' (tap-hold-release-keys $tap-time $hold-time ' @hyp $right-hand-keys)
 
-  spc (tap-hold-except-keys 200 200 @spc_ (layer-toggle nav) $not-movement-keys)
+  spc (tap-hold-except-keys 200 200 spc (layer-toggle nav) $not-movement-keys)
   ;; nav (tap-hold-except-keys 200 200 lmet (layer-toggle nav) $mods)
   ;; sym (tap-hold-except-keys 200 200 lalt (layer-toggle sym) $mods)
   esc (tap-hold-press 0 200 esc (layer-toggle sym))
