@@ -1,4 +1,4 @@
-set -x EDITOR nvim
+set -x EDITOR hx
 set -x GOPATH ~/go
 set -x KANATA_TRAY_CONFIG_DIR ~/.config/kanata-tray
 set -x KANATA_TRAY_LOG_DIR ~/.config/kanata-tray
@@ -42,7 +42,7 @@ if status is-interactive
             set -l cmd_line (string split " " -- $argv)
             set -l process_name $cmd_line[1]
 
-            if test "$process_name" = "v"
+            if test "$process_name" = v
                 set process_name (string join " " "nvim" (prompt_pwd))
             end
 
