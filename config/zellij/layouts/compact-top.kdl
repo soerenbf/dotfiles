@@ -52,7 +52,7 @@ layout {
 
     swap_floating_layout name="spread" {
         floating_panes max_panes=1 {
-            pane focus=true { x "50%"; y "50%"; }
+            pane focus=true { x "50%"; y "1%";                height "98%"; }
         }
         floating_panes max_panes=2 {
             pane focus=true { x "50%"; y "1%";                height "48%"; }
