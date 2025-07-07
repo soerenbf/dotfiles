@@ -1,3 +1,79 @@
+# Language server configs
+
+[language-server]
+deno = { command = "deno", args = [ "lsp" ]}
+emmet-ls = { command = "emmet-ls", args = [ "--stdio" ]}
+
+# efm-language-server
+
+[language-server.efm-lsp-prettier]
+command = "efm-langserver"
+[language-server.efm-lsp-prettier.config]
+documentFormatting = true
+[[language-server.efm-lsp-prettier.config.languages.typescript]]
+formatCommand ="prettierd ${INPUT}"
+formatStdin = true
+[[language-server.efm-lsp-prettier.config.languages.typescriptreact]]
+formatCommand ="prettierd ${INPUT}"
+formatStdin = true
+[[language-server.efm-lsp-prettier.config.languages.javascript]]
+formatCommand ="prettierd ${INPUT}"
+formatStdin = true
+[[language-server.efm-lsp-prettier.config.languages.javascriptreact]]
+formatCommand ="prettierd ${INPUT}"
+formatStdin = true
+[[language-server.efm-lsp-prettier.config.languages.css]]
+formatCommand ="prettierd ${INPUT}"
+formatStdin = true
+[[language-server.efm-lsp-prettier.config.languages.scss]]
+formatCommand ="prettierd ${INPUT}"
+formatStdin = true
+[[language-server.efm-lsp-prettier.config.languages.html]]
+formatCommand ="prettierd ${INPUT}"
+formatStdin = true
+
+# Language configs
+
 [[language]]
 name = "rust"
 auto-format = false
+
+[[language]]
+name = "typescript"
+language-servers = [ { name = "efm-lsp-prettier", only-features = [ "format" ] }, "typescript-language-server", "eslint" ]
+auto-format = true
+
+[[language]]
+name = "javascript"
+language-servers = [ { name = "efm-lsp-prettier", only-features = [ "format" ] }, "typescript-language-server", "eslint" ]
+auto-format = true
+
+[[language]]
+name = "tsx"
+language-servers = [ { name = "efm-lsp-prettier", only-features = [ "format" ] }, "typescript-language-server", "eslint" ]
+auto-format = true
+
+[[language]]
+name = "jsx"
+language-servers = [ { name = "efm-lsp-prettier", only-features = [ "format" ] }, "typescript-language-server", "eslint" ]
+auto-format = true
+
+[[language]]
+name = "css"
+language-servers = [ { name = "efm-lsp-prettier", only-features = [ "format" ] }, "vscode-css-language-server" ]
+auto-format = true
+
+[[language]]
+name = "scss"
+language-servers = [ { name = "efm-lsp-prettier", only-features = [ "format" ] }, "vscode-css-language-server" ]
+auto-format = true
+
+[[language]]
+name = "html"
+language-servers = [ { name = "efm-lsp-prettier", only-features = [ "format" ] }, "vscode-html-language-server" ]
+auto-format = true
+
+[[language]]
+name = "json"
+language-servers = [ { name = "efm-lsp-prettier", only-features = [ "format" ] }, "vscode-json-language-server" ]
+auto-format = true
