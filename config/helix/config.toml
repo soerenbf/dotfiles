@@ -16,6 +16,9 @@ hidden = false
 [editor.inline-diagnostics]
 cursor-line = "warning"
 
+[editor.statusline]
+center = ["version-control"]
+
 [keys.normal]
 C-y = [
   ':sh rm -f /tmp/unique-file',

@@ -60,14 +60,14 @@ return {
       { '<C-j>',  '<cmd>Treewalker Down<cr>',  noremap = true, silent = true, mode = { 'n', 'v' } },
       { '<C-l>', '<cmd>Treewalker Right<cr>', noremap = true, silent = true, mode = { 'n', 'v' } },
       { '<C-h>',  '<cmd>Treewalker Left<cr>',  noremap = true, silent = true, mode = { 'n', 'v' } },
-      { '<C-M-k>', '<cmd>Treewalker SwapUp<cr>',   noremap = true, silent = true, mode = 'n' },
-      { '<C-M-j>', '<cmd>Treewalker SwapDown<cr>', noremap = true, silent = true, mode = 'n' },
+      -- { '<C-M-k>', '<cmd>Treewalker SwapUp<cr>',   noremap = true, silent = true, mode = 'n' },
+      -- { '<C-M-j>', '<cmd>Treewalker SwapDown<cr>', noremap = true, silent = true, mode = 'n' },
       { '<C-up>',    '<cmd>Treewalker Up<cr>',    noremap = true, silent = true, mode = { 'n', 'v' } },
       { '<C-down>',  '<cmd>Treewalker Down<cr>',  noremap = true, silent = true, mode = { 'n', 'v' } },
       { '<C-right>', '<cmd>Treewalker Right<cr>', noremap = true, silent = true, mode = { 'n', 'v' } },
       { '<C-left>',  '<cmd>Treewalker Left<cr>',  noremap = true, silent = true, mode = { 'n', 'v' } },
-      { '<C-M-up>', '<cmd>Treewalker SwapUp<cr>',   noremap = true, silent = true, mode = 'n' },
-      { '<C-M-down>', '<cmd>Treewalker SwapDown<cr>', noremap = true, silent = true, mode = 'n' },
+      -- { '<C-M-up>', '<cmd>Treewalker SwapUp<cr>',   noremap = true, silent = true, mode = 'n' },
+      -- { '<C-M-down>', '<cmd>Treewalker SwapDown<cr>', noremap = true, silent = true, mode = 'n' },
     }
   },
   {

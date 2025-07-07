@@ -178,31 +178,31 @@ keybinds clear-defaults=true {
         }
     }
     locked {
-        bind "Ctrl Shift Alt h" { MoveFocusOrTab "left"; }
-        bind "Ctrl Shift Alt j" { MoveFocus "down"; }
-        bind "Ctrl Shift Alt k" { MoveFocus "up"; }
-        bind "Ctrl Shift Alt l" { MoveFocusOrTab "right"; }
-        bind "Ctrl Shift Alt left" { MoveFocusOrTab "left"; }
-        bind "Ctrl Shift Alt down" { MoveFocus "down"; }
-        bind "Ctrl Shift Alt up" { MoveFocus "up"; }
-        bind "Ctrl Shift Alt right" { MoveFocusOrTab "right"; }
+        bind "Ctrl Alt h" { MoveFocusOrTab "left"; }
+        bind "Ctrl Alt j" { MoveFocus "down"; }
+        bind "Ctrl Alt k" { MoveFocus "up"; }
+        bind "Ctrl Alt l" { MoveFocusOrTab "right"; }
+        bind "Ctrl Alt left" { MoveFocusOrTab "left"; }
+        bind "Ctrl Alt down" { MoveFocus "down"; }
+        bind "Ctrl Alt up" { MoveFocus "up"; }
+        bind "Ctrl Alt right" { MoveFocusOrTab "right"; }
 
-        bind "Ctrl Shift Alt w" { ToggleFloatingPanes; }
-        bind "Ctrl Shift Alt f" { ToggleFocusFullscreen; }
+        bind "Ctrl Alt w" { ToggleFloatingPanes; }
+        bind "Ctrl Alt f" { ToggleFocusFullscreen; }
 
-        bind "Ctrl Shift Alt t" { NewTab; SwitchToMode "locked";  }
-        bind "Ctrl Shift Alt p" { NewPane; SwitchToMode "locked";  }
-        bind "Ctrl Shift Alt x" { CloseFocus; SwitchToMode "locked";  }
+        bind "Ctrl Alt t" { NewTab; SwitchToMode "locked";  }
+        bind "Ctrl Alt p" { NewPane; SwitchToMode "locked";  }
+        bind "Ctrl Alt x" { CloseFocus; SwitchToMode "locked";  }
 
-        bind "Ctrl Shift Alt 1" { GoToTab 1; SwitchToMode "locked"; }
-        bind "Ctrl Shift Alt 2" { GoToTab 2; SwitchToMode "locked"; }
-        bind "Ctrl Shift Alt 3" { GoToTab 3; SwitchToMode "locked"; }
-        bind "Ctrl Shift Alt 4" { GoToTab 4; SwitchToMode "locked"; }
-        bind "Ctrl Shift Alt 5" { GoToTab 5; SwitchToMode "locked"; }
-        bind "Ctrl Shift Alt 6" { GoToTab 6; SwitchToMode "locked"; }
-        bind "Ctrl Shift Alt 7" { GoToTab 7; SwitchToMode "locked"; }
-        bind "Ctrl Shift Alt 8" { GoToTab 8; SwitchToMode "locked"; }
-        bind "Ctrl Shift Alt 9" { GoToTab 9; SwitchToMode "locked"; }
+        bind "Ctrl Alt 1" { GoToTab 1; SwitchToMode "locked"; }
+        bind "Ctrl Alt 2" { GoToTab 2; SwitchToMode "locked"; }
+        bind "Ctrl Alt 3" { GoToTab 3; SwitchToMode "locked"; }
+        bind "Ctrl Alt 4" { GoToTab 4; SwitchToMode "locked"; }
+        bind "Ctrl Alt 5" { GoToTab 5; SwitchToMode "locked"; }
+        bind "Ctrl Alt 6" { GoToTab 6; SwitchToMode "locked"; }
+        bind "Ctrl Alt 7" { GoToTab 7; SwitchToMode "locked"; }
+        bind "Ctrl Alt 8" { GoToTab 8; SwitchToMode "locked"; }
+        bind "Ctrl Alt 9" { GoToTab 9; SwitchToMode "locked"; }
     }
     shared_except "locked" "renametab" "renamepane" {
         bind "Alt space" { SwitchToMode "locked"; }
