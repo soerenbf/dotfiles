@@ -15,12 +15,12 @@
   "autosave": "on_focus_change",
   "theme": {
     "mode": "system",
-    "light": "Nord",
+    "light": "Rosé Pine Dawn",
     "dark": "Nord"
   },
   "ui_font_size": 14,
   "minimap": { "show": "always", "display_in": "active_editor" },
-  "buffer_font_size": 12.0,
+  "buffer_font_size": 13.0,
   "buffer_font_family": "JetBrainsMono Nerd Font",
   "vim_mode": true,
   "relative_line_numbers": true,
@@ -40,13 +40,12 @@
     "default_model": {
       "provider": "copilot_chat",
       "model": "claude-3.7-sonnet"
-    },
-    "version": "2"
+    }
   },
   "terminal": {
     "dock": "right",
     "font_family": "JetBrainsMono Nerd Font",
-    "font_size": 12
+    "font_size": 13
   },
   "chat_panel": {
     "button": "when_in_call"
