@@ -11,12 +11,12 @@ return {
   opts = {
     display = {
       diff = {
-        provider = 'mini_diff', -- default|mini_diff
+        provider = 'default', -- default|mini_diff
       },
     },
     strategies = {
       chat = {
-        adapter = 'cp_default',
+        adapter = 'copilot',
         keymaps = {
           close = {
             modes = {
@@ -24,35 +24,31 @@ return {
             },
           },
         },
+        variables = {
+          ['buffer'] = {
+            opts = {
+              default_params = 'pin', -- or 'watch'
+            },
+          },
+        },
       },
       inline = {
-        adapter = 'cp_default',
+        adapter = 'copilot',
       },
       cmd = {
-        adapter = 'cp_sonnet_37',
+        adapter = 'copilot',
       },
     },
     adapters = {
       opts = {
         show_defaults = false,
       },
-      cp_default = function()
+      copilot = function()
         return require('codecompanion.adapters').extend('copilot', {
-          name = 'cp_default', -- Give this adapter a different name to differentiate it from the default ollama adapter
-        })
-      end,
-      cp_sonnet_37 = function()
-        return require('codecompanion.adapters').extend('copilot', {
-          name = 'cp_sonnet_37', -- Give this adapter a different name to differentiate it from the default ollama adapter
           schema = {
             model = {
+              -- default = 'gpt-4.1',
               default = 'claude-3.7-sonnet',
-            },
-            num_ctx = {
-              default = 16384,
-            },
-            num_predict = {
-              default = -1,
             },
           },
         })

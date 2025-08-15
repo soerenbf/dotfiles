@@ -61,6 +61,10 @@
     ~/.config/alacritty:
       force: true
       path: config/alacritty
+    ~/.config/opencode/opencode.jsonc:
+      force: true
+      create: true
+      path: config/opencode/opencode.jsonc
 
 - create:
     - ~/.vim/undodir

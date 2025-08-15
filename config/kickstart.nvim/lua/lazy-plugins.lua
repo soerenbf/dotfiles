@@ -30,9 +30,11 @@ require('lazy').setup({
 
   -- NOTE: Next step on your Neovim journey: Add/Configure additional plugins for Kickstart
 
-  require 'plugins.ai.codecompanion',
+  -- require 'plugins.ai.avante',
+  -- require 'plugins.ai.codecompanion',
   -- require 'plugins.ai.copilot',
   -- require 'plugins.ai.goose',
+  require 'plugins.ai.opencode',
   require 'plugins.autopairs',
   require 'plugins.breadcrumb',
   require 'plugins.colours',
