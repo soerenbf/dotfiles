@@ -1,12 +1,12 @@
 ---@type LazySpec
 return {
-  "mikavilpas/yazi.nvim",
+  'mikavilpas/yazi.nvim',
   keys = {
     -- 👇 in this section, choose your own keymappings!
     {
-      "<leader>E",
-      "<cmd>Yazi<cr>",
-      desc = "Open yazi [E]xplorer at the current file",
+      '<leader>E',
+      '<cmd>Yazi<cr>',
+      desc = 'Open yazi [E]xplorer at the current file',
     },
   },
   cmd = 'Yazi',

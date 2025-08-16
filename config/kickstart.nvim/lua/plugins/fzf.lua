@@ -1,11 +1,13 @@
 local map = function(keys, func, desc, opts)
-  vim.keymap.set('n', keys, function() func(opts) end, { desc = 'Fzf: ' .. desc })
+  vim.keymap.set('n', keys, function()
+    func(opts)
+  end, { desc = 'Fzf: ' .. desc })
 end
 
 return {
-  "ibhagwan/fzf-lua",
+  'ibhagwan/fzf-lua',
   -- optional for icon support
-  dependencies = { "nvim-tree/nvim-web-devicons" },
+  dependencies = { 'nvim-tree/nvim-web-devicons' },
   config = function(_, opts)
     local fzf = require 'fzf-lua'
     fzf.setup(opts)
@@ -19,7 +21,6 @@ return {
     map('<leader>s.', fzf.resume, '[S]earch Resume ("." for repeat)', { winopts = { fullscreen = true } })
     map('<leader>sr', fzf.oldfiles, '[S]earch [R]ecent Files', { winopts = { fullscreen = true } })
     -- map('<leader><leader>', fzf.buffers, '[ ] Search existing buffers', { winopts = { fullscreen = true } })
-    map('<leader>/', fzf.blines, '[/] Search in current buffer',
-      { winopts = { preview = { hidden = 'hidden' }, width = 120, height = 30 } })
-  end
+    map('<leader>/', fzf.blines, '[/] Search in current buffer', { winopts = { preview = { hidden = 'hidden' }, width = 120, height = 30 } })
+  end,
 }

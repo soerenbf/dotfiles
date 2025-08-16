@@ -1,13 +1,13 @@
 ---@module "snacks"
 
 local files = function()
-  local mod = require('mini.files')
-  mod.setup({
+  local mod = require 'mini.files'
+  mod.setup {
     windows = {
       preview = true,
       width_preview = 100,
-    }
-  })
+    },
+  }
 
   vim.keymap.set('n', '<leader>e', function()
     local buf_name = vim.api.nvim_buf_get_name(0)
@@ -21,18 +21,22 @@ local files = function()
     end
   end, { desc = 'Open [E]xplorer' })
 
-  vim.api.nvim_create_autocmd("User", {
-    pattern = "MiniFilesBufferCreate",
+  vim.api.nvim_create_autocmd('User', {
+    pattern = 'MiniFilesBufferCreate',
     callback = function(args)
       local buf_id = args.data.buf_id
-      vim.keymap.set("n", "<left>", mod.go_out, { buffer = buf_id })
-      vim.keymap.set("n", "<right>", function() mod.go_in { close_on_file = true } end, { buffer = buf_id })
-      vim.keymap.set("n", "l", function() mod.go_in { close_on_file = true } end, { buffer = buf_id })
-      vim.keymap.set("n", "<esc>", mod.close, { buffer = buf_id })
+      vim.keymap.set('n', '<left>', mod.go_out, { buffer = buf_id })
+      vim.keymap.set('n', '<right>', function()
+        mod.go_in { close_on_file = true }
+      end, { buffer = buf_id })
+      vim.keymap.set('n', 'l', function()
+        mod.go_in { close_on_file = true }
+      end, { buffer = buf_id })
+      vim.keymap.set('n', '<esc>', mod.close, { buffer = buf_id })
     end,
   })
-  vim.api.nvim_create_autocmd("User", {
-    pattern = "MiniFilesActionRename",
+  vim.api.nvim_create_autocmd('User', {
+    pattern = 'MiniFilesActionRename',
     callback = function(event)
       Snacks.rename.on_rename_file(event.data.from, event.data.to)
     end,
@@ -58,8 +62,8 @@ return {
   { -- Collection of various small independent plugins/modules
     'echasnovski/mini.nvim',
     dependencies = {
-      "nvim-tree/nvim-web-devicons",
-      "folke/snacks.nvim",
+      'nvim-tree/nvim-web-devicons',
+      'folke/snacks.nvim',
     },
     config = function()
       -- Better Around/Inside textobjects

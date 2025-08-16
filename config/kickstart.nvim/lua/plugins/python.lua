@@ -2,6 +2,7 @@ return {
   -- Python support
   {
     'neovim/nvim-lspconfig',
+    optional = true,
     opts = {
       _servers = {
         -- Python LSP (pyright for type checking)
@@ -27,41 +28,53 @@ return {
               },
             },
           },
-          on_attach = function (client, _)
+          on_attach = function(client, _)
             client.server_capabilities.hoverProvider = false
-          end
+          end,
         },
       },
     },
   },
-  
+
   -- Formatter configuration
   {
     'stevearc/conform.nvim',
+    optional = true,
     opts = {
       formatters_by_ft = {
         python = { 'ruff_format', 'isort' },
       },
     },
   },
-  
+
   -- Linter configuration
   {
     'mfussenegger/nvim-lint',
+    optional = true,
     opts = {
       _ft_linters = {
         python = { 'ruff' }, -- Ruff for linting
       },
     },
   },
-  
+
   -- Ensure the required tools are installed
   -- Most are installed automatically.
   {
     'WhoIsSethDaniel/mason-tool-installer.nvim',
+    optional = true,
     opts = {
       ensure_installed = {
-        'isort',             -- Import sorting
+        'isort', -- Import sorting
+      },
+    },
+  },
+  {
+    'jay-babu/mason-nvim-dap.nvim',
+    optional = true,
+    opts = {
+      ensure_installed = {
+        'python',
       },
     },
   },

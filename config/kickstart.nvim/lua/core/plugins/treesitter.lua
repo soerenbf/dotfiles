@@ -17,19 +17,19 @@ return {
       incremental_selection = {
         enable = true,
         keymaps = {
-          init_selection = "<C-space>",
-          node_incremental = "<C-space>",
+          init_selection = '<C-space>',
+          node_incremental = '<C-space>',
           scope_incremental = false,
-          node_decremental = "<C-BS>",
+          node_decremental = '<C-BS>',
         },
       },
       textobjects = {
         move = {
           enable = true,
-          goto_next_start = { ["]f"] = "@function.outer", ["]c"] = "@class.outer", ["]a"] = "@parameter.inner" },
-          goto_next_end = { ["]F"] = "@function.outer", ["]C"] = "@class.outer", ["]A"] = "@parameter.inner" },
-          goto_previous_start = { ["[f"] = "@function.outer", ["[c"] = "@class.outer", ["[a"] = "@parameter.inner" },
-          goto_previous_end = { ["[F"] = "@function.outer", ["[C"] = "@class.outer", ["[A"] = "@parameter.inner" },
+          goto_next_start = { [']f'] = '@function.outer', [']c'] = '@class.outer', [']a'] = '@parameter.inner' },
+          goto_next_end = { [']F'] = '@function.outer', [']C'] = '@class.outer', [']A'] = '@parameter.inner' },
+          goto_previous_start = { ['[f'] = '@function.outer', ['[c'] = '@class.outer', ['[a'] = '@parameter.inner' },
+          goto_previous_end = { ['[F'] = '@function.outer', ['[C'] = '@class.outer', ['[A'] = '@parameter.inner' },
         },
       },
     },
@@ -50,30 +50,30 @@ return {
     end,
   },
   {
-    "aaronik/treewalker.nvim",
+    'aaronik/treewalker.nvim',
     opts = {
-      highlight = true,         -- Whether to briefly highlight the node after jumping to it
+      highlight = true, -- Whether to briefly highlight the node after jumping to it
       highlight_duration = 250, -- How long should above highlight last (in ms)
     },
     keys = {
-      { '<C-k>',    '<cmd>Treewalker Up<cr>',    noremap = true, silent = true, mode = { 'n', 'v' } },
-      { '<C-j>',  '<cmd>Treewalker Down<cr>',  noremap = true, silent = true, mode = { 'n', 'v' } },
+      { '<C-k>', '<cmd>Treewalker Up<cr>', noremap = true, silent = true, mode = { 'n', 'v' } },
+      { '<C-j>', '<cmd>Treewalker Down<cr>', noremap = true, silent = true, mode = { 'n', 'v' } },
       { '<C-l>', '<cmd>Treewalker Right<cr>', noremap = true, silent = true, mode = { 'n', 'v' } },
-      { '<C-h>',  '<cmd>Treewalker Left<cr>',  noremap = true, silent = true, mode = { 'n', 'v' } },
+      { '<C-h>', '<cmd>Treewalker Left<cr>', noremap = true, silent = true, mode = { 'n', 'v' } },
       -- { '<C-M-k>', '<cmd>Treewalker SwapUp<cr>',   noremap = true, silent = true, mode = 'n' },
       -- { '<C-M-j>', '<cmd>Treewalker SwapDown<cr>', noremap = true, silent = true, mode = 'n' },
-      { '<C-up>',    '<cmd>Treewalker Up<cr>',    noremap = true, silent = true, mode = { 'n', 'v' } },
-      { '<C-down>',  '<cmd>Treewalker Down<cr>',  noremap = true, silent = true, mode = { 'n', 'v' } },
+      { '<C-up>', '<cmd>Treewalker Up<cr>', noremap = true, silent = true, mode = { 'n', 'v' } },
+      { '<C-down>', '<cmd>Treewalker Down<cr>', noremap = true, silent = true, mode = { 'n', 'v' } },
       { '<C-right>', '<cmd>Treewalker Right<cr>', noremap = true, silent = true, mode = { 'n', 'v' } },
-      { '<C-left>',  '<cmd>Treewalker Left<cr>',  noremap = true, silent = true, mode = { 'n', 'v' } },
+      { '<C-left>', '<cmd>Treewalker Left<cr>', noremap = true, silent = true, mode = { 'n', 'v' } },
       -- { '<C-M-up>', '<cmd>Treewalker SwapUp<cr>',   noremap = true, silent = true, mode = 'n' },
       -- { '<C-M-down>', '<cmd>Treewalker SwapDown<cr>', noremap = true, silent = true, mode = 'n' },
-    }
+    },
   },
   {
-    "windwp/nvim-ts-autotag",
-    event = "VeryLazy",
+    'windwp/nvim-ts-autotag',
+    event = 'VeryLazy',
     opts = {},
-  }
+  },
 }
 -- vim: ts=2 sts=2 sw=2 et

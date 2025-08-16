@@ -10,7 +10,7 @@ return {
         noremap = true,
         silent = true,
         mode = 'n',
-        desc = '[D]ocument [F]ormat'
+        desc = '[D]ocument [F]ormat',
       },
     },
     config = true,
@@ -24,12 +24,12 @@ return {
           format_on_save = function(bufnr)
             -- Completely disable formatting for these filetypes
             local disabled_filetypes = { rust = true }
-            
+
             -- If filetype is in the disabled list, return false to completely disable formatting
             if disabled_filetypes[vim.bo[bufnr].filetype] then
               return false
             end
-            
+
             -- For other filetypes, conditionally disable lsp_fallback
             local no_lsp_fallback_filetypes = { c = true, cpp = true, swift = true }
             return {
