@@ -29,9 +29,9 @@ return {
   {
     'jay-babu/mason-nvim-dap.nvim',
     optional = true,
-    opts = function(_, opts)
-      opts.ensure_installed = vim.tbl_extend('keep', opts.ensure_installed, { 'js' })
-    end,
+    opts = {
+      ensure_installed = { 'js' },
+    },
   },
   {
     'vuki656/package-info.nvim',

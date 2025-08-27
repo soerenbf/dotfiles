@@ -23,7 +23,7 @@ return {
           notify_on_error = false,
           format_on_save = function(bufnr)
             -- Completely disable formatting for these filetypes
-            local disabled_filetypes = { rust = true }
+            local disabled_filetypes = { rust = true, javascript = true, javascriptreact = true }
 
             -- If filetype is in the disabled list, return false to completely disable formatting
             if disabled_filetypes[vim.bo[bufnr].filetype] then
