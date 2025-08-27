@@ -1,6 +1,101 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  // Theme configuration
   "theme": "system",
-  "autoupdate": true
+  "autoupdate": true,
+  "keybinds": {
+    "leader": "ctrl+space",
+    "input_submit": "<leader>enter",
+    "input_newline": "enter,ctrl+j"
+  },
+  "permission": {
+    "bash": {
+      // git (read-only allowed; risky ops ask)
+      "git status": "allow",
+      "git diff": "allow",
+      "git log": "allow",
+      "git show": "allow",
+      "git branch": "allow",
+      "git tag": "allow",
+      "git submodule": "allow",
+      "git push": "ask",
+      "git reset --hard": "ask",
+      "git clean": "ask",
+      "git rebase": "ask",
+      "git checkout -f": "ask",
+      "git stash drop": "ask",
+      "git stash clear": "ask",
+      "git tag -d": "ask",
+      // nodejs (installs/scripts ask)
+      "node": "allow",
+      "npm": "ask",
+      "npm ci": "ask",
+      "npm install": "ask",
+      "npm run": "ask",
+      "npx": "ask",
+      "yarn": "ask",
+      "yarn install": "ask",
+      "yarn run": "ask",
+      "pnpm": "ask",
+      // python and tooling
+      "python": "allow",
+      "python3": "allow",
+      "pip": "ask",
+      // bash - safe introspection and search
+      "ls": "allow",
+      "pwd": "allow",
+      "echo": "allow",
+      "which": "allow",
+      "command -v": "allow",
+      "date": "allow",
+      "env": "allow",
+      "printenv": "allow",
+      "grep": "allow",
+      "rg": "allow",
+      "fd": "allow",
+      "cat": "allow",
+      "head": "allow",
+      "tail": "allow",
+      "cut": "allow",
+      "sort": "allow",
+      "uniq": "allow",
+      "wc": "allow",
+      "sed": "allow",
+      "awk": "allow",
+      "find": "allow",
+      "xargs": "allow",
+      "du": "allow",
+      "df": "allow",
+      "stat": "allow",
+      // networking (read-only)
+      "curl": "allow",
+      // tests and linters
+      "pytest": "allow",
+      "ruff": "allow",
+      "black --check": "allow",
+      "isort --check-only": "allow",
+      "mypy": "allow",
+      "eslint": "allow",
+      "prettier --check": "allow",
+      "stylua": "allow",
+      "selene": "allow",
+      "shellcheck": "allow",
+      "shfmt": "allow",
+      "make": "allow",
+      // fs-changing defaults: ask
+      "rm": "ask",
+      "mv": "ask",
+      "cp": "ask",
+      "chmod": "ask",
+      "chown": "ask",
+      "ln": "ask",
+      "mkdir": "ask",
+      "rmdir": "ask",
+      "sed -i": "ask",
+      "tee": "ask",
+      "patch": "ask",
+      // system-level
+      "sudo": "deny",
+      "*": "ask"
+    }
+  }
 }
