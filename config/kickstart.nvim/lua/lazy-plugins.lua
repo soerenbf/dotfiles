@@ -47,7 +47,7 @@ require('lazy').setup({
   require 'plugins.multicursor',
   require 'plugins.neogen',
   require 'plugins.noice',
-  require 'plugins.smear-cursor',
+  -- require 'plugins.smear-cursor', -- replaced with native cursor trails for ghostty.
   require 'plugins.snacks',
   require 'plugins.todo-comments',
   -- require 'plugins.trouble',

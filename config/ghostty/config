@@ -1,7 +1,7 @@
 font-family = "JetBrainsMono Nerd Font Mono"
 font-size = 13
 
-theme = nordfox
+theme = nord
 
 window-padding-balance = true
 window-padding-color = background
@@ -11,8 +11,11 @@ window-height = 50
 window-padding-x = 0
 
 cursor-style = block_hollow
+custom-shader = ~/.config/ghostty/shaders/cursor_smear_fade.glsl
+custom-shader-animation = true
 
-quick-terminal-position = left
+quick-terminal-position = top
+quick-terminal-size = 40%
 quick-terminal-screen = macos-menu-bar
 
 macos-option-as-alt = left
