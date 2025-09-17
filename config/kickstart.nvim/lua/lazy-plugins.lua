@@ -55,14 +55,15 @@ require('lazy').setup({
   require 'plugins.yazi',
 
   -- Language support
-  require 'plugins.markdown',
-  require 'plugins.swift',
-  require 'plugins.typescript',
-  require 'plugins.rust',
-  require 'plugins.haskell', -- Ensure the correct hls version is installed for the version of haskell used: https://haskell-language-server.readthedocs.io/en/latest/support/ghc-version-support.html#current-ghc-version-support-status
-  require 'plugins.lua',
-  require 'plugins.protobuf',
-  require 'plugins.python',
+  require 'lang.markdown',
+  require 'lang.swift',
+  require 'lang.typescript',
+  require 'lang.rust',
+  require 'lang.haskell', -- Ensure the correct hls version is installed for the version of haskell used: https://haskell-language-server.readthedocs.io/en/latest/support/ghc-version-support.html#current-ghc-version-support-status
+  require 'lang.lua',
+  require 'lang.protobuf',
+  require 'lang.python',
+  require 'lang.gleam',
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
