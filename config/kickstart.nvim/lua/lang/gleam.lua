@@ -1,5 +1,4 @@
 return {
-  -- Python support
   {
     'neovim/nvim-lspconfig',
     optional = true,

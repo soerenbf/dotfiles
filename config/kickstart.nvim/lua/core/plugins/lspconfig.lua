@@ -120,7 +120,8 @@ return {
 
       local setup_server = function(name, server_opts)
         server_opts.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server_opts.capabilities or {})
-        require('lspconfig')[name].setup(server_opts)
+        vim.lsp.config(name, server_opts)
+        vim.lsp.enable(name)
       end
 
       require('mason-lspconfig').setup {

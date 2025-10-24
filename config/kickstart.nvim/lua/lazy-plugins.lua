@@ -64,6 +64,7 @@ require('lazy').setup({
   require 'lang.protobuf',
   require 'lang.python',
   require 'lang.gleam',
+  require 'lang.latex',
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the

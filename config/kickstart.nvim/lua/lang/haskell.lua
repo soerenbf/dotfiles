@@ -11,4 +11,21 @@ return {
       })
     end,
   },
+  {
+    'stevearc/conform.nvim',
+    optional = true,
+    opts = {
+      formatters_by_ft = {
+        haskell = { 'fourmolu' },
+      },
+      formatters = {
+        fourmolu = {
+          command = 'fourmolu',
+          args = { '--stdin-input-file', '$FILENAME' },
+          stdin = true,
+          timeout_ms = 5000,
+        },
+      },
+    },
+  },
 }
