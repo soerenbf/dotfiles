@@ -112,8 +112,15 @@ local diffview = {
   },
 }
 
+local codediff = {
+  'esmuellert/codediff.nvim',
+  dependencies = { 'MunifTanjim/nui.nvim' },
+  cmd = 'CodeDiff',
+}
+
 return {
   -- gitsigns,
   neogit,
+  codediff,
   -- diffview,
 }
