@@ -7,40 +7,37 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "git_panel": {
+    "tree_view": true
+  },
   "features": {
     "edit_prediction_provider": "zed"
   },
-  "icon_theme": "Material Icon Theme",
+  "icon_theme": "Zed (Default)",
   "format_on_save": "off",
   "autosave": "on_focus_change",
   "theme": {
-    "mode": "system",
+    "mode": "dark",
     "light": "Rosé Pine Dawn",
-    "dark": "Nord"
+    "dark": "Nord Dark"
   },
   "ui_font_size": 14,
   "minimap": { "show": "always", "display_in": "active_editor" },
   "buffer_font_size": 13.0,
   "buffer_font_family": "JetBrainsMono Nerd Font",
   "vim_mode": true,
-  "relative_line_numbers": true,
+  "relative_line_numbers": "enabled",
   "base_keymap": "VSCode",
   "tab_size": 4, // This is the default, but for some reason it does not apply unless explicitly defined?
   "debugger": {
     "dock": "right"
   },
   "agent": {
-    "always_allow_tool_actions": true,
-    "default_profile": "write",
-    "inline_assistant_model": {
-      "provider": "copilot_chat",
-      "model": "claude-3-7-sonnet"
-    },
-    "dock": "right",
     "default_model": {
       "provider": "copilot_chat",
-      "model": "claude-3.7-sonnet"
-    }
+      "model": "claude-opus-4.5"
+    },
+    "model_parameters": []
   },
   "terminal": {
     "dock": "right",

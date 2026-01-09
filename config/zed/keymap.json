@@ -26,6 +26,7 @@
       "ctrl-alt-up": "pane::SplitUp",
       "ctrl-alt-j": "pane::SplitDown",
       "ctrl-alt-down": "pane::SplitDown",
+      "ctrl-6": "pane::AlternateFile",
       // Panel + docks overrides
       "cmd-alt-q": "workspace::CloseAllDocks",
       "cmd-shift-t": "terminal_panel::ToggleFocus", // [t]erminal
