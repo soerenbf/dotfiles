@@ -12,64 +12,71 @@
 
 return {
   {
-    'igorlfs/nvim-dap-view',
-    ---@module 'dap-view'
-    ---@type dapview.Config
+    'theHamsta/nvim-dap-virtual-text',
     opts = {},
   },
   -- {
-  --   'rcarriga/nvim-dap-ui',
-  --   -- Dap UI setup
-  --   -- For more information, see |:help nvim-dap-ui|
-  --   opts = {
-  --     -- Set icons to characters that are more likely to work in every terminal.
-  --     --    Feel free to remove or use ones that you like more! :)
-  --     --    Don't feel like these are good choices.
-  --     icons = { expanded = '▾', collapsed = '▸', current_frame = '*' },
-  --     controls = {
-  --       icons = {
-  --         pause = '⏸',
-  --         play = '▶',
-  --         step_into = '⏎',
-  --         step_over = '⏭',
-  --         step_out = '⏮',
-  --         step_back = 'b',
-  --         run_last = '▶▶',
-  --         terminate = '⏹',
-  --         disconnect = '⏏',
-  --       },
-  --     },
-  --   },
+  --   'igorlfs/nvim-dap-view',
+  --   ---@module 'dap-view'
+  --   ---@type dapview.Config
+  --   opts = {},
   -- },
   {
-    'mfussenegger/nvim-dap',
-    config = function()
+    'rcarriga/nvim-dap-ui',
+    -- For more information, see |:help nvim-dap-ui|
+    opts = {
+      icons = { expanded = '▾', collapsed = '▸', current_frame = '*' },
+      controls = {
+        icons = {
+          pause = '⏸',
+          play = '▶',
+          step_into = '⏎',
+          step_over = '⏭',
+          step_out = '⏮',
+          step_back = 'b',
+          run_last = '▶▶',
+          terminate = '⏹',
+          disconnect = '⏏',
+        },
+      },
+    },
+    config = function(_, opts)
       local dap = require 'dap'
-      local dapui = require 'dap-view'
-
-      dap.listeners.after.event_initialized['dapui_config'] = dapui.open
-      dap.listeners.before.event_terminated['dapui_config'] = dapui.close
-      dap.listeners.before.event_exited['dapui_config'] = dapui.close
+      local dapui = require 'dapui'
+      dapui.setup(opts)
+      dap.listeners.before.attach.dapui_config = function()
+        dapui.open()
+      end
+      dap.listeners.before.launch.dapui_config = function()
+        dapui.open()
+      end
+      dap.listeners.before.event_terminated.dapui_config = function()
+        dapui.close()
+      end
+      dap.listeners.before.event_exited.dapui_config = function()
+        dapui.close()
+      end
     end,
   },
   {
     'jay-babu/mason-nvim-dap.nvim',
     dependencies = {
       -- Creates a beautiful debugger UI
-      -- 'rcarriga/nvim-dap-ui',
-      'igorlfs/nvim-dap-view',
+      'rcarriga/nvim-dap-ui',
+      -- 'igorlfs/nvim-dap-view',
 
       -- Required dependency for nvim-dap-ui
-      -- 'nvim-neotest/nvim-nio',
+      'nvim-neotest/nvim-nio',
 
       -- Installs the debug adapters for you
       { 'williamboman/mason.nvim', config = true },
       'mfussenegger/nvim-dap',
+      'theHamsta/nvim-dap-virtual-text',
     },
     -- TODO: would be nice we could avoid lazy loading here, as it forces the dap modules to be loaded on start
     keys = function(_, keys)
       local dap = require 'dap'
-      local dapui = require 'dap-view'
+      local dapui = require 'dapui'
       return {
         -- Basic debugging keymaps, feel free to change to your liking!
         { '<F5>', dap.continue, desc = 'Debug: Start/Continue' },

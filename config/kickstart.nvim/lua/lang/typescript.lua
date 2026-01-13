@@ -34,6 +34,92 @@ return {
     },
   },
   {
+    'mfussenegger/nvim-dap',
+    optional = true,
+    config = function()
+      local dap = require('dap')
+      local mason_registry = require('mason-registry')
+
+      local js_debug_path = mason_registry.get_package('js-debug-adapter'):get_install_path()
+      local js_debug_server = js_debug_path .. '/js-debug/src/dapDebugServer.js'
+
+      for _, adapter in ipairs({ 'pwa-node', 'pwa-chrome' }) do
+        dap.adapters[adapter] = {
+          type = 'server',
+          host = 'localhost',
+          port = '${port}',
+          executable = {
+            command = 'node',
+            args = { js_debug_server, '${port}' },
+          },
+        }
+      end
+
+      local js_configs = {
+        {
+          type = 'pwa-node',
+          request = 'launch',
+          name = 'Launch file (JS)',
+          program = '${file}',
+          cwd = '${workspaceFolder}',
+          sourceMaps = true,
+        },
+        {
+          type = 'pwa-node',
+          request = 'launch',
+          name = 'Launch file (TS with tsx)',
+          runtimeExecutable = 'npx',
+          runtimeArgs = { 'tsx' },
+          program = '${file}',
+          cwd = '${workspaceFolder}',
+          sourceMaps = true,
+        },
+        {
+          type = 'pwa-node',
+          request = 'launch',
+          name = 'Launch file (TS with ts-node)',
+          runtimeExecutable = 'npx',
+          runtimeArgs = { 'ts-node' },
+          program = '${file}',
+          cwd = '${workspaceFolder}',
+          sourceMaps = true,
+        },
+        {
+          type = 'pwa-node',
+          request = 'attach',
+          name = 'Attach to process',
+          processId = require('dap.utils').pick_process,
+          cwd = '${workspaceFolder}',
+          sourceMaps = true,
+        },
+        {
+          type = 'pwa-node',
+          request = 'launch',
+          name = 'Debug Jest tests',
+          runtimeExecutable = 'npx',
+          runtimeArgs = { 'jest', '--runInBand', '--no-cache' },
+          cwd = '${workspaceFolder}',
+          console = 'integratedTerminal',
+          sourceMaps = true,
+        },
+        {
+          type = 'pwa-node',
+          request = 'launch',
+          name = 'Debug Vitest tests',
+          runtimeExecutable = 'npx',
+          runtimeArgs = { 'vitest', 'run' },
+          cwd = '${workspaceFolder}',
+          console = 'integratedTerminal',
+          sourceMaps = true,
+        },
+      }
+
+      for _, ft in ipairs({ 'javascript', 'typescript', 'javascriptreact', 'typescriptreact' }) do
+        dap.configurations[ft] = js_configs
+      end
+    end,
+  },
+  {
     'vuki656/package-info.nvim',
     dependencies = { 'MunifTanjim/nui.nvim' },
     opts = {},
