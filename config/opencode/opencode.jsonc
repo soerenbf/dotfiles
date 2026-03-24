@@ -1,12 +1,6 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "theme": "system",
   "autoupdate": true,
-  "keybinds": {
-    "leader": "ctrl+space",
-    "input_submit": "ctrl+return",
-    "input_newline": "return"
-  },
   "permission": {
     "bash": {
       // git (read-only allowed; risky ops ask)
@@ -113,6 +107,28 @@
       "patch": "ask",
       // system-level
       "sudo": "deny"
+    }
+  },
+  "mcp": {
+    "linear": {
+      "type": "remote",
+      "url": "https://mcp.linear.app/mcp",
+      "enabled": false,
+      "oauth": {}
+    },
+    "atlassian": {
+      "type": "remote",
+      "url": "https://mcp.atlassian.com/v1/mcp",
+      "enabled": false,
+      "oauth": {}
+    },
+    "github": {
+      "type": "remote",
+      "url": "https://api.githubcopilot.com/mcp/",
+      "enabled": false,
+      "headers": {
+        "Authorization": "Bearer {env:GITHUB_PAT}"
+      }
     }
   }
 }
