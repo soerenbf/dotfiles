@@ -1,6 +1,7 @@
 ---
 description: Analyses a task by gathering context from Linear, Confluence, and GitHub, interviewing the user, and producing a single-source-of-truth analysis document
 mode: subagent
+model: github-copilot/claude-opus-4.6
 temperature: 0.2
 permission:
   edit:

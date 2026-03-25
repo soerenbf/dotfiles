@@ -52,7 +52,7 @@ If the user requests changes:
 
 Once tests are approved:
 
-1. Stage the test files
+1. Stage ONLY the test files you created (verify with `git status`)
 2. Create a commit with message format: `test(<scope>): <description>`
    - Example: `test(auth): add unit tests for token refresh logic`
 3. Verify the commit succeeded
@@ -86,7 +86,11 @@ If the user requests changes:
 
 Once implementation is approved:
 
-1. Stage the implementation files
+1. Stage ONLY the implementation files you modified during this step (verify with `git status`)
+2. Create a commit with message format: `<type>(<scope>): <description>`
+   - Types: `feat`, `fix`, `refactor`, `perf`, `chore`
+   - Example: `feat(auth): implement token refresh with automatic retry`
+3. Verify the commit succeeded
 2. Create a commit with message format: `<type>(<scope>): <description>`
    - Types: `feat`, `fix`, `refactor`, `perf`, `chore`
    - Example: `feat(auth): implement token refresh with automatic retry`

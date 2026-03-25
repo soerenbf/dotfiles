@@ -1,6 +1,7 @@
 ---
-description: Creates a detailed implementation plan from an analysis document, breaking work into parallelizable checklist steps
+description: Creates a detailed implementation plan from an analysis document, breaking work into sequential checklist steps
 mode: subagent
+model: github-copilot/claude-sonnet-4.6
 temperature: 0.2
 permission:
   edit:
@@ -34,6 +35,7 @@ You are the **Implementation Plan** agent. Your job is to read an analysis docum
    - Break the requirements into discrete, independently implementable steps
    - Identify dependencies between steps
    - Maximize parallelism — prefer wide dependency graphs
+   - **IMPORTANT**: Steps in the same parallel group MUST NOT modify the same files
    - Order foundational work (types, models, interfaces) before consumers
    - Place integration verification last
 
@@ -51,6 +53,7 @@ You are the **Implementation Plan** agent. Your job is to read an analysis docum
 - You MUST NOT modify the analysis document.
 - Every step MUST have testable acceptance criteria.
 - Every step MUST list the specific files it will touch.
+- Steps in the same parallel execution group MUST NOT touch the same files — if they do, make them sequential.
 - Steps SHOULD be small enough for a single sub-agent session.
 - Dependencies between steps MUST be explicit — do not rely on implicit ordering.
 - If the analysis document has open questions (section 6), flag them as blockers and ask the user to resolve them before planning.
