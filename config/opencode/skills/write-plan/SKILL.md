@@ -35,6 +35,15 @@ List anything that must be true before implementation begins:
 - [ ] Access/permissions confirmed
 - [ ] Feature flags created (if applicable)
 
+## Documentation Impact
+
+State whether project-facing docs need updates:
+
+- **README**: Required | Not required | Unknown
+- **Changelog**: Required | Not required | Unknown
+- **Other docs**: List any additional docs that should change
+- **Reasoning**: Brief explanation tied to the user-visible or developer-visible impact of the task
+
 ## Steps
 
 ### Step 1: <Short Title>
@@ -95,6 +104,7 @@ Each step should be:
 - Group related changes that must be consistent (e.g., API contract + client)
 - Place integration and end-to-end steps last
 - Maximize parallelism: prefer wide dependency graphs over deep chains
+- If the task changes user-facing behavior, setup, CLI/API usage, or notable developer workflows, include doc update steps for `README`, changelog, or related docs
 
 ### Dependencies
 
@@ -117,3 +127,9 @@ For each file listed in a step:
 - Use paths relative to the project root
 - Describe what changes (not how — implementation details belong to the sub-agent)
 - If a file does not exist yet, mark it as "(new)"
+
+### Documentation Review
+
+- Always check whether a top-level `README`, changelog, release notes file, or equivalent project docs exist
+- If the task changes behavior worth communicating, include those docs in the plan's file list and steps
+- If docs do not need changes, say so explicitly in the `Documentation Impact` section

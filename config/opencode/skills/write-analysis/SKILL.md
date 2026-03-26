@@ -60,6 +60,13 @@ External services, libraries, or internal modules this work depends on.
 ### 3.3 Existing Behavior
 Describe current behavior that will change. Include code references where relevant.
 
+### 3.4 Related Prior Work
+If this task builds on earlier SDD work, summarize the most relevant prior tasks:
+
+| Task | Summary | Reusable Decisions | Files/Areas to Revisit |
+|------|---------|--------------------|------------------------|
+| add-token-refresh | Added refresh token lifecycle | Reuse token storage approach | `src/auth/*` |
+
 ## 4. Constraints
 
 ### 4.1 Technical Constraints
@@ -95,6 +102,7 @@ Concrete, testable criteria for when this task is done. Format:
 ## Quality Standards
 
 - Every requirement MUST be traceable to at least one source in section 1.2
+- If prior SDD work exists, section 3.4 SHOULD reference the prior `summary.md` first and only fall back to `plan.md`/`analysis.md` as needed
 - Every decision MUST include rationale and alternatives considered
 - Acceptance criteria MUST be specific enough to write tests from
 - The document MUST NOT contain implementation details (that belongs in the plan)

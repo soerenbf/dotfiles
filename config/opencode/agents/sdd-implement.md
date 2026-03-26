@@ -22,6 +22,10 @@ permission:
     "echo *": allow
     "grep *": allow
     "find *": allow
+    "xargs *": allow
+    "head *": allow
+    # Directory creation
+    "mkdir *": allow
     # Git (read-only)
     "git status*": allow
     "git diff*": allow

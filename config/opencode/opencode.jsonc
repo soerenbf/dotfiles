@@ -109,6 +109,9 @@
       "sudo": "deny"
     }
   },
+  "plugin": [
+    "@mohak34/opencode-notifier@latest"
+  ],
   "mcp": {
     "linear": {
       "type": "remote",
