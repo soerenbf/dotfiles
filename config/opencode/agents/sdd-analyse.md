@@ -7,8 +7,44 @@ permission:
   edit:
     "*": allow
   bash:
+    # Safe introspection and reading
+    "ls *": allow
+    "ls": allow
+    "pwd": allow
+    "cat *": allow
+    "head *": allow
+    "tail *": allow
+    "which *": allow
+    "command -v *": allow
+    "env": allow
+    "echo *": allow
+    "wc *": allow
+    "grep*": allow
+    "grep *": allow
+    "find *": allow
+    "tree *": allow
+    "tree": allow
+    # Git (read-only)
+    "git status": allow
+    "git status *": allow
+    "git log *": allow
+    "git show *": allow
+    "git branch *": allow
+    "git diff *": allow
+    "git rev-parse *": allow
+    # Directory creation
     "mkdir *": allow
-    "*": deny
+    # Deny destructive operations
+    "rm *": deny
+    "mv *": deny
+    "cp *": deny
+    "git commit": deny
+    "git commit *": deny
+    "git push": deny
+    "git push *": deny
+    "git add *": deny
+    # Everything else: ask
+    "*": ask
   skill:
     "gather-context": allow
     "interview": allow
