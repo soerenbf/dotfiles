@@ -8,9 +8,10 @@ permission:
   edit:
     "*": allow
   bash:
+    # Default: ask for anything not explicitly allowed/denied
+    "*": ask
     # Safe introspection and reading
-    "ls *": allow
-    "ls": allow
+    "ls*": allow
     "pwd": allow
     "cat *": allow
     "head *": allow
@@ -22,26 +23,20 @@ permission:
     "grep *": allow
     "find *": allow
     # Git (read-only)
-    "git status": allow
-    "git status *": allow
-    "git diff *": allow
-    "git log *": allow
-    "git show *": allow
-    "git branch": allow
-    "git branch *": allow
+    "git status*": allow
+    "git diff*": allow
+    "git log*": allow
+    "git show*": allow
+    "git branch*": allow
     # Test runners
-    "npm test": allow
-    "npm test *": allow
-    "npm run test *": allow
-    "yarn test": allow
-    "yarn test *": allow
-    "yarn run test *": allow
-    "pnpm test": allow
-    "pnpm test *": allow
-    "pnpm run test *": allow
-    "pytest *": allow
-    "cargo test": allow
-    "cargo test *": allow
+    "npm test*": allow
+    "npm run test*": allow
+    "yarn test*": allow
+    "yarn run test*": allow
+    "pnpm test*": allow
+    "pnpm run test*": allow
+    "pytest*": allow
+    "cargo test*": allow
     "go test *": allow
     "jest *": allow
     "vitest *": allow
@@ -56,10 +51,8 @@ permission:
     "flake8 *": allow
     "stylua *": allow
     "selene *": allow
-    "cargo fmt": allow
-    "cargo fmt *": allow
-    "cargo clippy": allow
-    "cargo clippy *": allow
+    "cargo fmt*": allow
+    "cargo clippy*": allow
     "go fmt *": allow
     "rustfmt *": allow
     "shellcheck *": allow
@@ -68,24 +61,23 @@ permission:
     "npm list *": allow
     "yarn why *": allow
     "pnpm list *": allow
-    "pip list *": allow
+    "pip list*": allow
     "pip show *": allow
-    "cargo tree *": allow
-    # Build tools (read-only checks)
+    "cargo tree*": allow
+    # Build tools
+    "cargo build*": allow
     "make -n *": allow
     "npm run --dry-run *": allow
     # Deny destructive operations
     "rm *": deny
     "mv *": deny
     "cp *": deny
-    "git commit *": deny
-    "git push *": deny
-    "git add *": deny
-    "npm install *": deny
-    "yarn install *": deny
-    "pip install *": deny
-    # Everything else: ask
-    "*": ask
+    "git commit*": deny
+    "git push*": deny
+    "git add*": deny
+    "npm install*": deny
+    "yarn install*": deny
+    "pip install*": deny
   skill:
     "implementation-workflow": allow
     "code-quality": allow

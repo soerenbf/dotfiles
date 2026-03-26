@@ -6,13 +6,13 @@ permission:
   task:
     "*": allow
   edit:
-    ".opencode/docs/**/plan.md": allow
-    ".opencode/docs/**/analysis.md": allow
     "*": deny
+    ".opencode/docs/*": allow
   bash:
+    # Default: ask for anything not explicitly allowed/denied
+    "*": ask
     # Safe introspection and reading
-    "ls *": allow
-    "ls": allow
+    "ls*": allow
     "pwd": allow
     "cat *": allow
     "head *": allow
@@ -24,43 +24,29 @@ permission:
     "wc *": allow
     "grep *": allow
     "find *": allow
-    "tree *": allow
-    "tree": allow
-    # Git operations (orchestrator needs these)
-    "git status": allow
-    "git status *": allow
-    "git log": allow
-    "git log *": allow
-    "git show": allow
-    "git show *": allow
-    "git branch": allow
-    "git branch *": allow
-    "git diff": allow
-    "git diff *": allow
-    "git add *": allow
-    "git commit *": allow
-    "git rev-parse": allow
-    "git rev-parse *": allow
+    "tree*": allow
     # Directory creation
     "mkdir *": allow
-    # Deny risky git operations
-    "git push": ask
-    "git push *": ask
-    "git reset --hard": ask
-    "git reset --hard *": ask
-    "git clean": ask
-    "git clean *": ask
-    "git rebase": ask
-    "git rebase *": ask
-    "git force": deny
+    # Git operations (orchestrator needs these)
+    "git status*": allow
+    "git log*": allow
+    "git show*": allow
+    "git branch*": allow
+    "git diff*": allow
+    "git add *": allow
+    "git commit *": allow
+    "git rev-parse*": allow
+    # Risky git operations: ask
     "git push --force *": deny
     "git push -f *": deny
+    "git push*": ask
+    "git reset --hard*": ask
+    "git clean*": ask
+    "git rebase*": ask
     # Deny destructive operations
     "rm *": deny
     "mv *": deny
     "cp *": deny
-    # Everything else: ask
-    "*": ask
   skill:
     "*": allow
 ---
