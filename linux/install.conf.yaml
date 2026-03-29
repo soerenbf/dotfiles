@@ -1,0 +1,14 @@
+# linux/install.conf.yaml
+# Linux-specific Dotbot configuration.
+#
+# This file is a placeholder — it will be fully populated in Step 7 of the
+# platform-split refactor. See .opencode/docs/split-dotfiles-by-platform/plan.md
+# for the intended final content.
+#
+# When complete, this file will contain:
+#   - defaults / link / create directives for Linux-specific dotfiles
+#   - Links for linux/zshrc.platform → ~/.zshrc.platform
+#   - Links for linux/zshenv.platform → ~/.zshenv.platform
+#   - Links for linux/config/alacritty/alacritty-linux.toml → ~/.config/alacritty/alacritty-platform.toml
+#
+# TODO (Step 7): Replace this stub with the full Linux Dotbot config.
