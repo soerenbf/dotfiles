@@ -1,13 +1,11 @@
-import = ["~/dotfiles/config/alacritty-theme/themes/nightfox.toml"]
+import = [
+  "~/dotfiles/config/alacritty-theme/themes/nightfox.toml",
+  "~/.config/alacritty/alacritty-platform.toml",
+]
 
 [font]
 normal.family = "JetBrainsMono Nerd Font"
 size = 13
 
 [window]
-option_as_alt = "OnlyLeft"
 dynamic_padding = true
-
-[shell]
-program = "/opt/homebrew/bin/zellij"
-args = ["-l", "welcome"]
