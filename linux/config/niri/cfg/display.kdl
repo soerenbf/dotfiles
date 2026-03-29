@@ -3,11 +3,11 @@
 // You will have to remove "/-" and edit it before it takes effect.
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Outputs
 
-output "DP-2" {
+output "Lenovo Group Limited LEN G34w-10 UGW05DBV" {
     mode "3440x1440@144.000" // Set resolution and refresh rate
     position x=0 y=400
 }
-output "DP-1" {
+output "LG Electronics LG ULTRAFINE 201NTNH5Y239" {
     scale 1.25 // No scaling (use 2 for HiDPI)
     transform "270"
 }

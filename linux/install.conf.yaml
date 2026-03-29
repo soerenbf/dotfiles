@@ -11,3 +11,13 @@
     ~/.config/ghostty/ghostty-platform:
       force: true
       path: linux/config/ghostty/ghostty-linux
+    ~/.config/niri:
+      glob: true
+      create: true
+      force: true
+      path: linux/config/niri/*
+    ~/.config/noctalia:
+      glob: true
+      create: true
+      force: true
+      path: linux/config/noctalia/*
