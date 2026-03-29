@@ -34,5 +34,8 @@ esac
 
 echo "Installing dotfiles for platform: ${PLATFORM}"
 
-"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "shared/install.conf.yaml"
-"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${PLATFORM}/install.conf.yaml"
+# Run both steps regardless of partial failures in each; track overall success.
+INSTALL_STATUS=0
+"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "shared/install.conf.yaml" || INSTALL_STATUS=$?
+"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${PLATFORM}/install.conf.yaml" || INSTALL_STATUS=$?
+exit "${INSTALL_STATUS}"

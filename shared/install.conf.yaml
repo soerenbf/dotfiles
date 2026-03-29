@@ -55,10 +55,13 @@
       path: shared/config/ghostty/**
     # Alacritty: link individual tracked files so ~/.config/alacritty/ remains a
     # real directory and the OS-specific alacritty-platform.toml can coexist.
-    ~/.config/alacritty:
-      glob: true
+    # Note: do NOT use glob here - dotbot has a quirk where a single-file glob with
+    # a non-slash destination falls back to a literal path link (the pattern itself,
+    # not the resolved file), which fails. Link the file directly instead.
+    ~/.config/alacritty/alacritty.toml:
+      force: true
       create: true
-      path: shared/config/alacritty/**
+      path: shared/config/alacritty/alacritty.toml
 
 - create:
     - ~/.vim/undodir
