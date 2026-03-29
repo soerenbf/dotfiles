@@ -2,9 +2,7 @@
 
 set -e
 
-CONFIG="install.conf.yaml"
 DOTBOT_DIR="dotbot"
-
 DOTBOT_BIN="bin/dotbot"
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
@@ -12,4 +10,29 @@ cd "${BASEDIR}"
 git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
 git submodule update --init --recursive "${DOTBOT_DIR}"
 
-"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
+# Determine platform
+if [[ -n "$1" ]]; then
+    PLATFORM="$1"
+else
+    case "$(uname -s)" in
+        Darwin) PLATFORM="macos" ;;
+        Linux)  PLATFORM="linux" ;;
+        *)
+            echo "ERROR: Unrecognised OS '$(uname -s)'. Run './install macos' or './install linux' to override." >&2
+            exit 1
+            ;;
+    esac
+fi
+
+case "${PLATFORM}" in
+    macos|linux) ;;
+    *)
+        echo "ERROR: Unknown platform '${PLATFORM}'. Valid values: macos, linux." >&2
+        exit 1
+        ;;
+esac
+
+echo "Installing dotfiles for platform: ${PLATFORM}"
+
+"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "shared/install.conf.yaml"
+"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${PLATFORM}/install.conf.yaml"
