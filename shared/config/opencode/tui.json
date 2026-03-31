@@ -2,9 +2,6 @@
   "$schema": "https://opencode.ai/tui.json",
   "theme": "system",
   "keybinds": {
-    "leader": "ctrl+space",
-    "input_submit": "ctrl+return",
-    "input_newline": "return"
+    "leader": "ctrl+space"
   }
 }
-

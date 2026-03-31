@@ -35,3 +35,4 @@ Notes:
 - The iPhone-shaped mode is encoded directly in the EDID as `2556x1179 @ 120.001`.
 - The desktop/TV modes stay at their EDID-backed ~60 Hz variants.
 - The installer for this setup is `../install-limine-mkinitcpio-sunshine-vdisplay.sh`.
+- The matching uninstaller is `../uninstall-limine-mkinitcpio-sunshine-vdisplay.sh`.
