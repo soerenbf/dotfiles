@@ -1,7 +1,7 @@
 font-family = "JetBrainsMono Nerd Font Mono"
 font-size = 13
 
-theme = nord
+theme = Nord
 
 window-padding-balance = true
 window-padding-color = background
@@ -23,5 +23,11 @@ macos-titlebar-style = transparent
 
 keybind = global:cmd+ctrl+alt+shift+t=toggle_quick_terminal
 
-initial-command = /opt/homebrew/bin/zellij -l welcome
-command = /opt/homebrew/bin/zellij
+# macos-* keys and macos-menu-bar are silently ignored by Ghostty on Linux.
+# Platform-specific overrides (zellij command, etc.) are loaded from
+# ~/.config/ghostty/ghostty-platform, which is a symlink placed by the
+# OS-specific Dotbot config pointing to the appropriate repo file:
+#   macOS: macos/config/ghostty/ghostty-macos
+#   Linux: linux/config/ghostty/ghostty-linux
+# The ? prefix suppresses errors if the platform file does not exist.
+config-file = "?~/.config/ghostty/ghostty-platform"

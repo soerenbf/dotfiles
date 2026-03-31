@@ -3,5 +3,5 @@
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
 [submodule "kanata-service"]
-	path = kanata-service
+	path = macos/kanata-service
 	url = git@github.com:soerenbf/kanata-service.git

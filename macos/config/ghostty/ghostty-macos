@@ -1,0 +1,7 @@
+# macOS-specific Ghostty overrides
+# Loaded via config-file directive in shared/config/ghostty/config.
+# Step 7 (macos/install.conf.yaml) must symlink this file to:
+#   ~/.config/ghostty/ghostty-platform -> macos/config/ghostty/ghostty-macos
+
+initial-command = /opt/homebrew/bin/zellij -l welcome
+command = /opt/homebrew/bin/zellij

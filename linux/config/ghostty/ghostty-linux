@@ -1,0 +1,7 @@
+# Linux-specific Ghostty overrides
+# Loaded via config-file directive in shared/config/ghostty/config.
+# Step 7 (linux/install.conf.yaml) must symlink this file to:
+#   ~/.config/ghostty/ghostty-platform -> linux/config/ghostty/ghostty-linux
+
+initial-command = zellij -l welcome
+command = zellij

@@ -1,0 +1,6 @@
+# Linux-specific shell configuration
+
+# Run tilix terminal setup when started in tilix terminal
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+    source /etc/profile.d/vte-2.91.sh
+fi

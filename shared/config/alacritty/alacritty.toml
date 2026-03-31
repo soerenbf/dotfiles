@@ -1,0 +1,11 @@
+import = [
+  "~/dotfiles/config/alacritty-theme/themes/nightfox.toml",
+  "~/.config/alacritty/alacritty-platform.toml",
+]
+
+[font]
+normal.family = "JetBrainsMono Nerd Font"
+size = 13
+
+[window]
+dynamic_padding = true

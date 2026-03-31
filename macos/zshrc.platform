@@ -1,0 +1,10 @@
+# macOS-specific PATH entries
+export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
+
+# ghcup (macOS path)
+[ -f "/Users/sbz/.ghcup/env" ] && source "/Users/sbz/.ghcup/env"
+
+# bun completions (macOS path)
+[ -s "/Users/sbz/.bun/_bun" ] && source "/Users/sbz/.bun/_bun"
