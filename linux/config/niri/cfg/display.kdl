@@ -11,3 +11,7 @@ output "LG Electronics LG ULTRAFINE 201NTNH5Y239" {
     scale 1.25 // No scaling (use 2 for HiDPI)
     transform "270"
 }
+
+output "LG Electronics VIRTUAL 201NTNH5Y239" {
+    off
+}
