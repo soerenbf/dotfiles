@@ -3,6 +3,10 @@
 local files = function()
   local mod = require 'mini.files'
   mod.setup {
+    options = {
+      -- Avoid the legacy netrw/FileExplorer hijack path, which errors on newer Neovim.
+      use_as_default_explorer = false,
+    },
     windows = {
       preview = true,
       width_preview = 100,

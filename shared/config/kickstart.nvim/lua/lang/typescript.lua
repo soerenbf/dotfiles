@@ -37,13 +37,14 @@ return {
     'mfussenegger/nvim-dap',
     optional = true,
     config = function()
-      local dap = require('dap')
-      local mason_registry = require('mason-registry')
+      local dap = require 'dap'
+      local mason_registry = require 'mason-registry'
+      local install_location = require 'mason-core.installer.InstallLocation'
 
-      local js_debug_path = mason_registry.get_package('js-debug-adapter'):get_install_path()
+      local js_debug_path = install_location.global():package(mason_registry.get_package('js-debug-adapter').name)
       local js_debug_server = js_debug_path .. '/js-debug/src/dapDebugServer.js'
 
-      for _, adapter in ipairs({ 'pwa-node', 'pwa-chrome' }) do
+      for _, adapter in ipairs { 'pwa-node', 'pwa-chrome' } do
         dap.adapters[adapter] = {
           type = 'server',
           host = 'localhost',
@@ -114,7 +115,7 @@ return {
         },
       }
 
-      for _, ft in ipairs({ 'javascript', 'typescript', 'javascriptreact', 'typescriptreact' }) do
+      for _, ft in ipairs { 'javascript', 'typescript', 'javascriptreact', 'typescriptreact' } do
         dap.configurations[ft] = js_configs
       end
     end,
