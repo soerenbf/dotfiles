@@ -110,7 +110,8 @@
     }
   },
   "plugin": [
-    "@mohak34/opencode-notifier@latest"
+    "@mohak34/opencode-notifier@latest",
+    "opencode-devcontainers"
   ],
   "mcp": {
     "linear": {

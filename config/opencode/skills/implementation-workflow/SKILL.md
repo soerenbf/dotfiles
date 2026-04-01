@@ -34,12 +34,17 @@ Use this skill when implementing a plan step. This is the core workflow for the 
 
 1. **Determine test location**: Follow the project's existing test file conventions (co-located, `__tests__/`, `test/`, etc.)
 2. **Write unit tests** that cover the implementation and acceptance criteria:
-   - Each acceptance criterion should map to at least one test case
-   - Include edge cases and error scenarios
-   - Tests should be descriptive: test names should read as specifications
-   - Cover the main functionality and important edge cases
-3. **Run the tests** to verify they all pass
-4. **Run the full test suite** to confirm nothing is broken
+    - Each acceptance criterion should map to at least one test case
+    - Include edge cases and error scenarios
+    - Tests should be descriptive: test names should read as specifications
+    - Cover the main functionality and important edge cases
+3. **Run the smallest relevant test subset** to verify the implementation passes:
+   - Prefer file-level, package-level, or feature-level test commands over whole-repo suites
+   - Start with tests that exercise the functionality added in this step
+   - If modifying existing behavior, shared utilities, or integration points, expand test scope to cover the affected surface area
+4. **Only run the full test suite when justified**:
+   - Use it when the project workflow explicitly requires it, when targeted tests are unavailable, or when the change is broad enough that scoped tests are insufficient
+   - Otherwise, avoid whole-suite runs to keep execution time reasonable
 
 ### Phase 4: Report Back
 
@@ -91,10 +96,12 @@ The token manager now requires the refreshEndpoint to be configured in the clien
 - NEVER commit anything. The parent agent handles reviews and commits.
 - NEVER wait for user approval. Write the code and report back immediately.
 - ALWAYS run formatters and linters before reporting back.
-- ALWAYS verify all tests pass before reporting back.
+- ALWAYS verify the relevant scoped tests pass before reporting back.
 - ONLY modify files relevant to the assigned plan step.
 - ALWAYS provide a complete list of all files to commit.
 - Keep implementation minimal — only write what is needed to satisfy the acceptance criteria.
 - If tests cannot be written for a step (e.g., pure configuration changes), explain why in your report.
 - If the existing test framework is unclear, explore the codebase first or mention it in your report.
 - Write tests that verify the implementation works correctly, covering both happy paths and edge cases.
+- Prefer the narrowest test command that gives confidence in the assigned change.
+- Expand to broader suites only when changing existing behavior, shared components, or cross-cutting integrations.

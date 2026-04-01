@@ -37,13 +37,13 @@ return {
     'mfussenegger/nvim-dap',
     optional = true,
     config = function()
-      local dap = require('dap')
-      local mason_registry = require('mason-registry')
+      local dap = require 'dap'
+      local mason_registry = require 'mason-registry'
 
       local js_debug_path = mason_registry.get_package('js-debug-adapter'):get_install_path()
       local js_debug_server = js_debug_path .. '/js-debug/src/dapDebugServer.js'
 
-      for _, adapter in ipairs({ 'pwa-node', 'pwa-chrome' }) do
+      for _, adapter in ipairs { 'pwa-node', 'pwa-chrome' } do
         dap.adapters[adapter] = {
           type = 'server',
           host = 'localhost',
@@ -114,17 +114,17 @@ return {
         },
       }
 
-      for _, ft in ipairs({ 'javascript', 'typescript', 'javascriptreact', 'typescriptreact' }) do
+      for _, ft in ipairs { 'javascript', 'typescript', 'javascriptreact', 'typescriptreact' } do
         dap.configurations[ft] = js_configs
       end
     end,
   },
-  {
-    'vuki656/package-info.nvim',
-    dependencies = { 'MunifTanjim/nui.nvim' },
-    opts = {},
-    event = 'BufRead package.json',
-  },
+  -- {
+  --   'vuki656/package-info.nvim',
+  --   dependencies = { 'MunifTanjim/nui.nvim' },
+  --   opts = {},
+  --   event = 'BufRead package.json',
+  -- },
   {
     'stevearc/conform.nvim',
     optional = true,

@@ -11,27 +11,14 @@
 ## Code Style Guidelines
 
 ### Python (dotbot)
-- Indentation: 4 spaces
-- Line length: 100 characters
-- Formatting: Black formatter
-- Error handling: Prefer explicit error handling with meaningful messages
+- 4-space indent, 100 char line length, Black formatter
 
 ### Lua (Neovim configs)
-- Indentation: 2 spaces
-- Line length: 120 characters (AstroNvim), 160 characters (Kickstart)
-- Quote style: Single quotes (Kickstart), double quotes (AstroNvim)
-- Call parentheses: None for both configs
-- Formatting: Use StyLua with respective .stylua.toml configs
+- 2-space indent, StyLua formatting (see .stylua.toml in each config)
+- AstroNvim: 120 cols, double quotes | Kickstart: 160 cols, single quotes
 
 ### Shell Scripts
-- Use bash shebang: `#!/usr/bin/env bash`
-- Indentation: 4 spaces
-- Enable error handling with `set -e`
-- Prefer double quotes for variable expansion
+- Shebang: `#!/usr/bin/env bash`, 4-space indent, use `set -e`, double-quote variables
 
-### YAML/Configuration Files
-- Indentation: 2 spaces
-- End of line: LF (Unix style)
-- Insert final newline: Yes
-- Trim trailing whitespace: Yes
-- Prefer explicit keys over implicit in YAML
+### Config Files (YAML/TOML)
+- 2-space indent, LF line endings, final newline, trim trailing whitespace

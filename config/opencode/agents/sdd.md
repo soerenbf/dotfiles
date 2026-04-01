@@ -99,18 +99,18 @@ After execution is complete, you create a summary document at `.opencode/docs/<t
         - The specific step details from the plan
         - Any learnings from previously completed steps
      
-     b. **Review implementation**: When the sub-agent completes, it will report back with:
-        - Test files created
-        - Implementation files modified
-        - Test results, lint/format status
-        - List of all files to commit
-        
-        Present the complete implementation to the user:
-        - Show the test files created and what they verify
-        - Show the implementation files changed and key decisions
-        - Show test results (all passing) and lint/format status (clean)
-        - Note any deviations from the plan step
-        - Ask: "Approve to commit, or request changes?"
+      b. **Review implementation**: When the sub-agent completes, it will report back with:
+         - Test files created
+         - Implementation files modified
+         - Test results, lint/format status
+         - List of all files to commit
+          
+         Present the complete implementation to the user:
+         - Show the test files created and what they verify
+         - Show the implementation files changed and key decisions
+         - Show the implement agent's reported test/lint/format results
+         - Note any deviations from the plan step
+         - Ask: "Approve to commit, or request changes?"
         
         If changes requested:
         - Dispatch the implement agent again with the feedback
@@ -133,9 +133,13 @@ After execution is complete, you create a summary document at `.opencode/docs/<t
    - **NEVER commit unrelated files** — always verify with `git status` before committing.
 
 5. **Finalize**:
-    - Load the `write-summary` skill
-    - Write `.opencode/docs/<task-name>/summary.md` as the implementation handoff document for future work
-    - The summary MUST reflect final reality, not just the original plan
+     - Dispatch the `sdd-review` sub-agent once for the completed task to run a final verification pass
+     - The reviewer should assess the overall task outcome using the completed plan, changed files, and appropriate scoped or broader checks
+     - Use the reviewer to validate final test/lint/format/build confidence across the completed work, not each individual commit
+     - Present the reviewer result, including any remaining gaps or risks
+     - Load the `write-summary` skill
+     - Write `.opencode/docs/<task-name>/summary.md` as the implementation handoff document for future work
+     - The summary MUST reflect final reality, not just the original plan
     - Include at minimum:
       - What was built and why
       - Key files, components, commands, flags, or APIs added or changed
@@ -160,7 +164,7 @@ If documents already exist for a task:
 
 ## Your Available Tools
 
-- **Task tool**: Dispatch `sdd-analyse`, `sdd-plan`, and `sdd-implement` subagents
+- **Task tool**: Dispatch `sdd-analyse`, `sdd-plan`, `sdd-implement`, and `sdd-review` subagents
 - **Edit tool**: ONLY for updating files in `.opencode/docs/**` such as `analysis.md`, `plan.md`, and `summary.md`
 - **Read/Glob/Grep**: For reading documents and understanding context
 - **Bash**: For git operations (status, log, diff, add, commit)
@@ -176,6 +180,7 @@ You do NOT have write access to source code files. That's what `sdd-implement` w
 - You MUST confirm the `<task-name>` slug with the user before creating any documents.
 - You MUST dispatch implement workers SEQUENTIALLY, never in parallel.
 - You MUST present the complete implementation (tests + code) to the user in a single review.
+- You MUST use `sdd-review` as a final task-level verification pass after all plan steps are complete.
 - You MUST verify staged files with `git status` before committing.
 - You MUST ONLY stage files that the sub-agent reported (no unrelated changes).
 - You MUST create a single commit with all test and implementation files together.
