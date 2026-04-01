@@ -1,0 +1,28 @@
+- defaults:
+    link:
+      relink: true
+
+- link:
+    ~/.zshrc.platform: macos/zshrc.platform
+    ~/.zshenv.platform: macos/zshenv.platform
+    ~/.config/aerospace:
+      force: true
+      path: macos/config/aerospace
+    ~/.config/karabiner:
+      glob: true
+      create: true
+      path: macos/config/karabiner/**
+    ~/.config/kanata-tray:
+      glob: true
+      create: true
+      path: macos/config/kanata-tray/**
+    ~/.config/rectangle:
+      glob: true
+      create: true
+      path: macos/config/rectangle/**
+    ~/.config/alacritty/alacritty-platform.toml:
+      force: true
+      path: macos/config/alacritty/alacritty-macos.toml
+    ~/.config/ghostty/ghostty-platform:
+      force: true
+      path: macos/config/ghostty/ghostty-macos

@@ -1,0 +1,33 @@
+font-family = "JetBrainsMono Nerd Font Mono"
+font-size = 13
+
+theme = Nord
+
+window-padding-balance = true
+window-padding-color = background
+window-inherit-working-directory = true
+window-width = 200
+window-height = 50
+window-padding-x = 0
+
+cursor-style = block_hollow
+custom-shader = ~/.config/ghostty/shaders/cursor_smear_fade.glsl
+custom-shader-animation = true
+
+quick-terminal-position = top
+quick-terminal-size = 40%
+quick-terminal-screen = macos-menu-bar
+
+macos-option-as-alt = left
+macos-titlebar-style = transparent
+
+keybind = global:cmd+ctrl+alt+shift+t=toggle_quick_terminal
+
+# macos-* keys and macos-menu-bar are silently ignored by Ghostty on Linux.
+# Platform-specific overrides (zellij command, etc.) are loaded from
+# ~/.config/ghostty/ghostty-platform, which is a symlink placed by the
+# OS-specific Dotbot config pointing to the appropriate repo file:
+#   macOS: macos/config/ghostty/ghostty-macos
+#   Linux: linux/config/ghostty/ghostty-linux
+# The ? prefix suppresses errors if the platform file does not exist.
+config-file = "?~/.config/ghostty/ghostty-platform"

@@ -1,0 +1,71 @@
+- defaults:
+    link:
+      relink: true
+
+- clean:
+    ~/:
+      force: true
+    ~/.config:
+      recursive: true
+
+- link:
+    ~/.bashrc: shared/bashrc
+    ~/.zshrc: shared/zshrc
+    ~/.zshenv: shared/zshenv
+    ~/.p10k.zsh: shared/p10k.zsh
+    ~/.config/btop:
+      create: true
+      path: shared/config/btop
+    ~/.config/fish:
+      glob: true
+      create: true
+      path: shared/config/fish/**
+    ~/.config/helix:
+      force: true
+      path: shared/config/helix
+    ~/.config/zellij:
+      glob: true
+      create: true
+      path: shared/config/zellij/**
+    ~/.config/zed:
+      glob: true
+      create: true
+      path: shared/config/zed/**
+    ~/.config/kanata:
+      force: true
+      path: shared/config/kanata
+    ~/.config/nvim-astro:
+      force: true
+      path: shared/config/astronvim
+    ~/.config/nvim:
+      force: true
+      path: shared/config/kickstart.nvim
+    ~/.config/kitty:
+      force: true
+      path: shared/config/kitty
+    ~/.config/opencode:
+      glob: true
+      create: true
+      path: shared/config/opencode/**
+    # Ghostty: link individual tracked files so ~/.config/ghostty/ remains a real
+    # directory and the OS-specific ghostty-platform symlink can coexist.
+    ~/.config/ghostty:
+      glob: true
+      create: true
+      path: shared/config/ghostty/**
+    # Alacritty: link individual tracked files so ~/.config/alacritty/ remains a
+    # real directory and the OS-specific alacritty-platform.toml can coexist.
+    # Note: do NOT use glob here - dotbot has a quirk where a single-file glob with
+    # a non-slash destination falls back to a literal path link (the pattern itself,
+    # not the resolved file), which fails. Link the file directly instead.
+    ~/.config/alacritty/alacritty.toml:
+      force: true
+      create: true
+      path: shared/config/alacritty/alacritty.toml
+
+- create:
+    - ~/.vim/undodir
+
+- shell:
+    - [git submodule update --init --recursive, Installing submodules]
+    - [touch ~/.z, Creating z history file]

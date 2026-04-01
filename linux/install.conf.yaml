@@ -1,0 +1,23 @@
+- defaults:
+    link:
+      relink: true
+
+- link:
+    ~/.zshrc.platform: linux/zshrc.platform
+    ~/.zshenv.platform: linux/zshenv.platform
+    ~/.config/alacritty/alacritty-platform.toml:
+      force: true
+      path: linux/config/alacritty/alacritty-linux.toml
+    ~/.config/ghostty/ghostty-platform:
+      force: true
+      path: linux/config/ghostty/ghostty-linux
+    ~/.config/niri:
+      glob: true
+      create: true
+      force: true
+      path: linux/config/niri/*
+    ~/.config/noctalia:
+      glob: true
+      create: true
+      force: true
+      path: linux/config/noctalia/*

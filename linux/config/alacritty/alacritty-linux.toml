@@ -1,0 +1,5 @@
+# Linux-specific Alacritty overrides
+
+[shell]
+program = "zellij"
+args = ["-l", "welcome"]
