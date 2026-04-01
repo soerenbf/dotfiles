@@ -5,6 +5,11 @@ Files:
 - `base-lg-ultrafine.bin`: untouched source EDID from `card1-DP-1`
 - `vdisplay-4k-iphone17.bin`: final virtual-display EDID
 
+Tools used:
+
+- `wxedid`: used to open and edit the binary EDID directly
+- `edid-decode`: used to inspect and validate the resulting EDID
+
 Advertised modes:
 
 1. `3840x2160 @ 60`

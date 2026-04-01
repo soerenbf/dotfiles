@@ -2,6 +2,10 @@
 
 This directory contains the Sunshine setup used on this machine.
 
+Reference:
+
+- Primary implementation reference: <https://www.azdanov.dev/articles/2025/how-to-create-a-virtual-display-for-sunshine-on-arch-linux>
+
 Assumptions:
 
 - Arch/CachyOS-style system
