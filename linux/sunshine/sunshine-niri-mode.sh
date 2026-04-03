@@ -8,6 +8,7 @@
 set -euo pipefail
 
 export XDG_RUNTIME_DIR="${XDG_RUNTIME_DIR:-/run/user/$(id -u)}"
+LOG_FILE="${HOME}/.config/sunshine/sunshine-launch.log"
 
 if [[ -n "${SUNSHINE_NIRI_SOCKET:-}" ]]; then
     export NIRI_SOCKET="${SUNSHINE_NIRI_SOCKET}"
@@ -26,6 +27,13 @@ if [[ -z "${FPS}" ]]; then
 fi
 
 apply_mode() {
+    printf '%s sunshine-niri-mode requested=%sx%s@%s applying=%s output=%s\n' \
+        "$(date --iso-8601=seconds)" \
+        "${WIDTH}" \
+        "${HEIGHT}" \
+        "${FPS}" \
+        "$1" \
+        "${OUTPUT_NAME}" >> "${LOG_FILE}"
     niri msg output "${OUTPUT_NAME}" mode "$1"
 }
 
