@@ -16,10 +16,10 @@
       glob: true
       create: true
       path: macos/config/kanata-tray/**
-    ~/.config/rectangle:
-      glob: true
+    ~/.config/rectangle/RectangleConfig.json:
+      force: true
       create: true
-      path: macos/config/rectangle/**
+      path: macos/config/rectangle/RectangleConfig.json
     ~/.config/alacritty/alacritty-platform.toml:
       force: true
       path: macos/config/alacritty/alacritty-macos.toml
