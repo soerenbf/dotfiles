@@ -8,6 +8,7 @@
 set -euo pipefail
 
 export XDG_RUNTIME_DIR="${XDG_RUNTIME_DIR:-/run/user/$(id -u)}"
+LOG_FILE="${HOME}/.config/sunshine/sunshine-launch.log"
 
 if [[ -n "${SUNSHINE_NIRI_SOCKET:-}" ]]; then
     export NIRI_SOCKET="${SUNSHINE_NIRI_SOCKET}"
@@ -39,4 +40,15 @@ while IFS= read -r other_output; do
     niri msg output "${other_output}" on
 done < <(list_other_outputs)
 
+sleep 0.5
+
 niri msg output "${OUTPUT_NAME}" off
+
+sleep 0.5
+
+# if noctalia-shell crashes due to no monitors, restart it.
+if ! pgrep -f '^qs -c noctalia-shell$' >/dev/null 2>&1; then
+    printf '%s sunshine-niri-disconnect restarting-noctalia\n' \
+        "$(date --iso-8601=seconds)" >> "${LOG_FILE}"
+    nohup qs -c noctalia-shell >/dev/null 2>&1 &
+fi
