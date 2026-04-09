@@ -47,6 +47,10 @@
       glob: true
       create: true
       path: shared/config/opencode/**
+    ~/.pi/agent/settings.json:
+      force: true
+      create: true
+      path: shared/config/pi/agent/settings.json
     # Ghostty: link individual tracked files so ~/.config/ghostty/ remains a real
     # directory and the OS-specific ghostty-platform symlink can coexist.
     ~/.config/ghostty:
