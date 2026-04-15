@@ -77,11 +77,11 @@ binds {
     Mod+Shift+K                         cooldown-ms=150 { focus-workspace-up; }
     Mod+WheelScrollUp                   cooldown-ms=150 { focus-workspace-up; }
     Mod+CTRL+WheelScrollUp              cooldown-ms=150 { move-column-to-workspace-up; }
-    Mod+CTRL+UP                         cooldown-ms=150 { move-column-to-workspace-up; }
-    Mod+CTRL+K                          cooldown-ms=150 { move-column-to-workspace-up; }
+    Mod+Alt+CTRL+UP                     cooldown-ms=150 { move-column-to-workspace-up; }
+    Mod+Alt+CTRL+K                      cooldown-ms=150 { move-column-to-workspace-up; }
     Mod+CTRL+WheelScrollDown            cooldown-ms=150 { move-column-to-workspace-down; }
-    Mod+CTRL+Down                       cooldown-ms=150 { move-column-to-workspace-down; }
-    Mod+CTRL+J                          cooldown-ms=150 { move-column-to-workspace-down; }
+    Mod+Alt+CTRL+Down                   cooldown-ms=150 { move-column-to-workspace-down; }
+    Mod+Alt+CTRL+J                      cooldown-ms=150 { move-column-to-workspace-down; }
 
     Mod+WheelScrollRight                { focus-column-right; }
     Mod+WheelScrollLeft                 { focus-column-left; }
@@ -116,8 +116,12 @@ binds {
     Mod+TAB                             { focus-workspace-previous; }
 
     // ─── Layout Controls ───
+    Mod+CTRL+UP                         { maximize-column; }
+    Mod+CTRL+K                          { maximize-column; }
     Mod+CTRL+F                          { expand-column-to-available-width; }
     Mod+C                               { center-column; }
+    Mod+CTRL+DOWN                       { center-column; }
+    Mod+CTRL+J                          { center-column; }
     Mod+CTRL+C                          { center-visible-columns; }
     Mod+R                               { switch-preset-column-width; }
     Mod+Minus                           { set-column-width "-10%"; }
