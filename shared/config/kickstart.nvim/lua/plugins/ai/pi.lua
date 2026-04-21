@@ -1,6 +1,8 @@
 return {
-  'carderne/pi-nvim',
-  config = true,
+  'soerenbf/pi-nvim',
+  config = {
+    set_default_keymaps = false,
+  },
   -- stylua: ignore
   keys = {
     { '<leader>aa', '<cmd>Pi<cr>', desc = 'Ask pi', mode = { 'n', 'v' }, },

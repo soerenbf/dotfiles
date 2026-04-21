@@ -1,3 +1,10 @@
 {
-  "packages": ["https://github.com/carderne/pi-nvim"]
+  "packages": [
+    "npm:pi-nvim",
+    "npm:pi-mcp-adapter",
+    "npm:pi-sandbox",
+    "npm:pi-web-access"
+  ],
+  "lastChangelogVersion": "0.67.6"
 }
+
