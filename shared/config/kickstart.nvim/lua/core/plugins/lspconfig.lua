@@ -124,8 +124,18 @@ return {
         vim.lsp.enable(name)
       end
 
+      local automatic_enable_exclude = {}
+      for server_name, server_opts in pairs(opts._servers) do
+        if server_opts._skip_setup then
+          table.insert(automatic_enable_exclude, server_name)
+        end
+      end
+
       require('mason-lspconfig').setup {
         ensure_installed = vim.tbl_keys(opts._servers),
+        automatic_enable = {
+          exclude = automatic_enable_exclude,
+        },
         handlers = {
           function(server_name)
             local server_opts = opts._servers[server_name] or {}
