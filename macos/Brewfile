@@ -73,6 +73,8 @@ brew "kanata"
 brew "gitu"
 # Prettier is an opinionated code formatter for JavaScript, TypeScript, CSS, and more.
 brew "prettier"
+# Parser generator tool and incremental parsing library
+brew "tree-sitter"
 
 # AeroSpace is an i3-like tiling window manager for macOS
 # cask "aerospace"
@@ -83,6 +85,8 @@ cask "font-jetbrains-mono"
 cask "font-symbols-only-nerd-font"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
+# Personal knowledge base and note-taking app
+cask "obsidian"
 # Control your tools with a few keystrokes
 cask "raycast"
 # System monitor for the menu bar
