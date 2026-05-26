@@ -53,6 +53,8 @@ brew "sevenzip"
 brew "starship"
 # Watch files and take action when they change
 brew "watchman"
+# Wake-on-LAN client
+brew "wakeonlan"
 # JavaScript package manager
 brew "yarn"
 # Blazing fast terminal file manager written in Rust, based on async I/O
