@@ -7,6 +7,7 @@ set -x KANATA_TRAY_LOG_DIR ~/.config/kanata-tray
 fish_add_path ~/.local/bin
 fish_add_path /usr/local/go/bin
 fish_add_path $GOPATH/bin
+fish_add_path ~/.cargo/bin
 
 # enable vi mode
 set -g fish_key_bindings fish_vi_key_bindings

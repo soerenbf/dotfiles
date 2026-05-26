@@ -5,7 +5,7 @@
 allow_concurrent_presets = false
 
 [defaults]
-kanata_executable = "" # Leave empty to use the system $PATH
+kanata_executable = "/opt/homebrew/bin/kanata" # Leave empty to use the system $PATH
 kanata_config = ""     # Default kanata config locations will be used if empty
 tcp_port = 5829        # Default TCP port
 autorestart_on_crash = true

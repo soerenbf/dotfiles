@@ -1,0 +1,55 @@
+{
+  "enabled": true,
+  "network": {
+    "allowedDomains": [
+      "npmjs.org",
+      "*.npmjs.org",
+      "registry.npmjs.org",
+      "registry.yarnpkg.com",
+      "github.com",
+      "*.github.com",
+      "api.github.com",
+      "raw.githubusercontent.com",
+      "objects.githubusercontent.com",
+      "crates.io",
+      "*.crates.io",
+      "static.crates.io",
+      "rust-lang.org",
+      "*.rust-lang.org",
+      "rustup.rs",
+      "*.rustup.rs",
+      "hackage.haskell.org",
+      "haskell.org",
+      "*.haskell.org",
+      "stackage.org",
+      "*.stackage.org"
+    ],
+    "deniedDomains": []
+  },
+  "filesystem": {
+    "denyRead": ["/Users", "/home"],
+    "allowRead": [
+      ".",
+      "~/.config",
+      "~/.local",
+      "Library",
+      "~/.cargo",
+      "~/.rustup",
+      "~/.cabal",
+      "~/.stack",
+      "~/.ghcup",
+      "~/.npm"
+    ],
+    "allowWrite": [
+      ".",
+      "/tmp",
+      "~/.cargo",
+      "~/.rustup",
+      "~/.cabal",
+      "~/.stack",
+      "~/.ghcup",
+      "~/.npm"
+    ],
+    "denyWrite": [".env", ".env.*", "*.pem", "*.key"]
+  }
+}

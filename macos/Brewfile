@@ -1,7 +1,3 @@
-tap "homebrew/bundle"
-tap "homebrew/cask-fonts"
-tap "homebrew/cask-versions"
-tap "homebrew/services"
 tap "nikitabobko/tap"
 tap "oven-sh/bun"
 tap "buo/cask-upgrade"
@@ -30,23 +26,23 @@ brew "swift-protobuf"
 # Swift language implementation of gRPC
 brew "grpc-swift"
 # Post-modern modal text editor
-brew "helix"
+# brew "helix"
 # Improved top (interactive process viewer)
 brew "htop"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
 # Simple terminal UI for git commands
-brew "lazygit"
+# brew "lazygit"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # Mac store apps for brew
 brew "mas"
 # Object-relational database system
-brew "postgresql@16"
+brew "postgresql"
 # Python version management
 brew "pyenv"
 # Interpreted, interactive, object-oriented programming language
-brew "python@3.10"
+brew "python@3"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # Experimental Rust compiler front-end for IDEs
@@ -70,14 +66,14 @@ brew "oven-sh/bun/bun"
 # Software keyboard remapper
 brew "kanata"
 # Telescope-like search for your terminal
-brew "television"
+# brew "television"
 # Magit-like git UI for the terminal
 brew "gitu"
 # Prettier is an opinionated code formatter for JavaScript, TypeScript, CSS, and more.
 brew "prettier"
 
 # AeroSpace is an i3-like tiling window manager for macOS
-cask "aerospace"
+# cask "aerospace"
 # Enable Windows-like alt-tab
 cask "alt-tab"
 cask "font-hack-nerd-font"
