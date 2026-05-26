@@ -30,6 +30,7 @@
     "denyRead": ["/Users", "/home"],
     "allowRead": [
       ".",
+      "~/.pi",
       "~/.config",
       "~/.local",
       "Library",

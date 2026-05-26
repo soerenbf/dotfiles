@@ -2,6 +2,7 @@ set -x EDITOR nvim
 set -x GOPATH ~/go
 set -x KANATA_TRAY_CONFIG_DIR ~/.config/kanata-tray
 set -x KANATA_TRAY_LOG_DIR ~/.config/kanata-tray
+set -x OPENSPEC_TELEMETRY 0
 
 # PATH
 fish_add_path ~/.local/bin

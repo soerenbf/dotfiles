@@ -5,6 +5,7 @@
     "npm:pi-sandbox",
     "npm:pi-web-access"
   ],
-  "lastChangelogVersion": "0.67.6"
+  "lastChangelogVersion": "0.67.6",
+  "defaultProvider": "github-copilot",
+  "defaultModel": "gpt-5.4"
 }
-

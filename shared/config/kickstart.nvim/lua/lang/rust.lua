@@ -3,8 +3,11 @@ return {
     'nvim-treesitter/nvim-treesitter',
     optional = true,
     opts = function(_, opts)
-      if opts.ensure_installed ~= 'all' then
-        opts.ensure_installed = vim.tbl_extend('keep', opts.ensure_installed, { 'rust', 'toml' })
+      opts.languages = opts.languages or {}
+      for _, lang in ipairs { 'rust', 'toml' } do
+        if not vim.list_contains(opts.languages, lang) then
+          table.insert(opts.languages, lang)
+        end
       end
     end,
   },
