@@ -6,7 +6,23 @@ return {
     build = ':TSUpdate',
     opts = {
       install_dir = vim.fn.stdpath 'data' .. '/site',
-      languages = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' },
+      languages = {
+        'bash',
+        'c',
+        'diff',
+        'gitcommit',
+        'git_rebase',
+        'html',
+        'json',
+        'lua',
+        'luadoc',
+        'markdown',
+        'markdown_inline',
+        'query',
+        'vim',
+        'vimdoc',
+        'yaml',
+      },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
