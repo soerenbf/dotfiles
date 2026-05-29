@@ -67,6 +67,154 @@ return {
     end,
   },
   {
+    'shrey99sh/ts-node-select',
+    tag = 'release/v0.1.2',
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    config = function()
+      local ts_node_select = require 'ts-node-select'
+
+      ts_node_select.setup {
+        keymaps = {
+          init = '<C-Space>',
+          expand = '<C-Space>',
+          shrink = '<BS>',
+        },
+      }
+
+      vim.keymap.set('n', '<C-@>', ts_node_select.init, { desc = 'TS init selection' })
+      vim.keymap.set('x', '<C-@>', ts_node_select.expand, { desc = 'TS expand selection' })
+      vim.keymap.set('x', '<C-BS>', ts_node_select.shrink, { desc = 'TS shrink selection' })
+    end,
+  },
+  {
+    'nvim-treesitter/nvim-treesitter-textobjects',
+    branch = 'main',
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    opts = {
+      select = {
+        lookahead = true,
+        selection_modes = {
+          ['@parameter.outer'] = 'v',
+          ['@function.outer'] = 'V',
+          ['@class.outer'] = 'V',
+        },
+        include_surrounding_whitespace = true,
+      },
+      move = {
+        set_jumps = true,
+      },
+    },
+    config = function(_, opts)
+      require('nvim-treesitter-textobjects').setup(opts)
+    end,
+    keys = {
+      {
+        'af',
+        function()
+          require('nvim-treesitter-textobjects.select').select_textobject('@function.outer', 'textobjects')
+        end,
+        mode = { 'x', 'o' },
+        desc = 'outer function',
+      },
+      {
+        'if',
+        function()
+          require('nvim-treesitter-textobjects.select').select_textobject('@function.inner', 'textobjects')
+        end,
+        mode = { 'x', 'o' },
+        desc = 'inner function',
+      },
+      {
+        'ac',
+        function()
+          require('nvim-treesitter-textobjects.select').select_textobject('@class.outer', 'textobjects')
+        end,
+        mode = { 'x', 'o' },
+        desc = 'outer class',
+      },
+      {
+        'ic',
+        function()
+          require('nvim-treesitter-textobjects.select').select_textobject('@class.inner', 'textobjects')
+        end,
+        mode = { 'x', 'o' },
+        desc = 'inner class',
+      },
+      {
+        'as',
+        function()
+          require('nvim-treesitter-textobjects.select').select_textobject('@local.scope', 'locals')
+        end,
+        mode = { 'x', 'o' },
+        desc = 'local scope',
+      },
+      {
+        ']m',
+        function()
+          require('nvim-treesitter-textobjects.move').goto_next_start('@function.outer', 'textobjects')
+        end,
+        mode = { 'n', 'x', 'o' },
+        desc = 'next function start',
+      },
+      {
+        ']M',
+        function()
+          require('nvim-treesitter-textobjects.move').goto_next_end('@function.outer', 'textobjects')
+        end,
+        mode = { 'n', 'x', 'o' },
+        desc = 'next function end',
+      },
+      {
+        '[m',
+        function()
+          require('nvim-treesitter-textobjects.move').goto_previous_start('@function.outer', 'textobjects')
+        end,
+        mode = { 'n', 'x', 'o' },
+        desc = 'previous function start',
+      },
+      {
+        '[M',
+        function()
+          require('nvim-treesitter-textobjects.move').goto_previous_end('@function.outer', 'textobjects')
+        end,
+        mode = { 'n', 'x', 'o' },
+        desc = 'previous function end',
+      },
+      {
+        ']]',
+        function()
+          require('nvim-treesitter-textobjects.move').goto_next_start('@class.outer', 'textobjects')
+        end,
+        mode = { 'n', 'x', 'o' },
+        desc = 'next class start',
+      },
+      {
+        '][',
+        function()
+          require('nvim-treesitter-textobjects.move').goto_next_end('@class.outer', 'textobjects')
+        end,
+        mode = { 'n', 'x', 'o' },
+        desc = 'next class end',
+      },
+      {
+        '[[',
+        function()
+          require('nvim-treesitter-textobjects.move').goto_previous_start('@class.outer', 'textobjects')
+        end,
+        mode = { 'n', 'x', 'o' },
+        desc = 'previous class start',
+      },
+      {
+        '[]',
+        function()
+          require('nvim-treesitter-textobjects.move').goto_previous_end('@class.outer', 'textobjects')
+        end,
+        mode = { 'n', 'x', 'o' },
+        desc = 'previous class end',
+      },
+    },
+  },
+  {
     'aaronik/treewalker.nvim',
     opts = {
       highlight = true, -- Whether to briefly highlight the node after jumping to it

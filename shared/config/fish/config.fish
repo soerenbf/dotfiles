@@ -9,6 +9,8 @@ fish_add_path ~/.local/bin
 fish_add_path /usr/local/go/bin
 fish_add_path $GOPATH/bin
 fish_add_path ~/.cargo/bin
+fish_add_path ~/.ghcup/bin
+fish_add_path ~/.cabal/bin
 
 # enable vi mode
 set -g fish_key_bindings fish_vi_key_bindings
@@ -68,22 +70,20 @@ if status is-interactive
             return 1
         end
 
-        # Helper function to set Zellij tab name
+        # Helper function to set Zellij tab name for selected commands only
         function set_zellij_tab_name --argument-names cmd
             set -l cmd_line (string split " " -- $cmd)
             set -l process_name $cmd_line[1]
 
             switch $process_name
                 case v
-                    set process_name (string join " " "nvim" (prompt_pwd))
+                    command nohup zellij action rename-tab (string join " " "nvim" (prompt_pwd)) >/dev/null 2>&1
                 case ssh mosh
                     set -l ssh_target (zellij_ssh_target_from_command $cmd)
                     if test -n "$ssh_target"
-                        set process_name $ssh_target
+                        command nohup zellij action rename-tab (string join " " "ssh" $ssh_target) >/dev/null 2>&1
                     end
             end
-
-            command nohup zellij action rename-tab $process_name >/dev/null 2>&1
         end
 
         # Update the zellij tab name with the current process name or pwd.

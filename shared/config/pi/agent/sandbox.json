@@ -2,18 +2,15 @@
   "enabled": true,
   "network": {
     "allowedDomains": [
-      "npmjs.org",
-      "*.npmjs.org",
-      "registry.npmjs.org",
-      "registry.yarnpkg.com",
       "github.com",
       "*.github.com",
-      "api.github.com",
       "raw.githubusercontent.com",
       "objects.githubusercontent.com",
+      "npmjs.org",
+      "*.npmjs.org",
+      "registry.yarnpkg.com",
       "crates.io",
       "*.crates.io",
-      "static.crates.io",
       "rust-lang.org",
       "*.rust-lang.org",
       "rustup.rs",
@@ -30,16 +27,18 @@
     "denyRead": ["/Users", "/home"],
     "allowRead": [
       ".",
+      "~/AGENTS.md",
       "~/.pi",
       "~/.config",
       "~/.local",
-      "Library",
+      "~/Library",
       "~/.cargo",
       "~/.rustup",
       "~/.cabal",
       "~/.stack",
       "~/.ghcup",
-      "~/.npm"
+      "~/.npm",
+      "/opt/homebrew/Cellar"
     ],
     "allowWrite": [
       ".",
