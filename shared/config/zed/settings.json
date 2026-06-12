@@ -7,50 +7,67 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "diff_view_style": "unified",
+  "context_servers": {
+    "linear": {
+      "enabled": true,
+      "url": "https://mcp.linear.app/mcp"
+    },
+    "atlassian": {
+      "url": "https://mcp.atlassian.com/v1/mcp/authv2"
+    }
+  },
+  "edit_predictions": {
+    "mode": "subtle",
+    "provider": "copilot"
+  },
+  "agent_servers": {
+    "pi-acp": {
+      "type": "registry"
+    }
+  },
   "git_panel": {
     "tree_view": true
   },
-  "features": {
-    "edit_prediction_provider": "zed"
+  "icon_theme": {
+    "mode": "system",
+    "light": "Zed (Default)",
+    "dark": "Zed (Default)"
   },
-  "icon_theme": "Zed (Default)",
-  "format_on_save": "off",
+  "format_on_save": "on",
   "autosave": "on_focus_change",
   "theme": {
     "mode": "dark",
-    "light": "Rosé Pine Dawn",
-    "dark": "Nord Dark"
+    "light": "Dawnfox - opaque",
+    "dark": "Nordfox - opaque"
   },
-  "ui_font_size": 14,
+  "ui_font_size": 12,
   "minimap": { "show": "always", "display_in": "active_editor" },
-  "buffer_font_size": 13.0,
-  "buffer_font_family": "JetBrainsMono Nerd Font",
+  "buffer_font_size": 12.0,
   "vim_mode": true,
   "relative_line_numbers": "enabled",
   "base_keymap": "VSCode",
   "tab_size": 4, // This is the default, but for some reason it does not apply unless explicitly defined?
+  "soft_wrap": "none",
   "debugger": {
     "dock": "right"
   },
   "agent": {
+    "use_modifier_to_send": true,
+    "thinking_display": "preview",
     "default_model": {
+      "effort": "high",
+      "enable_thinking": true,
       "provider": "copilot_chat",
-      "model": "claude-opus-4.5"
+      "model": "gpt-5.4"
     },
     "model_parameters": []
   },
   "terminal": {
     "dock": "right",
-    "font_family": "JetBrainsMono Nerd Font",
-    "font_size": 13
-  },
-  "chat_panel": {
-    "button": "when_in_call"
+    "font_size": 12
   },
   "collaboration_panel": {
-    "button": false
-  },
-  "notification_panel": {
     "button": false
   },
   "journal": {
@@ -66,6 +83,10 @@
     }
   },
   "languages": {
+    "Markdown": {
+      "soft_wrap": "editor_width",
+      "format_on_save": "off"
+    },
     "TypeScript": {
       "code_actions_on_format": {
         "source.fixAll.eslint": true
@@ -119,6 +140,7 @@
     },
     "YAML": {
       "tab_size": 2,
+      "format_on_save": "off",
       "formatter": {
         "external": {
           "command": "prettierd",

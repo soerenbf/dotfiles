@@ -19,7 +19,8 @@
       "haskell.org",
       "*.haskell.org",
       "stackage.org",
-      "*.stackage.org"
+      "*.stackage.org",
+      "hub.docker.com"
     ],
     "deniedDomains": []
   },
@@ -28,21 +29,25 @@
     "allowRead": [
       ".",
       "~/AGENTS.md",
+      "~/.gitconfig",
       "~/.pi",
       "~/.config",
       "~/.local",
       "~/Library",
+      "~/Developer",
       "~/.cargo",
       "~/.rustup",
       "~/.cabal",
       "~/.stack",
       "~/.ghcup",
       "~/.npm",
+      "~/dotfiles",
       "/opt/homebrew/Cellar"
     ],
     "allowWrite": [
       ".",
       "/tmp",
+      "/private/tmp",
       "~/.cargo",
       "~/.rustup",
       "~/.cabal",

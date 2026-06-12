@@ -1,0 +1,71 @@
+{
+  "defaultProfile": "balanced",
+  "debug": false,
+  "tierStickiness": 0.6,
+  "defaultContextThresholdPercent": 90,
+  "rules": [
+    {
+      "matches": [
+        "archive a completed change",
+        "archive this change",
+        "finalize and archive a change",
+        "archive change"
+      ],
+      "tier": "low",
+      "reason": "OpenSpec archival work should stay on the cheap tier."
+    },
+    {
+      "matches": [
+        "propose a new change",
+        "create a change",
+        "generate all artifacts",
+        "implement tasks from an openspec change",
+        "continue implementation",
+        "work through tasks"
+      ],
+      "tier": "medium",
+      "reason": "OpenSpec proposal and implementation work is usually bounded synthesis or coding work."
+    },
+    {
+      "matches": [
+        "enter explore mode",
+        "think deeply",
+        "exploring ideas",
+        "investigating problems",
+        "clarifying requirements",
+        "thinking partner",
+        "tradeoff",
+        "root cause",
+        "architecture",
+        "strategy"
+      ],
+      "tier": "high",
+      "reason": "OpenSpec exploration and deep analysis should use the strongest tier."
+    }
+  ],
+  "profiles": {
+    "balanced": {
+      "high": {
+        "model": "openai-codex/gpt-5.5",
+        "thinking": "high",
+        "fallbacks": [
+          "github-copilot/gpt-5.5",
+          "github-copilot/claude-sonnet-4.6"
+        ]
+      },
+      "medium": {
+        "model": "openai-codex/gpt-5.4",
+        "thinking": "medium",
+        "fallbacks": [
+          "github-copilot/gpt-5.4",
+          "github-copilot/claude-sonnet-4.6"
+        ]
+      },
+      "low": {
+        "model": "openai-codex/gpt-5.4-mini",
+        "thinking": "low",
+        "fallbacks": ["github-copilot/gpt-5.4-mini"]
+      }
+    }
+  }
+}
