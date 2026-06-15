@@ -9,6 +9,7 @@
       recursive: true
 
 - link:
+    ~/AGENTS.md: shared/_AGENTS.md
     ~/.bashrc: shared/bashrc
     ~/.zshrc: shared/zshrc
     ~/.zshenv: shared/zshenv

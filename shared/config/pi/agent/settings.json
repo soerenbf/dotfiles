@@ -6,7 +6,7 @@
     "npm:pi-web-access",
     "npm:@yeliu84/pi-model-router"
   ],
-  "lastChangelogVersion": "0.79.1",
+  "lastChangelogVersion": "0.79.3",
   "defaultProvider": "openai-codex",
   "defaultModel": "gpt-5.4",
   "theme": "dark",
