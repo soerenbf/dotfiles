@@ -34,6 +34,7 @@ alias lg="lazygit"
 alias rustfmt="cargo +nightly-2023-04-01 fmt"
 
 starship init fish | source
+pyenv init - fish | source
 
 if test -f "$HOME/.cargo/env.fish"
     source "$HOME/.cargo/env.fish"

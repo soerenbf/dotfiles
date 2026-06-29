@@ -80,6 +80,13 @@
           "features": "all"
         }
       }
+    },
+    "hls": {
+      "initialization_options": {
+        "haskell": {
+          "formattingProvider": "fourmolu"
+        }
+      }
     }
   },
   "languages": {
