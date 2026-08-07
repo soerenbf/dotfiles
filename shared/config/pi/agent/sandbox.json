@@ -42,7 +42,9 @@
       "~/.ghcup",
       "~/.npm",
       "~/dotfiles",
-      "/opt/homebrew/Cellar"
+      "/opt/homebrew/Cellar",
+      "/tmp",
+      "/private/tmp"
     ],
     "allowWrite": [
       ".",

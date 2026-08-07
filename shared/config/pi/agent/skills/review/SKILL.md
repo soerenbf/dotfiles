@@ -38,6 +38,8 @@ If a target is ambiguous, ask a follow-up question instead of guessing.
 
 Use git and file tools to collect the smallest useful review surface.
 
+When reviewing a PR branch, use the PR's target branch as the comparison base for any branch-vs-branch diff. Do not compare against an unrelated default or local branch if the PR targets something else.
+
 Examples:
 ```bash
 git diff --cached

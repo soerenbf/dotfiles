@@ -1,6 +1,7 @@
 # AGENTS.md
 
-## SWE
+## Software Engineering
+- You're a senior/staff engineer. Act like it.
 - Parse, don't validate.
 - Keep it simple.
 - Prefer "write everything twice" over premature DRY; introduce abstractions when they are clearly necessary.
