@@ -65,6 +65,20 @@ Apply proportionately. A small ADR does not need the breadth of a cross-system f
 - Significant choices link to ADRs or explain why no ADR is needed.
 - Testing covers affected layers and failure paths.
 
+### Security Issue Proposal
+
+- The document is no longer than needed for reviewers to decide the issue, scope, and remediation; supporting detail is linked rather than repeated.
+- The issue summary gives a short, self-contained account of the vulnerable behavior, trigger, practical consequence, and broad affected area without requiring readers to infer them from the security-property analysis.
+- The expected security property and the current violation are explicit.
+- Attacker capabilities, prerequisites, entry points, and trust boundaries are evidence-backed.
+- Demonstrated impact is distinguishable from inferred impact and unresolved hypotheses.
+- Affected, unaffected, and unknown scope are all addressed, including relevant versions and configurations.
+- Remediation requirements are stated independently of the proposed implementation.
+- The proposal explains why the remediation covers the vulnerability class and all identified paths, not only the demonstrated case.
+- Verification includes adversarial and regression evidence appropriate to the claimed impact.
+- Sensitive details are no broader than needed for the intended internal reviewers.
+- Optional and empty sections are omitted, and headings do not fragment a simple narrative.
+
 ### ADR
 
 - Scope is one bounded decision.

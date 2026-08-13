@@ -1,6 +1,6 @@
 ---
 name: org-tech-docs
-description: Create or review Concordium technical documents, including product requirements documents (PRDs), technical feature proposals and RFCs, architecture decision records (ADRs), decision docs, and technical designs. Use this skill whenever the user asks to draft, refine, structure, assess, or review one of these documents, even if they only say “proposal,” “requirements,” or “decision record.”
+description: Create or review Concordium technical documents, including product requirements documents (PRDs), technical feature proposals and RFCs, internal security issue proposals, architecture decision records (ADRs), decision docs, and technical designs. Use this skill whenever the user asks to collaboratively draft, refine, structure, assess, or review one of these documents, even if they only say “proposal,” “requirements,” “security issue,” or “decision record.”
 ---
 
 # Organization Technical Documents
@@ -17,6 +17,7 @@ Read [references/document-lifecycle.md](references/document-lifecycle.md) when t
 | --- | --- | --- |
 | Agree on observable behavior and scope | PRD | What must the product do, and why? |
 | Review a technical design before committing | Feature proposal / RFC | How should the feature be built? |
+| Agree on a vulnerability, its scope, and remediation | Security issue proposal | What is the issue, what does it affect, and how should we resolve it? |
 | Preserve one consequential technical choice | ADR | What did we decide, and why? |
 
 A technical feature proposal is Concordium's equivalent of an RFC. Do not introduce RFC as a separate document unless the user's local convention distinguishes it.
@@ -25,6 +26,7 @@ Load only the relevant guidance and template:
 
 - PRD: [references/prd.md](references/prd.md) and [assets/prd-template.md](assets/prd-template.md)
 - Feature proposal: [references/feature-proposal.md](references/feature-proposal.md) and [assets/feature-proposal-template.md](assets/feature-proposal-template.md)
+- Security issue proposal: [references/security-issue-proposal.md](references/security-issue-proposal.md) and [assets/security-issue-proposal-template.md](assets/security-issue-proposal-template.md)
 - ADR: [references/adr.md](references/adr.md) and [assets/adr-template.md](assets/adr-template.md)
 
 If the user supplies an organizational template, use it instead of the asset while retaining applicable guidance and quality checks. Templates are defaults: omit irrelevant sections and add domain-specific sections only when they help reviewers. Read [references/examples.md](references/examples.md) when examples would clarify document boundaries, lifecycle language, or traceability.
