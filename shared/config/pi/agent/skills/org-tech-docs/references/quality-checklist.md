@@ -71,6 +71,7 @@ Apply proportionately. A small ADR does not need the breadth of a cross-system f
 - The issue summary gives a short, self-contained account of the vulnerable behavior, trigger, practical consequence, and broad affected area without requiring readers to infer them from the security-property analysis.
 - The expected security property and the current violation are explicit.
 - Attacker capabilities, prerequisites, entry points, and trust boundaries are evidence-backed.
+- When reachability is non-trivial, a compact graph or containment tree lets reviewers trace `E` entry points through `P` processing steps to `V` vulnerable operations, defines that legend, distinguishes uncertain paths, and resolves every marker to an exact symbol and direct, durable code link.
 - Demonstrated impact is distinguishable from inferred impact and unresolved hypotheses.
 - Affected, unaffected, and unknown scope are all addressed, including relevant versions and configurations.
 - Remediation requirements are stated independently of the proposed implementation.

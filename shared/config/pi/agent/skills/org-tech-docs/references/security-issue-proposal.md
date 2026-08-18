@@ -31,11 +31,12 @@ Then work through uncertainty in this order:
 1. **Issue summary:** Establish a concise shared understanding before introducing the underlying security model.
 2. **Security property:** State the invariant or trust boundary that should hold.
 3. **Current behavior:** Trace attacker-controlled data or actions to the violating behavior.
-4. **Impact:** Separate reproduced effects from evidence-backed inference and speculation.
-5. **Scope:** Identify affected, unaffected, and unknown paths, versions, configurations, and deployments.
-6. **Remediation requirements:** Define properties any acceptable solution must establish before selecting an implementation.
-7. **Solution:** Evaluate the current recommendation against those requirements and meaningful alternatives.
-8. **Verification:** Define the evidence needed to show both exploit prevention and absence of material regressions.
+4. **Reachability graph:** Map every known attacker-controlled entry point through nested structures and shared boundaries to the vulnerable operation.
+5. **Impact:** Separate reproduced effects from evidence-backed inference and speculation.
+6. **Scope:** Identify affected, unaffected, and unknown paths, versions, configurations, and deployments.
+7. **Remediation requirements:** Define properties any acceptable solution must establish before selecting an implementation.
+8. **Solution:** Evaluate the current recommendation against those requirements and meaningful alternatives.
+9. **Verification:** Define the evidence needed to show both exploit prevention and absence of material regressions.
 
 Ask targeted questions where evidence is missing. Do not silently decide disputed exploitability, impact, scope, or risk acceptance. Use diagrams when they clarify trust boundaries or reachability, and accompany them with a textual explanation.
 
@@ -73,6 +74,58 @@ Label material claims as needed:
 - **Accepted:** explicitly approved behavior or decision.
 
 Link code, tests, versions, and related documents precisely enough for reviewers to verify the claim. Avoid treating the absence of a known exploit as evidence that a path is safe.
+
+## Reachability Graph
+
+Include a compact reachability graph by default when more than one entry point exists or the path is not obvious. Its purpose is to let another engineer verify path coverage against the code without reconstructing the analysis from prose.
+
+For nested messages, wire objects, ASTs, or deserialization paths, prefer an ASCII containment tree:
+
+Use this fixed marker legend so readers can scan node roles without interpreting ad hoc notation:
+
+- `E` — attacker control or externally reachable entry point;
+- `P` — processing step needed to trace reachability from an entry point to vulnerable behavior;
+- `V` — vulnerable check or operation.
+
+```text
+<attacker-controlled trust-boundary input> [E1]
+├─ <message or operation> [E2]
+│  └─ <nested processing path> [P1]
+│     └─ <vulnerable type or operation> [V1]
+└─ <message or operation> [E3]
+   └─ <alternate processing path> [P2]
+      └─ <vulnerable type or operation> [V1]
+```
+
+Resolve every marker immediately below the graph with both an exact code symbol and a direct link to the relevant file or lines:
+
+```markdown
+- **[E1]** `<symbol>` — [`<file:lines>`](<direct code URL>)
+- **[E2]** `<symbol>` — [`<file:lines>`](<direct code URL>)
+- **[E3]** `<symbol>` — [`<file:lines>`](<direct code URL>)
+- **[P1]** `<symbol>` — [`<file:lines>`](<direct code URL>)
+- **[P2]** `<symbol>` — [`<file:lines>`](<direct code URL>)
+- **[V1]** `<symbol>` — [`<file:lines>`](<direct code URL>)
+```
+
+The graph should:
+
+- use the attacker-controlled trust-boundary input as its root;
+- show externally reachable messages or operations as the main branches;
+- preserve enough nested structure for reviewers to trace each path in code;
+- terminate each complete path at the vulnerable type or operation;
+- collapse paths only when doing so does not hide verification-relevant structure;
+- classify verification-relevant nodes with the fixed `E` (entry), `P` (processing path), and `V` (vulnerable operation) markers and include the legend before the graph;
+- do not invent additional marker classes; describe trust boundaries, validation, uncertainty, and consequences in node labels or prose;
+- resolve every marker to the exact symbol and a clickable file or line reference immediately below the graph; markers backed only by prose or an unlinked path are incomplete;
+- reuse the same marker where multiple paths converge on the same implementation;
+- prefer commit-pinned permalinks with line ranges so references remain durable; when the code host supports stable symbol links, use those instead; avoid branch-relative line links that will drift;
+- reference branching points, trust boundaries, enforcement points, and the vulnerable operation rather than annotating every data-only wrapper;
+- distinguish verified paths from suspected or unknown paths;
+- show validation or authorization boundaries when they affect exploitability; and
+- fit on one screen when possible, with detail delegated to linked evidence.
+
+Do not put long paths or URLs directly inside tree nodes; reference markers preserve the visual shape while the list below provides direct code navigation. Use a general directed graph instead when reachability cannot be represented clearly as containment. Accompany either form with a brief textual explanation so its meaning remains durable and accessible. The scope table remains authoritative for affected, unaffected, and unknown assessments; the graph explains reachability.
 
 ## Scope Analysis
 
@@ -120,6 +173,7 @@ A test showing that one reproducer fails is not by itself evidence that all affe
 - **Template-shaped verbosity:** gives every concept its own heading, repeats the same claim across sections, or includes detail that cannot change the review decision.
 - **Advisory-shaped summary:** describes impact but omits the evidence and decisions needed to agree on scope and remediation.
 - **Fix-first reasoning:** presents a patch before defining the security property it must restore.
+- **Unverifiable reachability:** lists entry points in prose without showing how they converge on the vulnerable operation or where the trust boundaries are.
 - **Reproducer-sized scope:** analyzes only the reported path rather than the shared vulnerable behavior.
 - **Possibility presented as impact:** treats a theoretical consequence as demonstrated fact.
 - **Unjustified exclusion:** labels a component unaffected without explaining the relevant difference.

@@ -1,6 +1,8 @@
 {
   "enabled": true,
+  "allowBrowserProcess": true,
   "network": {
+    "allowLocalBinding": true,
     "allowedDomains": [
       "github.com",
       "*.github.com",

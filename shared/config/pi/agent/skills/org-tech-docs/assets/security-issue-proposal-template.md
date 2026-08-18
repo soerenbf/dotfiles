@@ -13,7 +13,30 @@
 
 ## Analysis
 
-<Explain only what reviewers need to evaluate the issue: the expected security property, how current behavior violates it, attacker prerequisites and path, root cause, and demonstrated or inferred impact. Prefer a compact narrative or diagram over a subsection for each item.>
+<Explain only what reviewers need to evaluate the issue: the expected security property, how current behavior violates it, attacker prerequisites, root cause, and demonstrated or inferred impact.>
+
+### Reachability Graph
+
+<Show the attacker-controlled trust-boundary input as the root, the messages or operations that expose the vulnerable behavior as branches, and the vulnerable type or operation as the leaves. Use a containment tree for nested messages or deserialization paths. Classify referenced nodes using the fixed legend below. Resolve every marker after the graph with the exact code symbol and a direct link to the relevant file or lines; do not leave markers supported only by prose or an unlinked path. Reuse a marker when paths converge on the same code. Mark uncertain paths in words. Omit the graph only when there is one direct, obvious path.>
+
+**Legend:** `E` = attacker control or externally reachable entry point; `P` = processing step needed to trace reachability; `V` = vulnerable check or operation.
+
+```text
+<attacker-controlled input> [E1]
+├─ <entry point or message> [E2]
+│  └─ <nested processing path> [P1]
+│     └─ <vulnerable type or operation> [V1]
+└─ <entry point or message> [E3]
+   └─ <alternate processing path> [P2]
+      └─ <vulnerable type or operation> [V1]
+```
+
+- **[E1]** `<symbol>` — [`<file:lines>`](<direct code URL>)
+- **[E2]** `<symbol>` — [`<file:lines>`](<direct code URL>)
+- **[E3]** `<symbol>` — [`<file:lines>`](<direct code URL>)
+- **[P1]** `<symbol>` — [`<file:lines>`](<direct code URL>)
+- **[P2]** `<symbol>` — [`<file:lines>`](<direct code URL>)
+- **[V1]** `<symbol>` — [`<file:lines>`](<direct code URL>)
 
 ## Scope
 
