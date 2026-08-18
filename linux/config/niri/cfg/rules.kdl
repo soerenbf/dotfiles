@@ -1,11 +1,16 @@
 window-rule {
-    geometry-corner-radius 20 // Set every window radius to 20
+    geometry-corner-radius 10 // Set every window radius to 10
     clip-to-geometry true
 }
 
 window-rule {
     match app-id="^gamescope$"
     open-focused true
+}
+
+window-rule {
+    match app-id="^steam$" title="^Steam Big Picture Mode$"
+    open-fullscreen true
 }
 
 layer-rule {
