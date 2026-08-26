@@ -1,0 +1,1 @@
+-- VimTeX configures itself when a TeX buffer opens.

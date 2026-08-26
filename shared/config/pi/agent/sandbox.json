@@ -22,12 +22,16 @@
       "*.haskell.org",
       "stackage.org",
       "*.stackage.org",
-      "hub.docker.com"
+      "hub.docker.com",
+      "storage.googleapis.com"
     ],
     "deniedDomains": []
   },
   "filesystem": {
-    "denyRead": ["/Users", "/home"],
+    "denyRead": [
+      "/Users",
+      "/home"
+    ],
     "allowRead": [
       ".",
       "~/AGENTS.md",
@@ -60,6 +64,11 @@
       "~/.ghcup",
       "~/.npm"
     ],
-    "denyWrite": [".env", ".env.*", "*.pem", "*.key"]
+    "denyWrite": [
+      ".env",
+      ".env.*",
+      "*.pem",
+      "*.key"
+    ]
   }
 }

@@ -3,9 +3,12 @@
     "npm:pi-nvim",
     "npm:pi-mcp-adapter",
     "npm:pi-sandbox",
-    "npm:pi-web-access"
+    "npm:pi-web-access",
+    "git:github.com/DietrichGebert/ponytail",
+    "npm:@tintinweb/pi-subagents",
+    "git:github.com/v2nic/pi-caveman"
   ],
-  "lastChangelogVersion": "0.84.2",
+  "lastChangelogVersion": "0.84.3",
   "defaultProvider": "openai-codex",
   "defaultModel": "gpt-5.6-sol",
   "theme": "dark",
@@ -21,5 +24,7 @@
   "defaultThinkingLevel": "low",
   "enableInstallTelemetry": false,
   "quietStartup": true,
-  "collapseChangelog": true
+  "collapseChangelog": true,
+  "tuiMode": "fullscreen",
+  "outputPad": 1
 }

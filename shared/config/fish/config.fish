@@ -27,7 +27,7 @@ alias gcl="git clone --recurse-submodules"
 alias gsw="git switch --recurse-submodules"
 alias gsu="git submodule update --init --recursive"
 
-alias v='nvim'
+alias v='env NVIM_APPNAME=nvim-minimal nvim'
 alias em="emacs"
 alias lg="lazygit"
 

@@ -35,9 +35,9 @@
     ~/.config/kanata:
       force: true
       path: shared/config/kanata
-    ~/.config/nvim-astro:
+    ~/.config/nvim-minimal:
       force: true
-      path: shared/config/astronvim
+      path: shared/config/nvim-minimal
     ~/.config/nvim:
       force: true
       path: shared/config/kickstart.nvim
