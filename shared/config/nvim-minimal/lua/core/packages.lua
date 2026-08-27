@@ -31,4 +31,5 @@ vim.pack.add {
   { src = 'https://github.com/Bilal2453/luvit-meta' },
   { src = 'https://github.com/MeanderingProgrammer/markdown.nvim' },
   { src = 'https://github.com/lervag/vimtex' },
+  { src = 'https://github.com/stevearc/quicker.nvim'}
 }
