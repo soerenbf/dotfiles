@@ -6,7 +6,7 @@
     "npm:pi-web-access",
     "git:github.com/DietrichGebert/ponytail",
     "npm:@tintinweb/pi-subagents",
-    "git:github.com/v2nic/pi-caveman"
+    "npm:pi-caveman"
   ],
   "lastChangelogVersion": "0.84.3",
   "defaultProvider": "openai-codex",
